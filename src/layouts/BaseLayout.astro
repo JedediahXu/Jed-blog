@@ -1,0 +1,27 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{Astro.props.title}</title>
+    <meta property="og:site_name" content={"Chet's Blog"} />
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta
+      property="og:image"
+      content={Astro.props.ogImage || new URL('/ogImage.png', Astro.site)}
+    />
+    <meta
+      property="og:description"
+      content={Astro.props.ogDescription || 'ChetSerenade is blogging about life, tech.'}
+    />
+    <meta property="og:type" content={Astro.props.ogType || 'website'} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

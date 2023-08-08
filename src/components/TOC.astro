@@ -1,0 +1,27 @@
+---
+const { headings } = Astro.props as {
+  headings: Array<{
+    depth: number,
+    slug: string,
+    text: string
+  }>
+}
+---
+
+{headings.length ? <div class="fixed top-24 left-8 hidden lg:inline-block">
+  <div class="mb-2 text-sm">
+    索引
+  </div>
+  <div>
+    {headings.map(heading => {
+      return (
+        <a
+          class={`block text-gray-500 hover:text-gray-900 text-sm mb-2 ${heading.depth > 2 ? 'ml-4' : ''}`}
+          href={`#${heading.slug}`}
+        >
+          {heading.text}
+        </a>
+      )
+    })}
+  </div>
+</div> : null}
