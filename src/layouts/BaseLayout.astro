@@ -20,8 +20,16 @@
       content={Astro.props.ogDescription || 'ChetSerenade is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
+    <link rel="stylesheet"  href="/src/style/index.css">
   </head>
-  <body>
+
+  <body >
+    <div id="background">
+      <div class="image"></div>
+    </div>
     <slot />
+    <script>
+      import '../load-gallery.js';
+    </script>
   </body>
 </html>

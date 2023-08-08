@@ -1,5 +1,5 @@
 export default {
-  title: `ChetSerenade Blog`,
+  title: `ChetSerenade`,
   name: 'ChetSerenade',
   since: '2021',
   contacts: [

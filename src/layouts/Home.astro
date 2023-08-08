@@ -32,7 +32,7 @@ const contacts = [
 ]
 ---
 
-<BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
+<BaseLayout   title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex">
       <div class="text-center sm:px-40 lg:my-24 py-24">
@@ -59,7 +59,7 @@ const contacts = [
           <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
             {
               config.navs.map((nav) => {
-                return <a href={nav.url}>{nav.title}</a>
+                return <a href={nav.url}>{nav.title}</a>;
               })
             }
           </div>

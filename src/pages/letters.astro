@@ -1,38 +1,108 @@
 ---
 import Home from '../layouts/Home.astro'
-const letters = await Astro.glob('../letters/*.md')
-import dayjs from 'dayjs'
-// sort letters by date
-letters.sort((a, b) => {
-  //@ts-ignore
-  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-})
+const data = {
+  images: [
+    {
+      label: '测试',
+      time: '2023/01/03',
+      href: 'https://scontent-xsp1-2.cdninstagram.com/v/t51.29350-15/356029168_276874865000295_5768967542438173894_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8ae9d6&_nc_aid=0&_nc_ohc=KWzs5ieAuIEAX8WaowE&_nc_ht=scontent-xsp1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfCQrHf3s9GEdHEiNfgDMgAWjeJYzeFPCTgqYuWu4ja2lA&oe=64D6D489',
+    },
+    {
+      label: '测试',
+      time: '2023/05/03',
+      href: 'https://scontent-xsp1-3.cdninstagram.com/v/t51.29350-15/356610273_166304683105588_4604563586482489939_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=FhLgdJiMLHQAX_BGcYb&_nc_ht=scontent-xsp1-3.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDRl9qVc109AxoRkb2W8bEpRopdcfFDo10kG5H-IZlKEg&oe=64D5E24D',
+    },
+    {
+      label: '测试',
+      time: '2023/08/03',
+      href: 'https://scontent-xsp1-1.cdninstagram.com/v/t51.29350-15/355900268_1330338834218299_543965928441316527_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=v3tOMQ7xB2kAX8TITNJ&_nc_ht=scontent-xsp1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfCkzBOqw-a_5-0m2dBO8RONMBdU5CpQGsHRCq4RlDtW9Q&oe=64D6951B',
+    },
+    {
+      label: '测试',
+      time: '2023/02/03',
+      href: 'https://scontent-xsp1-2.cdninstagram.com/v/t51.29350-15/355996737_805891551238447_5339127441332136385_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=m2PsLCLzAXIAX9d_X5R&_nc_ht=scontent-xsp1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDaloFc3XrdSrbtPnP_q-TJUjnDN0B3BNioLTNf2D4fvg&oe=64D5EEF0',
+    },
+    {
+      label: '测试',
+      time: '2023/08/03',
+      href: 'https://scontent-xsp1-2.cdninstagram.com/v/t51.29350-15/354207512_1489946301756751_8425844479543468931_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=uRF-e_yP6c0AX8XDZpa&_nc_ht=scontent-xsp1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfD40qICXKKzU-IFA88Rpm2N5DGRMMqsojmiZIS5e_Dj3w&oe=64D7B9D3',
+    },
+    {
+      label: '测试',
+      time: '2023/03/03',
+      href: 'https://scontent-xsp1-2.cdninstagram.com/v/t51.29350-15/353496617_642791621094035_8214055319612731263_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=3IJDWIe_LVEAX8_r_eE&_nc_ht=scontent-xsp1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBLo8QL9jRWYlb0xSt8kYkmplOqeO3m7TcnckD12Cb1oQ&oe=64D78357',
+    },
+    {
+      label: '测试',
+      time: '2023/02/03',
+      href: 'https://scontent-xsp1-2.cdninstagram.com/v/t51.29350-15/342085687_767729448035058_6749126369215556147_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=euKPhnxrCOUAX-ZXlB0&_nc_ht=scontent-xsp1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDTXPDB6Gewv39o_Cr5xBDAdcP0h8LMYiT8GpzIi2xPYg&oe=64D7A9ED',
+    },
+    {
+      label: '测试',
+      time: '2023/08/03',
+      href: 'https://scontent-xsp1-3.cdninstagram.com/v/t51.29350-15/345403533_603117805081993_5045163865636559652_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=jrv1lX7Dt3QAX-OywWT&_nc_ht=scontent-xsp1-3.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfA-QNjdEZq8t4nqms9kgZkvNNKogG9LsK7-UME65XBohQ&oe=64D76F4D',
+    },
+    {
+      label: '测试',
+      time: '2023/03/03',
+      href: 'https://scontent-xsp1-1.cdninstagram.com/v/t51.29350-15/343619591_625572815735413_5877437266022637385_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=4xz929CdMs0AX9dMyXT&_nc_ht=scontent-xsp1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAin_UW1Nsv7RIz1VlTi4Vk0SMZLT3OqHyS9E8GjMaIuA&oe=64D67B35',
+    },
+  ],
+}
 ---
 
+<style>
+  .date-container {
+    position: absolute;
+    bottom: 0.318rem;
+    left: 0.5rem;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .date-label {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+</style>
+
 <Home>
-  <div class="container max-w-[640px] lg:p-4 mx-auto">
+  <div class="ml-6 md:ml-0 md:mr-20 pl-3">
     <div class="mb-8 flex flex-col gap-1">
-      <h1 class="text-xl font-medium mb-4">图片/视频</h1>
-      <h2 class="text-sm">生活中一些图片和视频</h2>
-      <div>
-        <a href="/blog/letters-from-reader" class="text-sm underline">拍摄</a>
-      </div>
+      <h1 class="text-xl font-medium mb-4">图片 / 视频</h1>
+      <h2 class="text-sm">「优游处其境，岁月忽其期」</h2>
     </div>
-    <!-- <div class="lg:grid sm:grid-cols-2 gap-4">
+  </div>
+  <div class="ml-6 md:ml-0 md:mr-20">
+    <div id="my-gallery" class="flex flex-wrap">
       {
-        letters.map((letter) => {
-          return (
-            <div class=" border border-slate-200 lg:p-8 p-12 text-sm mb-4">
-              <div class="prose prose-sm">
-                <letter.Content />
-              </div>
-              <div class="text-slate-500 mt-4 text-right">
-                {dayjs(letter.frontmatter.date).format('YYYY-MM-DD')}
+        data.images.map((image) => (
+          <div class="w-2/4 2xl:w-1/6 md:w-1/4 p-1 2xl:p-3 md:p-3 h-17 relative">
+            <div class="relative group rounded-md overflow-hidden">
+              <a href={image.href} data-cropped="true" class="block overflow-hidden">
+                <div class="transition-transform transform group-hover:scale-110">
+                  <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                    <img
+                      src={image.href}
+                      alt={image.label}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="date-container">
+                <div class="group-hover:opacity-0 transition duration-200">
+                  <span class="date-label  group-hover:opacity-0 transition duration-200">
+                    {image.time}
+                  </span>
+                </div>
               </div>
             </div>
-          )
-        })
+          </div>
+        ))
       }
-    </div> -->
+    </div>
   </div>
 </Home>
