@@ -1,0 +1,38 @@
+---
+import Home from '../layouts/Home.astro'
+const letters = await Astro.glob('../letters/*.md')
+import dayjs from 'dayjs'
+// sort letters by date
+letters.sort((a, b) => {
+  //@ts-ignore
+  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+})
+---
+
+<Home>
+  <div class="container max-w-[640px] lg:p-4 mx-auto">
+    <div class="mb-8 flex flex-col gap-1">
+      <h1 class="text-xl font-medium mb-4">图片/视频</h1>
+      <h2 class="text-sm">生活中一些图片和视频</h2>
+      <div>
+        <a href="/blog/letters-from-reader" class="text-sm underline">拍摄</a>
+      </div>
+    </div>
+    <!-- <div class="lg:grid sm:grid-cols-2 gap-4">
+      {
+        letters.map((letter) => {
+          return (
+            <div class=" border border-slate-200 lg:p-8 p-12 text-sm mb-4">
+              <div class="prose prose-sm">
+                <letter.Content />
+              </div>
+              <div class="text-slate-500 mt-4 text-right">
+                {dayjs(letter.frontmatter.date).format('YYYY-MM-DD')}
+              </div>
+            </div>
+          )
+        })
+      }
+    </div> -->
+  </div>
+</Home>

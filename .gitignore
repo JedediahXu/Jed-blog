@@ -1,0 +1,9 @@
+# Editor directories and files
+.vscode
+
+node_modules
+/dist
+
+*.sh
+node_modules*
+pnpm-lock.yaml

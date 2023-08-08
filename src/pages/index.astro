@@ -1,0 +1,84 @@
+---
+import Home from '../layouts/Home.astro'
+import PostList from '../components/PostList.astro'
+import CodingList from '../components/Coding.astro'
+import { Content as Intro } from '../intro.md'
+
+const data = {
+  activities: [
+    {
+      title: '[在海一方]',
+      url: 'https://cdn.surmon.me/imgproxy/resize:fill:350:238:0/plain/thumbnail/wat-umong.jpg@webp',
+    },
+    {
+      title: '[泉城济南]',
+      url: 'https://cdn.surmon.me/imgproxy/resize:fill:350:238:0/plain/thumbnail/deconstruction.jpg@webp',
+    },
+    {
+      title: '[你好,明天]',
+      url: 'https://cdn.surmon.me/imgproxy/resize:fill:350:238:0/plain/thumbnail/moments.jpg@webp',
+    },
+    {
+      title: '点击显示更多',
+      url: 'https://cdn.surmon.me/imgproxy/resize:fill:350:238:0/plain/thumbnail/wat-umong.jpg@webp',
+    },
+  ],
+  publications: [
+    {
+      title: '6666',
+      url: 'https://cdn.surmon.me/imgproxy/resize:fill:350:238:0/plain/thumbnail/wat-umong.jpg@webp',
+    },
+  ],
+}
+---
+
+<Home>
+  <div class="mx-auto text-sm">
+    <h2 class="font-bold mb-6 text-md">ABOUT /「 关于我 」</h2>
+    <div class="prose prose-sm">
+      <Intro />
+    </div>
+  </div>
+  <div class="text-sm mt-8">
+    <h2 class="font-bold mb-6 text-md">PUBLIC / 「 大千同在 」</h2>
+
+    <div class="ml-6 md:ml-0 md:mr-20">
+      <div class="flex flex-wrap">
+        {
+          data.activities.map((activity) => (
+            <div class="w-2/4 2xl:w-1/6 md:w-1/4  p-2">
+              <div class="relative group rounded-md overflow-hidden">
+                <a target="_blank" class="block overflow-hidden" href={activity.url}>
+                  <div class="transition-transform transform group-hover:scale-110">
+                    <img
+                      src={activity.url}
+                      alt={activity.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </a>
+                <div class="mt-2">
+                  <span class="text-sm font-semibold" style="line-height: .5;">
+                    {activity.title}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div class="text-sm mt-8">
+    <h2 class="font-bold mb-6 text-md">CODING /「 前端 」</h2>
+    <div class="ml-6 md:ml-0">
+      <CodingList />
+    </div>
+  </div>
+  <div class="text-sm mt-8">
+    <h2 class="font-bold mb-6 text-md">ESSAYS / 「 生活 」</h2>
+    <div class="ml-6 md:ml-0">
+      <PostList />
+    </div>
+  </div>
+</Home>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+import Donate from "../components/Donate.astro"
+import TOC from "../components/TOC.astro"
+import dayjs from "dayjs"
+import config from "../config"
+const { frontmatter, headings } = Astro.props
+---
+
+<BaseLayout title={`${frontmatter.title} | ${config.title}`} ogType="article" ogDescription={frontmatter.ogDescription} ogImage={frontmatter.ogImage}>
+  <TOC headings={headings} />
+  <nav
+    class="border-b p-4 sm:px-8 px-4 flex gap-4 items-center sticky top-0 bg-white/50 backdrop-blur-lg"
+  >
+    <a class="font-bold" href="/">{config.title}</a>
+    <div class="text-sm flex gap-4">
+      {
+        config.navs.map((nav) => {
+          return <a href={nav.url}>{nav.title}</a>
+        })
+      }
+    </div>
+  </nav>
+  <div class="prose mx-auto px-4 lg:px-0 my-12 lg:my-12">
+    <h1>{frontmatter.title}</h1>
+    <div class="text-slate-500">
+      {dayjs(frontmatter.date).format("YYYY/MM/DD")}
+    </div>
+    <slot />
+    <hr />
+    <div>
+      <Donate />
+    </div>
+  </div>
+</BaseLayout>

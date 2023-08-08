@@ -1,0 +1,21 @@
+---
+const posts = await Astro.glob('../pages/coding/*.md')
+// sort post by date
+posts.sort((a, b) => {
+  //@ts-ignore
+  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+})
+---
+
+<div class="flex flex-col gap-2">
+  {
+    posts.map((post) => {
+      return (
+        <div class="relative">
+          {post.frontmatter.pin && <div class="absolute -left-6">✱</div>}
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </div>
+      )
+    })
+  }
+</div>
