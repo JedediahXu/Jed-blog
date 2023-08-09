@@ -1,4 +1,4 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
 import config from '../config'
 import sanitizeHtml from 'sanitize-html';
 
