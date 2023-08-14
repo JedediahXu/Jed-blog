@@ -19,59 +19,61 @@ const getPointHeightStyle = (value: number) => {
       <div class="item tweet" :style="{ height: getPointHeightStyle(tweets / total) }" />
       <div class="item instagram" :style="{ height: getPointHeightStyle(instagrams / total) }" />
       -->
-      <div
+      <!-- <div
         class="item tweet"
         :style="{
-          height: getPointHeightStyle(1 / 3),
+          height: getPointHeightStyle(3 / 3),
           backgroundColor: '#1b95e0',
         }"
-      />
-      <div
+      /> -->
+      <!-- <div
         class="item instagram"
         :style="{
           height: getPointHeightStyle(1 / 3),
           backgroundColor: '#f6a6ac',
         }"
-      />
+      />-->
       <div
         class="item contribution"
         :style="{
-          height: getPointHeightStyle(1 / 3),
-          backgroundColor: 'rgb(155, 233, 168)',
+          height: getPointHeightStyle(0 / 3),
+          backgroundColor: 'rgb(235, 237, 240)',
         }"
-      />
+      /> 
     </div>
-    <!-- <div class="tooltip" v-if="total">
-      <p class="date">{{ date }}</p>
+    <div class="tooltip" >
+      <p class="date">2023-08-14</p>
       <ul class="counts">
         <li class="item article">
           <i class="iconfont icon-quill"></i>
-          <span class="count">{{ articles }}</span>
+          <span class="count">222</span>
           articles
         </li>
         <li class="item tweet">
           <i class="iconfont icon-twitter"></i>
-          <span class="count">{{ tweets }}</span>
+          <span class="count">333</span>
           tweets
         </li>
         <li class="item instagram">
           <i class="iconfont icon-instagram"></i>
-          <span class="count">{{ instagrams }}</span>
+          <span class="count">444</span>
           instagrams
         </li>
         <li class="item contribution">
           <i class="iconfont icon-github"></i>
-          <span class="count">{{ contributions }}</span>
+          <span class="count"> contributions</span>
           contributions
         </li>
       </ul>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../style/variables";
 @import "../style/mixins";
+
+
 .day {
   $size: 11px;
   $radius: 2px;

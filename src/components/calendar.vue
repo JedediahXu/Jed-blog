@@ -43,7 +43,6 @@ const months = [
 @import "../style/mixins";
 
 .calendar {
-  width: 55vw;
   margin-bottom: $gap * 2;
   border-radius: $lg-radius;
   padding: $gap;

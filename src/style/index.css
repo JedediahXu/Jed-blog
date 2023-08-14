@@ -15,3 +15,7 @@
   opacity: .2;
   background: url("../images/background.png");
 }
+
+.home {
+  overflow-x: hidden;
+}
