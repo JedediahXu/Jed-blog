@@ -20,8 +20,30 @@
       content={Astro.props.ogDescription || 'ChetSerenade is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
-    <link rel="stylesheet" href="/src/style/index.css" />
-  </head>
+    <style>
+      #background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #e3e3e3;
+      }
+
+      #background .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url('../images/background.png');
+      }
+
+      .home {
+        overflow-x: hidden;
+      }
+    </style></head
+  >
 
   <body>
     <div id="background">
