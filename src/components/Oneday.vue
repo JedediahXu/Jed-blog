@@ -1,31 +1,22 @@
 <script lang="ts" setup>
-// import { computed } from 'Vue'
-//import { useEnhancer } from '/@/app/enhancer'
 
-// const props = defineProps<{
-//   githubColor?: string
-// }>()
+const props = defineProps<{
+  date?: string
+}>()
 
-// const { isDarkTheme } = useEnhancer()
-// const total = computed(() => props.articles + props.tweets + props.contributions + props.instagrams)
+
+// const total = computed(() => props.articles  + props.contributions + props.instagrams)
 const getPointHeightStyle = (value: number) => {
   return isNaN(value) ? 0 : `${Math.floor(value * 100)}%`;
 };
+
 </script>
 <template>
-  <div class="day">
+  <div class="day"  :data-date="date">
     <div class="point">
       <!-- <div class="item article" :style="{ height: getPointHeightStyle(articles / total) }" />
-      <div class="item tweet" :style="{ height: getPointHeightStyle(tweets / total) }" />
       <div class="item instagram" :style="{ height: getPointHeightStyle(instagrams / total) }" />
       -->
-      <!-- <div
-        class="item tweet"
-        :style="{
-          height: getPointHeightStyle(3 / 3),
-          backgroundColor: '#1b95e0',
-        }"
-      /> -->
       <!-- <div
         class="item instagram"
         :style="{
@@ -42,27 +33,22 @@ const getPointHeightStyle = (value: number) => {
       /> 
     </div>
     <div class="tooltip" >
-      <p class="date">2023-08-14</p>
+      <p class="date">{{ date }}</p>
       <ul class="counts">
         <li class="item article">
           <i class="iconfont icon-quill"></i>
-          <span class="count">222</span>
+          <span class="count">暂无数据</span>
           articles
-        </li>
-        <li class="item tweet">
-          <i class="iconfont icon-twitter"></i>
-          <span class="count">333</span>
-          tweets
-        </li>
-        <li class="item instagram">
-          <i class="iconfont icon-instagram"></i>
-          <span class="count">444</span>
-          instagrams
         </li>
         <li class="item contribution">
           <i class="iconfont icon-github"></i>
-          <span class="count"> contributions</span>
-          contributions
+          <span class="count">暂无数据</span>
+          github
+        </li>
+        <li class="item instagram">
+          <i class="iconfont icon-instagram"></i>
+          <span class="count">暂无数据</span>
+          instagrams
         </li>
       </ul>
     </div>
@@ -78,10 +64,10 @@ const getPointHeightStyle = (value: number) => {
   $size: 11px;
   $radius: 2px;
   position: relative;
-  width: 14px;
-  height: 14px;
+  width: 11px;
+  height: 11px;
   border-radius: $radius;
-  background-color: #dedede;
+  background-color: $module-bg-opaque;
   &.dark {
     background-color: $module-bg-darker-1;
     .point {
@@ -99,15 +85,16 @@ const getPointHeightStyle = (value: number) => {
     }
     .point:hover {
       & + .tooltip {
-        // @include visible();
+        opacity: 1 !important;
+        visibility: visible !important
       }
     }
   }
 
   .point {
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 11px;
+    height: 11px;
     border-radius: $radius;
     overflow: hidden;
 
@@ -115,9 +102,6 @@ const getPointHeightStyle = (value: number) => {
       width: 100%;
       &.article {
         background-color: $rss-primary;
-      }
-      &.tweet {
-        background-color: $twitter-primary;
       }
       &.instagram {
         background-color: $instagram-primary;
@@ -154,6 +138,7 @@ const getPointHeightStyle = (value: number) => {
     }
 
     .date {
+      color: $module-bg-opaque;
       font-weight: bold;
       margin-bottom: $xs-gap;
     }
@@ -169,14 +154,15 @@ const getPointHeightStyle = (value: number) => {
         &.article {
           color: $rss-primary;
         }
-        &.tweet {
-          color: $twitter-primary;
-          /* A token to indicate that twitter is no longer supported */
-          text-decoration: line-through;
-        }
+      
         &.instagram {
           color: $instagram-primary;
         }
+
+
+      &.contribution {
+        color: $module-bg-opaque
+      }
 
         .count {
           margin-left: $sm-gap;
@@ -237,45 +223,6 @@ const getPointHeightStyle = (value: number) => {
     .point {
       .instagram {
         background-color: lighten($instagram-primary, 10%);
-      }
-    }
-  }
-
-  /* tweets */
-  /* 8+ */
-  &:not([data-tweet-count="0"]) {
-    .point {
-      .tweet {
-        background-color: $twitter-primary;
-      }
-    }
-  }
-  /* 1 */
-  &[data-tweet-count="1"] {
-    .point {
-      .tweet {
-        background-color: lighten($twitter-primary, 22%);
-      }
-    }
-  }
-  /* 2-4 */
-  &[data-tweet-count="2"],
-  &[data-tweet-count="3"],
-  &[data-tweet-count="4"] {
-    .point {
-      .tweet {
-        background-color: lighten($twitter-primary, 16%);
-      }
-    }
-  }
-  /* 5-8 */
-  &[data-tweet-count="5"],
-  &[data-tweet-count="6"],
-  &[data-tweet-count="7"],
-  &[data-tweet-count="8"] {
-    .point {
-      .tweet {
-        background-color: lighten($twitter-primary, 8%);
       }
     }
   }

@@ -2,7 +2,7 @@
 import Home from '../layouts/Home.astro'
 import PostList from '../components/PostList.astro'
 import CodingList from '../components/Coding.astro'
-import Calendar from '../components/calendar.vue'
+import Calendar from '../components/Calendar.vue'
 import { Content as Intro } from '../intro.md'
 ---
 
@@ -13,9 +13,9 @@ import { Content as Intro } from '../intro.md'
       <Intro />
     </div>
   </div>
-  <div class="text-sm mt-8 be-with" style="width: 55rem;">
+  <div class="text-sm mt-8 be-with">
     <h2 class="font-bold mb-6 text-md">PUBLIC / 「 大千同在 」</h2>
-    <Calendar />
+    <Calendar client:only="svelte" />
   </div>
   <div class="text-sm mt-8">
     <h2 class="font-bold mb-6 text-md">CODING /「 前端 」</h2>

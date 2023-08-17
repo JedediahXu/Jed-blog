@@ -7,8 +7,7 @@ pin: true
 categories:
   - Life
 ---
-
-![图片描述](https://cdn.surmon.me/static/thumbnail/mindfulness.jpg)
+![图片描述](https://chetxu.chetserenade.info/uPic/wat-umong.png)
 
 # setup（语法糖）
 

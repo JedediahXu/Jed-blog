@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { dateToHuman, HumanDate, humanDateToYMD } from "../utils/moment";
-import CalendarDay from "./day.vue";
+import CalendarDay from "./OneDay.vue";
 
 // current month | day
 const today = new Date();
@@ -16,6 +16,7 @@ const getPrevMonthFullDays = (date: HumanDate, prevMonths: number) => {
   });
 };
 
+// Show monthly quantity
 const months = [
   getPrevMonthFullDays(todayHuman, 7),
   getPrevMonthFullDays(todayHuman, 6),
@@ -43,11 +44,10 @@ const months = [
 @import "../style/mixins";
 
 .calendar {
-  margin-bottom: $gap * 2;
   border-radius: $lg-radius;
-  padding: $gap;
-  background-color: rgba(255, 255, 255, 0.6);
-    transition: background-color 0.25s;
+  padding: 0.8rem;
+  background-color: $module-bg-ashen;
+  transition: background-color 0.25s;
 }
 
 .aggregate-calendar {
@@ -62,8 +62,8 @@ const months = [
     grid-template-rows: repeat(7, 1fr);
     grid-auto-flow: column;
     grid-auto-columns: min-content;
-    grid-gap: 5px;
-    @include scroll-snap-item();
+    grid-gap: 3px;
+    scroll-snap-align: start;
   }
 }
 </style>
