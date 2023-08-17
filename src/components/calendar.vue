@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { dateToHuman, HumanDate, humanDateToYMD } from "../utils/moment";
-import CalendarDay from "./OneDay.vue";
+import CalendarDay from "./Oneday.vue";
 
 // current month | day
 const today = new Date();
