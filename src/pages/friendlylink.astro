@@ -1,0 +1,36 @@
+---
+import Home from '../layouts/Home.astro'
+
+const linkedList = {
+  data: [
+    {
+      label: '俊劫学习基地',
+      link: 'https://alexjjwu.fun',
+    },
+    {
+      label: 'Liuzepeng',
+      link: 'https://www.liuzepeng.com',
+    },
+    {
+      label: 'lemonhx',
+      link: 'https://lemonhx.moe',
+    },
+  ],
+}
+---
+
+<Home title="666">
+  <div class="prose">
+    {
+      linkedList.data.map((res) => (
+        <ul>
+          <li>
+            <a href={res.link} target="_blank" rel="noopener noreferrer">
+              {res.label}
+            </a>
+          </li>
+        </ul>
+      ))
+    }
+  </div>
+</Home>

@@ -22,6 +22,10 @@ export default {
       url: '/consulting'
     },
     {
+      title: '友情链接',
+      url: '/friendlylink'
+    },
+    {
       title: 'RSS',
       url: '/rss.xml'
     }
