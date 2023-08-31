@@ -1,6 +1,5 @@
 ---
 import Home from '../layouts/Home.astro'
-import PostList from '../components/PostList.astro'
 import CodingList from '../components/Coding.astro'
 import Calendar from '../components/calendar.vue'
 import { Content as Intro } from '../intro.md'
@@ -14,19 +13,13 @@ import { Content as Intro } from '../intro.md'
     </div>
   </div>
   <div class="text-sm mt-8 be-with">
-    <h2 class="font-bold mb-6 text-md">PUBLIC / 「 大千同在 」</h2>
+    <h2 class="font-bold mb-6 text-md">PERECENT TRENDS / 「 近期动态 」</h2>
     <Calendar client:only="vue" />
   </div>
   <div class="text-sm mt-8">
-    <h2 class="font-bold mb-6 text-md">CODING /「 前端 」</h2>
+    <h2 class="font-bold mb-6 text-md">PERECENT ARTICLES/「 近期文章 」</h2>
     <div class="ml-6 md:ml-0">
       <CodingList />
-    </div>
-  </div>
-  <div class="text-sm mt-8">
-    <h2 class="font-bold mb-6 text-md">ESSAYS / 「 生活 」</h2>
-    <div class="ml-6 md:ml-0">
-      <PostList />
     </div>
   </div>
 </Home>

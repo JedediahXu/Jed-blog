@@ -1,12 +1,22 @@
 ---
 import Home from '../layouts/Home.astro'
+import PostList from '../components/PostList.astro'
+import CodingList from '../components/Coding.astro'
 const response = await fetch('https://api.oioweb.cn/api/common/OneDayEnglish')
 const datas = await response.json()
 ---
 
-<Home title="666">
-  <div class="prose">
-    <h1>可能会植入地图....</h1>
-    {datas.result.note}
+<Home title="全部分类">
+  <div class="text-sm mt-8">
+    <h2 class="font-bold mb-6 text-md">CODING /「 前端 」</h2>
+    <div class="ml-6 md:ml-0">
+      <CodingList />
+    </div>
+  </div>
+  <div class="text-sm mt-8">
+    <h2 class="font-bold mb-6 text-md">ESSAYS / 「 生活 」</h2>
+    <div class="ml-6 md:ml-0">
+      <PostList />
+    </div>
   </div>
 </Home>

@@ -1,6 +1,7 @@
 ---
 import Home from '../layouts/Home.astro'
-
+const response = await fetch('https://api.oioweb.cn/api/common/OneDayEnglish')
+const datas = await response.json()
 const linkedList = {
   data: [
     {
@@ -19,7 +20,19 @@ const linkedList = {
 }
 ---
 
-<Home title="666">
+<style>
+  .prose-map {
+    width: 600px;
+    height: 500px;
+  }
+</style>
+
+<Home title="素履以往">
+  <div class="prose-map">
+    <h1>可能会植入地图....</h1>
+    {datas.result.note}
+  </div>
+  <h2>友情链接👇</h2>
   <div class="prose">
     {
       linkedList.data.map((res) => (

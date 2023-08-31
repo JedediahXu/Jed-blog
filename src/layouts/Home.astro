@@ -32,10 +32,16 @@ const contacts = [
 ]
 ---
 
+<style>
+  .active {
+    color: #0088f5;
+  }
+</style>
+
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
-      <div class="text-center sm:px-40 lg:my-24 py-24">
+      <div class="text-center sm:px-40 lg:mt-24 py-24">
         <div class="sticky top-5 flex flex-col gap-4">
           <div
             class="w-48 h-48 bg-cover bg-center rounded-full inline-block mx-auto"
@@ -56,10 +62,17 @@ const contacts = [
               })
             }
           </div>
+
           <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
             {
               config.navs.map((nav) => {
-                return <a href={nav.url}>{nav.title}</a>
+                const currentPath = new URL(Astro.request.url).pathname
+                const isActive = currentPath === nav.url
+                return (
+                  <a href={nav.url} class={isActive ? 'active' : ''}>
+                    {nav.title}
+                  </a>
+                )
               })
             }
           </div>
@@ -69,7 +82,7 @@ const contacts = [
           </div>
         </div>
       </div>
-      <div class="lg:my-24 mx-6 lg:mx-0">
+      <div class="lg:mt-24 mx-6 lg:mx-0">
         <slot />
       </div>
     </div>
