@@ -44,11 +44,25 @@ const months = [
 @import "../style/mixins";
 
 .calendar {
+  width: 630px;
   border-radius: $lg-radius;
   padding: 0.8rem;
   background-color: $module-bg-ashen;
   transition: background-color 0.25s;
 }
+
+@media (min-width: 1020px) and (max-width: 1279px) {
+  .calendar {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar {
+    width: 630px;
+  }
+}
+
 
 .aggregate-calendar {
   display: flex;

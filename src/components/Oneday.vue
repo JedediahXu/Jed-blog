@@ -101,10 +101,10 @@ const getPointHeightStyle = (value: number) => {
     .item {
       width: 100%;
       &.article {
-        background-color: $rss-primary;
+        background-color: #f8981d;
       }
       &.instagram {
-        background-color: $instagram-primary;
+        background-color: #ed4956;
       }
     }
   }
@@ -152,11 +152,11 @@ const getPointHeightStyle = (value: number) => {
         line-height: 1.8em;
         font-size: $font-size-small;
         &.article {
-          color: $rss-primary;
+          color: #f8981d;
         }
       
         &.instagram {
-          color: $instagram-primary;
+          color: #ed4956;
         }
 
 
@@ -177,7 +177,7 @@ const getPointHeightStyle = (value: number) => {
   &:not([data-article-count="0"]) {
     .point {
       .article {
-        background-color: $rss-primary;
+        background-color: #f8981d;
       }
     }
   }
@@ -185,7 +185,7 @@ const getPointHeightStyle = (value: number) => {
   &[data-article-count="1"] {
     .point {
       .article {
-        background-color: lighten($rss-primary, 20%);
+        background-color: lighten(#f8981d, 20%);
       }
     }
   }
@@ -195,7 +195,7 @@ const getPointHeightStyle = (value: number) => {
   &[data-article-count="4"] {
     .point {
       .article {
-        background-color: lighten($rss-primary, 10%);
+        background-color: lighten(#f8981d, 10%);
       }
     }
   }
@@ -205,7 +205,7 @@ const getPointHeightStyle = (value: number) => {
   &:not([data-instagram-count="0"]) {
     .point {
       .instagram {
-        background-color: $instagram-primary;
+        background-color: #ed4956;
       }
     }
   }
@@ -213,7 +213,7 @@ const getPointHeightStyle = (value: number) => {
   &[data-instagram-count="1"] {
     .point {
       .instagram {
-        background-color: lighten($instagram-primary, 20%);
+        background-color: lighten(#ed4956, 20%);
       }
     }
   }
@@ -222,7 +222,7 @@ const getPointHeightStyle = (value: number) => {
   &[data-instagram-count="3"] {
     .point {
       .instagram {
-        background-color: lighten($instagram-primary, 10%);
+        background-color: lighten(#ed4956, 10%);
       }
     }
   }
