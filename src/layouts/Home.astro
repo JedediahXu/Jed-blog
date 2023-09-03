@@ -2,11 +2,11 @@
 import BaseLayout from './BaseLayout.astro'
 import avatar from '../images/avatar.jpg'
 import config from '../config'
+
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 import juejin from '../images/juejin.svg'
 import youtube from '../images/youtube.svg'
-import Navigationbar from "../components/Navigationbar.vue";
 
 const contacts = [
   {
@@ -30,8 +30,13 @@ const contacts = [
     title: 'YouTube',
   },
 ]
-
 ---
+
+<style>
+  .active {
+    color: #0088f5;
+  }
+</style>
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
@@ -59,10 +64,19 @@ const contacts = [
           </div>
 
           <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
-            <Navigationbar client:only="vue"  />
+            {
+              config.navs.map((nav) => {
+                const isActive = Astro.url.pathname === nav.url
+                return (
+                  <a href={nav.url} class={isActive ? 'active' : ''}>
+                    {nav.title}
+                  </a>
+                )
+              })
+            }
           </div>
 
-          <div class="text-slate-500 text-sm"> 
+          <div class="text-slate-500 text-sm">
             Blog since {config.since}
           </div>
         </div>
