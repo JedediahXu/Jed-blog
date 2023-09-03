@@ -3,7 +3,4 @@
   "compilerOptions": {
     "jsx": "preserve"
   },
-  "types": [
-    "@astro/types"
-  ]
 }

@@ -4,10 +4,9 @@ import tailwind from "@astrojs/tailwind";
 
 import vue from '@astrojs/vue';
 
-import svelte from '@astrojs/svelte';
-
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   site: 'https://chetserenade.info',
-  integrations: [tailwind(),vue(),svelte(),]
+  integrations: [tailwind(),vue()]
 });
