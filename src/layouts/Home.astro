@@ -66,9 +66,14 @@ const contacts = [
           <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
             {
               config.navs.map((nav) => {
-                const isActive = Astro.url.pathname === nav.url
+                const { pathname } = Astro.url
+                const isActive = pathname === nav.url + '/'
                 return (
-                  <a href={nav.url} class={isActive ? 'active' : ''}>
+                  <a
+                    href={nav.url}
+                    class:list={isActive ? 'active' : ''}
+                    rel={nav.url.startsWith('http') ? 'noopener' : undefined}
+                  >
                     {nav.title}
                   </a>
                 )
