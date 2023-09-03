@@ -28,7 +28,6 @@ lightbox.on('uiRegister', function () {
       el.setAttribute('rel', 'noopener');
 
       pswp.on('change', () => {
-        console.log('change');
         el.href = pswp.currSlide.data.src;
       });
     },

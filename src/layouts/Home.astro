@@ -67,7 +67,8 @@ const contacts = [
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
-                const isActive = pathname === nav.url + '/'
+                const trimmedPathname = pathname === '/' ? pathname : pathname.replace(/\/$/, '')
+                const isActive = trimmedPathname === nav.url
                 return (
                   <a
                     href={nav.url}
