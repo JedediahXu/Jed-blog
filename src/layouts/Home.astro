@@ -1,8 +1,8 @@
 ---
+import { afterUpdate } from 'svelte'
 import BaseLayout from './BaseLayout.astro'
 import avatar from '../images/avatar.jpg'
 import config from '../config'
-
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 import juejin from '../images/juejin.svg'
@@ -30,6 +30,16 @@ const contacts = [
     title: 'YouTube',
   },
 ]
+
+let currentPathname = Astro.url.pathname
+
+afterUpdate(() => {
+  const newPathname = Astro.url.pathname
+
+  if (currentPathname !== newPathname) {
+    currentPathname = newPathname
+  }
+})
 ---
 
 <style>
@@ -66,8 +76,7 @@ const contacts = [
           <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
             {
               config.navs.map((nav) => {
-                const currentPath = new URL(Astro.request.url).pathname
-                const isActive = currentPath === nav.url
+                const isActive = currentPathname === nav.url
                 return (
                   <a href={nav.url} class={isActive ? 'active' : ''}>
                     {nav.title}
