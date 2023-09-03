@@ -14,15 +14,15 @@ export default {
       url: '/'
     },
     {
+      title: '相册',
+      url: '/letters'
+    },
+    {
       title: '素履以往',
       url: '/consulting'
     },
     {
-      title: '万象更新',
-      url: '/letters'
-    },
-    {
-      title: '友情链接',
+      title: '我的足迹',
       url: '/friendlylink'
     },
     {
