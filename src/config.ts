@@ -18,11 +18,11 @@ export default {
       url: '/letters'
     },
     {
-      title: '素履以往',
+      title: '归档',
       url: '/consulting'
     },
     {
-      title: '我的足迹',
+      title: '足迹',
       url: '/friendlylink'
     },
     {
