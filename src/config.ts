@@ -22,7 +22,7 @@ export default {
       url: '/consulting'
     },
     {
-      title: '灰色轨迹',
+      title: '生活轨迹',
       url: '/friendlylink'
     },
     {

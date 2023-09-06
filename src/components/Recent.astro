@@ -1,0 +1,26 @@
+---
+const codingPosts = await Astro.glob('../pages/coding/*.md');
+const blogPosts = await Astro.glob('../pages/blog/*.md');
+
+// 合并 coding 和 blog 文章
+const allPosts = [...codingPosts, ...blogPosts];
+
+// 将所有文章按日期排序
+allPosts.sort((a, b) => {
+  //@ts-ignore
+  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+});
+---
+
+<div class="flex flex-col gap-2">
+  {
+    allPosts.map((post) => {
+      return (
+        <div class="relative">
+          {post.frontmatter.pin && <div class="absolute -left-6">✱</div>}
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </div>
+      )
+    })
+  }
+</div>

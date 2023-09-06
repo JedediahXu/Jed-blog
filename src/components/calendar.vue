@@ -51,17 +51,19 @@ const months = [
   transition: background-color 0.25s;
 }
 
-@media (min-width: 1020px) and (max-width: 1279px) {
+@media (min-width: 1600px) and (max-width: 3999px) {
   .calendar {
-    width: 800px;
+    width: 640px;
   }
 }
 
-@media (min-width: 1100px) {
+
+@media (max-width: 1600px) {
   .calendar {
     width: 550px;
   }
 }
+
 
 
 .aggregate-calendar {
