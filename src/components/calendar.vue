@@ -57,14 +57,11 @@ const months = [
   }
 }
 
-
 @media (max-width: 1600px) {
   .calendar {
     width: 550px;
   }
 }
-
-
 
 .aggregate-calendar {
   display: flex;
