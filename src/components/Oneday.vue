@@ -1,38 +1,44 @@
 <script lang="ts" setup>
+import { computed } from "vue";
 
 const props = defineProps<{
-  date?: string
-}>()
+  date?: string;
+  githubColor?: string;
+  contributions: number;
+}>();
 
-
-// const total = computed(() => props.articles  + props.contributions + props.instagrams)
+const total = computed(() => props.contributions);
 const getPointHeightStyle = (value: number) => {
   return isNaN(value) ? 0 : `${Math.floor(value * 100)}%`;
 };
-
 </script>
 <template>
-  <div class="day"  :data-date="date">
+  <div class="day" :data-date="date">
     <div class="point">
-      <!-- <div class="item article" :style="{ height: getPointHeightStyle(articles / total) }" />
-      <div class="item instagram" :style="{ height: getPointHeightStyle(instagrams / total) }" />
-      -->
+      <!-- <div
+        class="item article"
+        :style="{ height: getPointHeightStyle(articles / total) }"
+      />
+      <div
+        class="item instagram"
+        :style="{ height: getPointHeightStyle(instagrams / total) }"
+      /> -->
       <!-- <div
         class="item instagram"
         :style="{
-          height: getPointHeightStyle(1 / 3),
+          height: getPointHeightStyle(2 / 3),
           backgroundColor: '#f6a6ac',
         }"
-      />-->
+      /> -->
       <div
         class="item contribution"
         :style="{
-          height: getPointHeightStyle(0 / 3),
-          backgroundColor: 'rgb(235, 237, 240)',
+          height: getPointHeightStyle(3 / 3),
+          backgroundColor: githubColor,
         }"
-      /> 
+      />
     </div>
-    <div class="tooltip" >
+    <div class="tooltip">
       <p class="date">{{ date }}</p>
       <ul class="counts">
         <li class="item article">
@@ -42,8 +48,8 @@ const getPointHeightStyle = (value: number) => {
         </li>
         <li class="item contribution">
           <i class="iconfont icon-github"></i>
-          <span class="count">暂无数据</span>
-          github
+          <span class="count">发生 {{ contributions }} 次</span>
+          contributions
         </li>
         <li class="item instagram">
           <i class="iconfont icon-instagram"></i>
@@ -58,7 +64,6 @@ const getPointHeightStyle = (value: number) => {
 <style lang="scss" scoped>
 @import "../style/variables";
 @import "../style/mixins";
-
 
 .day {
   $size: 11px;
@@ -86,7 +91,7 @@ const getPointHeightStyle = (value: number) => {
     .point:hover {
       & + .tooltip {
         opacity: 1 !important;
-        visibility: visible !important
+        visibility: visible !important;
       }
     }
   }
@@ -138,7 +143,7 @@ const getPointHeightStyle = (value: number) => {
     }
 
     .date {
-      color: $module-bg-opaque;
+      color: #fff;
       font-weight: bold;
       margin-bottom: $xs-gap;
     }
@@ -153,16 +158,19 @@ const getPointHeightStyle = (value: number) => {
         font-size: $font-size-small;
         &.article {
           color: #f8981d;
+          /* A token to indicate that twitter is no longer supported */
+          text-decoration: line-through;
         }
-      
+
         &.instagram {
           color: #ed4956;
+          /* A token to indicate that twitter is no longer supported */
+          text-decoration: line-through;
         }
 
-
-      &.contribution {
-        color: $module-bg-opaque
-      }
+        &.contribution {
+          color: #fff;
+        }
 
         .count {
           margin-left: $sm-gap;

@@ -1,6 +1,29 @@
 <script lang="ts" setup>
+import { computed } from "vue";
 import { dateToHuman, HumanDate, humanDateToYMD } from "../utils/moment";
 import CalendarDay from "./Oneday.vue";
+import { data } from "./data";
+
+const githubContributionsMap = computed(() => {
+  const contributionsMap = new Map();
+  for (const week of data.weeks) {
+    for (const day of week.contributionDays) {
+      contributionsMap.set(day.date, {
+        count: day.contributionCount,
+        color: day.color,
+      });
+    }
+  }
+  return contributionsMap;
+});
+
+const getDayContributions = (date: string) => {
+  return githubContributionsMap.value.get(date)?.count || 0;
+};
+
+const getDayGitHubColor = (date: string) => {
+  return githubContributionsMap.value.get(date)?.color;
+};
 
 // current month | day
 const today = new Date();
@@ -33,7 +56,14 @@ const months = [
   <div class="calendar">
     <ul class="aggregate-calendar">
       <li class="month" v-for="(month, index) in months" :key="index">
-        <calendar-day v-for="(day, i) in month" :key="i" :date="day" :tweets="0" />
+        <calendar-day
+          v-for="(day, i) in month"
+          :key="i"
+          :date="day"
+          :tweets="0"
+          :contributions="getDayContributions(day)"
+          :github-color="getDayGitHubColor(day)"
+        />
       </li>
     </ul>
   </div>
@@ -59,7 +89,7 @@ const months = [
 
 @media (max-width: 1600px) {
   .calendar {
-    width: 550px;
+    width: 575px;
   }
 }
 
