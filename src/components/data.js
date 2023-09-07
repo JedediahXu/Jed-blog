@@ -176,8 +176,8 @@ export  const data = {
         {
           weekday: 2,
           date: "2023-09-07",
-          contributionCount: 3,
-          color: "#9be9a8"
+          contributionCount: 4,
+          color: "#40c463"
         }
       ]
     }
