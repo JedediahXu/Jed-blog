@@ -14,12 +14,12 @@ export default {
       url: '/'
     },
     {
-      title: '生活相册',
-      url: '/letters'
-    },
-    {
       title: '文章归档',
       url: '/consulting'
+    },
+    {
+      title: '生活相册',
+      url: '/letters'
     },
     {
       title: '生活轨迹',

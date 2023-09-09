@@ -1,7 +1,6 @@
 ---
 import Home from '../layouts/Home.astro'
-const response = await fetch('https://api.oioweb.cn/api/common/OneDayEnglish')
-const datas = await response.json()
+import TrackMap from '../components/Map.vue'
 const linkedList = {
   data: [
     {
@@ -12,27 +11,23 @@ const linkedList = {
       label: 'Liuzepeng',
       link: 'https://www.liuzepeng.com',
     },
-    {
-      label: 'lemonhx',
-      link: 'https://lemonhx.moe',
-    },
   ],
 }
 ---
 
-<style>
-  .prose-map {
-    width: 600px;
-    height: 500px;
-  }
-</style>
-
 <Home title="地图/友链">
-  <div class="prose-map mx-auto text-sm">
-    <h1>Map track!</h1>
-    {datas.result.note}
+  <div class="mx-auto text-sm">
+    <div class="mb-8 flex flex-col gap-1">
+      <h1 class="text-xl font-medium mb-4">生活/轨迹</h1>
+      <h2 class="text-sm">「斯是陋室，唯吾芳馨」</h2>
+    </div>
   </div>
-  <h2>友情链接👇</h2>
+  <div class="w-full md:w-1/2 lg:w-3/4 xl:w-4/5">
+    <div id="my-gallery" class="flex flex-wrap">
+      <TrackMap client:only="vue" />
+    </div>
+  </div>
+  <h2 class="mt-10">友情链接:</h2>
   <div class="prose pb-10">
     {
       linkedList.data.map((res) => (
