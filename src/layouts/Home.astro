@@ -36,6 +36,10 @@ const contacts = [
   .active {
     color: #0088f5;
   }
+  .md {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 </style>
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
@@ -87,7 +91,7 @@ const contacts = [
           </div>
         </div>
       </div>
-      <div class="lg:mt-24 mx-4 lg:mx-0  md:w-1/2 lg:w-3/4 xl:w-4/5 mx-auto pb-10">
+      <div class="lg:mt-24 mx-4 lg:mx-0 md:w-1/2 lg:w-3/4 xl:w-4/5 mx-auto pb-10 md">
         <slot />
       </div>
     </div>
