@@ -15,7 +15,11 @@
               role="region"
               class="mapContainer"
             >
-              <div class="bg-slate-100 shadow-md text-slate-700 rounded-full py-2 px-6 slate-900 text-lg font-semibold absolute bottom-4 left-4 watermark">JiNan, Shandong</div>
+              <div
+                class="bg-slate-100 shadow-md text-slate-700 rounded-full py-2 px-6 slate-900 text-lg font-semibold absolute bottom-4 left-4 watermark"
+              >
+                JiNan, Shandong
+              </div>
             </div>
           </div>
         </div>
@@ -53,17 +57,27 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-declare const window: Window & { mapboxgl: any };
-</script>
 <script lang="ts" setup>
+declare const window: Window & { mapboxgl: any };
 import { geoPhoto, geoData } from "../utils/config";
 import { initDragMap } from "../utils/Map/drawMap";
 
-const popup = new window.mapboxgl.Popup({
-  closeButton: false,
-  closeOnClick: false,
-});
+let popup;
+
+try {
+  const windowWithMapbox = window as Window & { mapboxgl: any };
+  if (windowWithMapbox.mapboxgl) {
+    popup = new windowWithMapbox.mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+    });
+  } else {
+    console.error("Mapbox GL库未正确加载");
+    alert("地图加载时出现问题。请刷新页面或检查网络连接");
+  }
+} catch (error) {
+  console.error("创建Popup时出错：", error);
+}
 
 // 地图数据
 const { map, mapDivElement, marker } = initDragMap(
