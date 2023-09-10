@@ -61,6 +61,7 @@
 declare const window: Window & { mapboxgl: any };
 import { geoPhoto, geoData } from "../utils/config";
 import { initDragMap } from "../utils/Map/drawMap";
+import { onMounted, ref } from "vue";
 
 let popup;
 
@@ -73,7 +74,6 @@ try {
     });
   } else {
     console.error("Mapbox GL库未正确加载");
-    alert("地图加载时出现问题。请刷新页面或检查网络连接");
   }
 } catch (error) {
   console.error("创建Popup时出错：", error);

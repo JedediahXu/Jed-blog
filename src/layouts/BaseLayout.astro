@@ -7,8 +7,6 @@ import '../style/iconfont.scss'
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
@@ -24,6 +22,8 @@ import '../style/iconfont.scss'
       content={Astro.props.ogDescription || 'ChetSerenade is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
   </head>
 
   <body>
