@@ -1,12 +1,11 @@
 import { onMounted, Ref, ref } from 'vue'
+import mapboxgl from 'mapbox-gl';
 import { mapThreeDim } from './mapThreeDim'
 import { skyLoad } from './skyLoad'
 import { click } from './click'
 import { addPhoto } from './addPhoto'
 import { addPointMk } from './addPointMk'
 import { Popups } from './Popups'
-
-declare const window: Window & { mapboxgl: any }
 
 export function initDragMap(
   mapboxgl: { accessToken: string },
@@ -59,7 +58,7 @@ function mapNew(
   arr: [number, number],
 ) {
   if (mapDivElement.value !== null) {
-    map.value = new window.mapboxgl.Map({
+    map.value = new mapboxgl.Map({
       container: mapDivElement.value, // 容器 ID
       center: arr, // 初始坐标
       minZoom: 1.7, // 设置最小缩放比例
@@ -84,7 +83,7 @@ function mapNew(
     markerElement.style.height = '100px';
 
     // 在地图上添加自定义标记
-    marker.value = new window.mapboxgl.Marker({
+    marker.value = new mapboxgl.Marker({
       element: markerElement,
     })
       .setLngLat(arr)
@@ -98,7 +97,7 @@ function mapNew(
     Popups(map, popup) // 弹窗信息
 
     // 添加比例尺控件
-    const scale = new window.mapboxgl.ScaleControl({
+    const scale = new mapboxgl.ScaleControl({
       maxWidth: 100,
       unit: 'metric',
     })

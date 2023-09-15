@@ -19,6 +19,7 @@
     "astro-imagetools": "^0.8.1",
     "auth0-js": "^9.22.1",
     "dayjs": "^1.11.7",
+    "mapbox-gl": "^2.15.0",
     "photoswipe": "^5.3.8",
     "probe-image-size": "^7.2.3",
     "sanitize-html": "^2.10.0",

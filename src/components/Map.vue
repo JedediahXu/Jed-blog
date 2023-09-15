@@ -58,34 +58,18 @@
   </div>
 </template>
 <script lang="ts" setup>
-declare const window: Window & { mapboxgl: any };
+import mapboxgl from "mapbox-gl";
 import { geoPhoto, geoData } from "../utils/config";
 import { initDragMap } from "../utils/Map/drawMap";
 import { onMounted, ref } from "vue";
 
-let popup;
-
-try {
-  const windowWithMapbox = window as Window & { mapboxgl: any };
-  if (windowWithMapbox.mapboxgl) {
-    popup = new windowWithMapbox.mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false,
-    });
-  } else {
-    console.error("Mapbox GL库未正确加载");
-  }
-} catch (error) {
-  console.error("创建Popup时出错：", error);
-}
+let popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false,
+});
 
 // 地图数据
-const { map, mapDivElement, marker } = initDragMap(
-  window.mapboxgl,
-  popup,
-  geoPhoto,
-  geoData
-);
+const { map, mapDivElement, marker } = initDragMap(mapboxgl, popup, geoPhoto, geoData);
 
 const photoItems = [
   { text: "2023 山东济南", count: "(0)" },
