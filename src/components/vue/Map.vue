@@ -1,3 +1,47 @@
+<script lang="ts" setup>
+import mapboxgl from "mapbox-gl";
+import { geoPhoto, geoData } from "../../utils/config";
+import { initDragMap } from "../../utils/Map/drawMap";
+import { onMounted, ref } from "vue";
+
+let popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false,
+});
+
+// Map data
+const { map, mapDivElement, marker } = initDragMap(mapboxgl, popup, geoPhoto, geoData);
+
+const photoItems = [
+  { text: "2023 山东济南", count: "(0)" },
+  { text: "2022 山东淄博", count: "(1)" },
+  { text: "2018 山东滕州", count: "(2)" },
+  { text: "2012 上海世博", count: "(3)" },
+  { text: "2008 山东临沂", count: "(4)" },
+  { text: "••••" },
+];
+
+const toggleFullscreen = () => {
+  // Here is the logic to implement the full screen function
+};
+
+const displayCurrentLocation = () => {
+  map.value.flyTo({
+    center: [Number(116.99159757284207), Number(36.65020327424449)],
+    zoom: 5,
+  });
+};
+
+const displayPhoto = (i: number) => {
+  const mapContainer = geoPhoto.features[i].geometry.coordinates;
+  map.value.flyTo({ center: [mapContainer[0], mapContainer[1]], zoom: 12 });
+  popup
+    .setLngLat([mapContainer[0], mapContainer[1]])
+    .setHTML(geoPhoto.features[i].properties.description)
+    .addTo(map.value);
+};
+</script>
+
 <template>
   <div class="footprint w-full">
     <div class="footprint-map">
@@ -18,7 +62,7 @@
               <div
                 class="bg-slate-100 shadow-md text-slate-700 rounded-full py-2 px-6 slate-900 text-lg font-semibold absolute bottom-4 left-4 watermark"
               >
-                JiNan, Shandong
+                Shandong,China
               </div>
             </div>
           </div>
@@ -57,56 +101,10 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import mapboxgl from "mapbox-gl";
-import { geoPhoto, geoData } from "../utils/config";
-import { initDragMap } from "../utils/Map/drawMap";
-import { onMounted, ref } from "vue";
-
-let popup = new mapboxgl.Popup({
-  closeButton: false,
-  closeOnClick: false,
-});
-
-// 地图数据
-const { map, mapDivElement, marker } = initDragMap(mapboxgl, popup, geoPhoto, geoData);
-
-const photoItems = [
-  { text: "2023 山东济南", count: "(0)" },
-  { text: "2022 山东淄博", count: "(1)" },
-  { text: "2018 山东滕州", count: "(2)" },
-  { text: "2012 上海世博", count: "(3)" },
-  { text: "2008 山东临沂", count: "(4)" },
-  { text: "••••" },
-];
-
-// 地图按钮
-const toggleFullscreen = () => {
-  // 在这里实现全屏功能的逻辑
-};
-
-// 主菜单
-const displayCurrentLocation = () => {
-  map.value.flyTo({
-    center: [Number(116.99159757284207), Number(36.65020327424449)],
-    zoom: 5,
-  });
-};
-
-// 地图左侧菜单
-const displayPhoto = (i: number) => {
-  const mapContainer = geoPhoto.features[i].geometry.coordinates;
-  map.value.flyTo({ center: [mapContainer[0], mapContainer[1]], zoom: 12 });
-  popup
-    .setLngLat([mapContainer[0], mapContainer[1]])
-    .setHTML(geoPhoto.features[i].properties.description)
-    .addTo(map.value);
-};
-</script>
 
 <style lang="scss" scope>
-@import "../style/variables";
-@import "../style/mixins";
+@import "../../style/variables";
+@import "../../style/mixins";
 
 .footprint {
   border: 1px solid black;

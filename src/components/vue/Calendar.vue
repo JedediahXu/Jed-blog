@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { dateToHuman, HumanDate, humanDateToYMD } from "../utils/moment";
+import { dateToHuman, HumanDate, humanDateToYMD } from "../../utils/moment";
 import CalendarDay from "./Oneday.vue";
-import { data } from "./data";
+import { data } from "../../data/calendar";
 
 const githubContributionsMap = computed(() => {
   const contributionsMap = new Map();
@@ -70,8 +70,8 @@ const months = [
 </template>
 
 <style lang="scss" scoped>
-@import "../style/variables";
-@import "../style/mixins";
+@import "../../style/variables";
+@import "../../style/mixins";
 
 .calendar {
   width: 630px;
@@ -110,3 +110,4 @@ const months = [
   }
 }
 </style>
+

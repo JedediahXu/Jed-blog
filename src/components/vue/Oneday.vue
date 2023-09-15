@@ -62,8 +62,9 @@ const getPointHeightStyle = (value: number) => {
 </template>
 
 <style lang="scss" scoped>
-@import "../style/variables";
-@import "../style/mixins";
+@import "../../style/variables";
+@import "../../style/mixins";
+
 
 .day {
   $size: 11px;

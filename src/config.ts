@@ -15,11 +15,11 @@ export default {
     },
     {
       title: '文章归档',
-      url: '/consulting'
+      url: '/article'
     },
     {
       title: '生活相册',
-      url: '/letters'
+      url: '/photo'
     },
     {
       title: '生活轨迹',
