@@ -33,6 +33,7 @@ import '../style/iconfont.scss'
     <script>
       import '../load-gallery.js'
     </script>
+    <!-- 获取用户数据｜数据埋点 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NNW326HBL"></script>
     <script>
       window.dataLayer = window.dataLayer || []
@@ -42,6 +43,14 @@ import '../style/iconfont.scss'
       gtag('js', new Date())
 
       gtag('config', 'G-2NNW326HBL')
+
+      var _hmt = _hmt || []
+      ;(function () {
+        var hm = document.createElement('script')
+        hm.src = 'https://hm.baidu.com/hm.js?54818920b21956b8d2d7e3e951398987'
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(hm, s)
+      })()
     </script>
   </body>
 </html>
