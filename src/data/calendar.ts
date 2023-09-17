@@ -178,7 +178,31 @@ export  const data = {
           date: "2023-09-07",
           contributionCount: 4,
           color: "#40c463"
-        }
+        },
+        {
+          weekday: 2,
+          date: "2023-09-10",
+          contributionCount: 4,
+          color: "#40c463"
+        },
+        {
+          weekday: 2,
+          date: "2023-09-15",
+          contributionCount: 6,
+          color: "#206E39"
+        },
+        {
+          weekday: 2,
+          date: "2023-09-16",
+          contributionCount: 1,
+          color: "#9be9a8"
+        },
+        {
+          weekday: 2,
+          date: "2023-09-17",
+          contributionCount: 1,
+          color: "#9be9a8"
+        },
       ]
     }
   ]
