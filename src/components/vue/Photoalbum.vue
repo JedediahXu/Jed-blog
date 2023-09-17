@@ -17,6 +17,8 @@ async function updateImageSizes() {
 }
 
 await updateImageSizes();
+console.log(data.images);
+
 </script>
 
 <template>
