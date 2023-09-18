@@ -3,7 +3,7 @@ export  const data = {
   images: [
     {
       label: "ChetXu",
-      time: "2023/08/01",
+      time: "2023/08/16",
       size: {
         width: 0,
         height: 0,
@@ -12,7 +12,7 @@ export  const data = {
     },
     {
       label: "ChetXu",
-      time: "2023/08/01",
+      time: "2023/08/16",
       size: {
         width: 0,
         height: 0,
@@ -21,7 +21,7 @@ export  const data = {
     },
     {
       label: "ChetXu",
-      time: "2023/08/01",
+      time: "2023/08/16",
       size: {
         width: 0,
         height: 0,
