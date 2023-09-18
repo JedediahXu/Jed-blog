@@ -75,7 +75,7 @@ function mapNew(
     })
 
     // 创建一个自定义标记元素
-    const avatarUrl = 'https://chetxu.chetserenade.info/uPic/WechatIMG825.jpeg'; // 替换为您的头像图像的实际 URL
+    const avatarUrl = 'https://chetxu.chetserenade.info/uPic/WechatIMG825.jpeg'; 
     const markerElement = document.createElement('div');
     markerElement.className = 'custom-marker';
     markerElement.style.backgroundImage = `url(${avatarUrl})`;

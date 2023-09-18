@@ -3,3 +3,4 @@
 
 declare module 'astro-imagetools/components';
 declare module 'probe-image-size';
+declare module 'mapbox-gl'
