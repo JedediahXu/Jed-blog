@@ -203,6 +203,12 @@ export  const data = {
           contributionCount: 1,
           color: "#9be9a8"
         },
+        {
+          weekday: 2,
+          date: "2023-09-19",
+          contributionCount: 1,
+          color: "#9be9a8"
+        },
       ]
     }
   ]
