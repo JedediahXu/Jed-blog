@@ -1,7 +1,6 @@
 /**
  * @file Date time transformer
  * @module transform.moment
- * @author Surmon <https://github.com/surmon-china>
  */
 
 export const cloneDate = (date: Date) => {

@@ -8,7 +8,7 @@ categories:
   - 编程
 ---
 
-![图片描述](https://chetxu.chetserenade.info/uPic/hello-world.jpg)
+![图片描述](https://chetxu.chetserenade.info/uPic/web-javascript.jpg)
 
 ## 前端工程化
 

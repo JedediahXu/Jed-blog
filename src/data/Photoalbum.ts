@@ -156,15 +156,6 @@ export  const data = {
     },
     {
       label: "ChetXu",
-      time: "2022/02/20",
-      size: {
-        width: 0,
-        height: 0,
-      },
-      href: "https://chetxu.chetserenade.info/uPic/IMG_2644.JPG",
-    },
-    {
-      label: "ChetXu",
       time: "2021/10/09",
       size: {
         width: 0,

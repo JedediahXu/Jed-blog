@@ -7,7 +7,7 @@ pin: false
 categories:
   - Coding
 ---
-![图片描述](https://chetxu.chetserenade.info/uPic/wat-umong.png)
+![图片描述](https://chetxu.chetserenade.info/uPic/unfreedom.webp)
 
 # setup（语法糖）
 
@@ -120,5 +120,3 @@ defineExpose({
 总得来说，新引入的setup语法糖的 目的是简化使用`Composition API`时冗长的模板代码，也就是让代码更加简洁，阅读性也越高。而在组件中引入并使用自定义hook 自定义hook的作用类似于vue2中的mixin技术 自定义Hook的优势: 很清楚复用功能代码的来源, 更清楚易懂！
 
  有不足的地方欢迎大家进行交流讨论，互相学习！
-
-------------------------
