@@ -1,6 +1,6 @@
 export default {
-  title: `ChetSerenade`,
-  name: 'ChetSerenade',
+  title: `Jed`,
+  name: 'Jed',
   since: '2021',
   contacts: [
     {
@@ -17,14 +17,14 @@ export default {
       title: '文章归档',
       url: '/article'
     },
-    {
-      title: '生活相册',
-      url: '/photo'
-    },
-    {
-      title: '生活轨迹',
-      url: '/friendlylink'
-    },
+    // {
+    //   title: '生活相册',
+    //   url: '/photo'
+    // },
+    // {
+    //   title: '生活轨迹',
+    //   url: '/friendlylink'
+    // },
     {
       title: 'RSS',
       url: '/rss.xml'

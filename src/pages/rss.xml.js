@@ -14,7 +14,7 @@ export async function get(context) {
   const allPosts = { ...posts, ...otherPosts }; // 合并两个文件夹的文章对象
   return rss({
     title: config.title,
-    description: `ChetSerenade is blogging about life, tech.`,
+    description: `Jed is blogging about life, tech.`,
     site: context.site,
     items: Object.values(allPosts).map(allPosts => ({
       title: allPosts.frontmatter.title,

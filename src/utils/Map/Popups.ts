@@ -1,9 +1,9 @@
 /*
  * @Description: 弹窗信息
- * @Author: Chetxu
+ * @Author: Jed
  * @Date: 2022-07-09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-09-09 15:47:14
+ * @LastEditTime: 2023-10-06 13:23:27
  */
 import type { Ref } from 'vue'
 
