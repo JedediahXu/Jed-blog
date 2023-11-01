@@ -39,7 +39,7 @@ categories:
 以上都是我们对性能优化所涉及到的知识。
 
 
-### HTTP && Vite方面（资源整合/依赖分析/Gzip压缩/Tree Shaking/生产构建优化）
+### HTTP && Vite方面
 
 从输入URL到显示页面这一步骤，我们可以将其分为三个主要阶段：
 
