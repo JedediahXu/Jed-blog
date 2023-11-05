@@ -1,3 +1,18 @@
+body {
+  font-family:
+    SpecialSymbol,
+    DINRegular,
+    -apple-system,
+    BlinkMacSystemFont,
+    PingFang SC,
+    Helvetica Neue,
+    Hiragino Sans GB,
+    Segoe UI,
+    Microsoft YaHei,
+    å¾®è½¯é›…é»‘,
+    sans-serif;
+}
+
 #background {
   position: fixed;
   width: 100%;
@@ -16,7 +31,7 @@
 }
 
 .prose-width {
-  max-width: 75ch;
+  max-width: 110ch;
 }
 
 .home {

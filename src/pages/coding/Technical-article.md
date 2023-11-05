@@ -5,7 +5,6 @@ date: 2022-07-02
 tags: blog
 pin: false
 quantity: 3400
-item: 17
 language: 中文
 categories:
   - 编程
@@ -52,7 +51,7 @@ import subassembly from './subassembly.vue'
 
 **父组件代码:**
 
-```vue
+```js
 <template>
   <div>我是父组件----1</div>
   <subassembly @getChili="getChili" :title="msg" />

@@ -11,6 +11,9 @@ const { frontmatter } = Astro.props as {
   title: string
 }
 
+const { minutesRead } = Astro.props.frontmatter
+
+
 function getIcon(depth: number) {
   switch (depth) {
     case 1:
@@ -37,6 +40,47 @@ function removeFirstCharAndSpace(title: string) {
   }
   return title
 }
+
+function convertToChineseTime(timeString: string) {
+  const timePattern =
+    /(\d+)\s*(min|minute|min\s+read|分钟\s+阅读|hr|hour|hour\s+read|小时\s+阅读|day|天|week|周|month|月|year|年)\s*(read)?/i
+  const match = timeString.match(timePattern)
+
+  if (match) {
+    const value = parseInt(match[1])
+    const unit = match[2].toLowerCase()
+    let chineseUnit
+
+    switch (unit) {
+      case 'min':
+      case 'minute':
+        chineseUnit = '分钟'
+        break
+      case 'hr':
+      case 'hour':
+        chineseUnit = '小时'
+        break
+      case 'day':
+        chineseUnit = '天'
+        break
+      case 'week':
+        chineseUnit = '周'
+        break
+      case 'month':
+        chineseUnit = '月'
+        break
+      case 'year':
+        chineseUnit = '年'
+        break
+      default:
+        chineseUnit = '无法识别的单位'
+    }
+
+    return `${value} ${chineseUnit}`
+  }
+
+  return '无法识别的时间格式'
+}
 ---
 
 {
@@ -46,7 +90,7 @@ function removeFirstCharAndSpace(title: string) {
         <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
         {frontmatter.title && frontmatter.language && frontmatter.quantity ? (
           <div class="read">
-            {frontmatter.language}，共 {frontmatter.quantity} 字，需阅读 {frontmatter.item}分钟
+            {frontmatter.language}，共 {frontmatter.quantity} 字，需阅读 {convertToChineseTime(minutesRead)}
           </div>
         ) : null}
       </button>

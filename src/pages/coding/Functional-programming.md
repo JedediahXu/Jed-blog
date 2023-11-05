@@ -3,9 +3,8 @@ title:   👨‍💻 函数式编程
 layout: '../../layouts/Post.astro'
 date: 2023-8-20
 tags: blog
-pin: false
+pin: false∑
 quantity: 2400
-item: 18
 language: 中文
 categories:
   - 编程
@@ -15,7 +14,7 @@ categories:
 
 前言：函数式编程最早起源于数学中的范畴论，和面向对象编程、命令式编程并列为三大编程范式，也就是如何编写程序的方法论。 它属于"结构化编程"的一种，主要思想是把运算过程尽量写成一系列嵌套的函数调用。
 范畴论（Category Theory）是数学中的一个分支，它是一种抽象的数学理论，用于研究数学结构和数学对象之间的关系。
-<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300;font-style: inherit; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> 顾名思义，范畴论把世界上一切存在关系的元素理解为一个范畴，有点像分子结构，范畴内部的各原子之间的关系就是函数。</blockquote>
+<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> 顾名思义，范畴论把世界上一切存在关系的元素理解为一个范畴，有点像分子结构，范畴内部的各原子之间的关系就是函数。</blockquote>
 
 今天，我们不单独的去聊函数式（FP）而是去结合面向对象编程（OOP）和命令式编程（IP）去聊一下。在前端，使用最多的编程语言就是JavaScript而JavaScript本身是多范式语言，所以在现在的前端框架身上都离不开这些编程范式。 如：Angular（面向对象编程）、React（命令式编程和函数式）、Vue（混合了面向对象和命令式编程、函数式）、Redux（函数式）等等。
 

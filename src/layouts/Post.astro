@@ -4,6 +4,7 @@ import Donate from '../components/Donate.astro'
 import TOC from '../components/TOC.astro'
 import dayjs from 'dayjs'
 import config from '../config'
+import '../style/markdown.scss'
 const { frontmatter, headings } = Astro.props
 import Home from '../layouts/Home.astro'
 ---
@@ -15,7 +16,7 @@ import Home from '../layouts/Home.astro'
   ogImage={frontmatter.ogImage}
 >
   <Home title="素履以往">
-    <div class="prose" style="max-width:65ch">
+    <div class="markdown-body" style="max-width:68ch">
       <h1>{frontmatter.title}</h1>
       <div class="text-slate-500"></div>
       <div class="text-slate-500">

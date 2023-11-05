@@ -5,7 +5,6 @@ date: 2023-09-19
 tags: blog
 pin: true
 quantity: 8400
-item: 25
 language: 中文
 categories:
   - 编程
@@ -14,7 +13,7 @@ categories:
 
 从事前端开发的很难离开**性能优化**这个词，但是关于前端性能方面，其实知识点是相当琐碎的，以至于我们总是感觉**做的不够好** 接下来我们从一道面试题说起:
 
-<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300;font-style: inherit; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> 从输入 URL 到页面加载完成，发生了什么？ </blockquote>
+<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> 从输入 URL 到页面加载完成，发生了什么？ </blockquote>
 
 这个题的答案，其实很简单,相信很多开发的小伙伴都可以很快速的讲出来。今天我们不去单纯的去聊发生了什么,从性能的层面去考虑。
 
@@ -165,7 +164,7 @@ optimizeDeps: {
 
 **Vite的压缩和服务端的压缩**
 
-<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300;font-style: inherit; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> HTTP 压缩是一种内置到网页服务器和网页客户端中以改进传输速度和带宽利用率的方式。在使用 HTTP 压缩的情况下，HTTP 数据在从服务器发送前就已压缩：兼容的浏览器将在下载所需的格式前宣告支持何种方法给服务器；不支持压缩方法的浏览器将下载未经压缩的数据。最常见的压缩方案包括 Gzip 和 Deflate。 </blockquote>
+<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> HTTP 压缩是一种内置到网页服务器和网页客户端中以改进传输速度和带宽利用率的方式。在使用 HTTP 压缩的情况下，HTTP 数据在从服务器发送前就已压缩：兼容的浏览器将在下载所需的格式前宣告支持何种方法给服务器；不支持压缩方法的浏览器将下载未经压缩的数据。最常见的压缩方案包括 Gzip 和 Deflate。 </blockquote>
 以上是摘自百科的解释，事实上，大家可以这么理解：
 
 **HTTP 压缩就是以缩小体积为目的，对 HTTP 内容进行重新编码的过程**

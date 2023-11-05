@@ -7,3 +7,199 @@
   opacity: 0 is-important($important);
   visibility: hidden is-important($important);
 }
+
+@function is-important($important) {
+  @return #{if($important, '!important', '')};
+}
+
+@function toRGBValue($color) {
+  @return red($color) + ', ' + green($color) + ', ' + blue($color);
+}
+
+@function toRGB($color) {
+  @return 'rgb(' + toRGBValue($color) + ')';
+}
+
+/// Element border radius
+@mixin radius-box($radius-size) {
+  border-radius: $radius-size;
+  overflow: hidden;
+}
+
+/// Text overflow
+@mixin text-overflow($placeholder: ellipsis) {
+  overflow: hidden;
+  text-overflow: $placeholder;
+  white-space: nowrap;
+}
+
+/// Multi line text overflow
+@mixin clamp($lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+/// Text underline
+@mixin text-underline($offset: 0.3em) {
+  text-decoration: underline;
+  text-underline-offset: $offset;
+  text-decoration-thickness: from-font;
+}
+
+/// Visible element
+@mixin visible($important: false) {
+  opacity: 1 is-important($important);
+  visibility: visible is-important($important);
+}
+
+/// Hidden element
+@mixin hidden($important: false) {
+  opacity: 0 is-important($important);
+  visibility: hidden is-important($important);
+}
+
+/// Backdrop drop effect
+@mixin backdrop-blur($blur-radius: 5px) {
+  backdrop-filter: blur($blur-radius);
+  // for Safari
+  -webkit-backdrop-filter: blur($blur-radius);
+}
+
+/// Box shadow
+@mixin box-shadow($alpha: 0.6, $blur-radius: 8px) {
+  box-shadow: rgba($black, $alpha) 0px 0px $blur-radius;
+}
+
+/// Box shadow
+@mixin drop-shadow($alpha: 0.6, $blur-radius: 1px) {
+  filter: drop-shadow(0px 0px $blur-radius rgba($black, $alpha));
+}
+
+/// Title shadow
+@mixin title-shadow() {
+  $text-color: #efefef;
+  color: $text-color;
+  text-shadow:
+    0px 0px 0px $text-color,
+    0px 0px 2px rgba($black, 0.6),
+    0px 0px 4px rgba($black, 0.6);
+}
+
+/// General module background
+@mixin common-bg-module($time: $transition-time-normal) {
+  background-color: $module-bg;
+  @include background-transition($time);
+  &:hover {
+    background-color: $module-bg-opaque;
+  }
+}
+
+/// Transform transition
+@mixin transform-transition($time: $transition-time-fast) {
+  transition: transform $time;
+}
+
+/// Visibility transition
+@mixin visibility-transition($time: $transition-time-fast) {
+  transition:
+    opacity $time,
+    visibility $time;
+}
+
+/// Color transition
+@mixin color-transition($time: $transition-time-fast) {
+  transition: color $time;
+}
+
+/// BackgroundColor transition
+@mixin background-transition($time: $transition-time-fast) {
+  transition: background-color $time;
+}
+
+/// Filter transition
+@mixin filter-transition($time: $transition-time-fast) {
+  transition: filter $time;
+}
+
+@mixin motion-blur-filter($param: 'horizontal') {
+  filter: url($source-url + '/images/filters/motion-blur.svg##{$param}');
+}
+
+/// Text Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [2px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+// Scrollbar
+/// @param {Size} $size
+/// @param {BackgroundColor} $bg
+/// @param {ThumbBackgroundColor} $thumb-bg
+/// @param {ThumbBackgroundColorHover} $thumb-bg-hover
+@mixin scrollbar-style(
+  $size: $sm-gap,
+  $bg: $white,
+  $thumb-bg: darken($white, 18%),
+  $thumb-bg-hover: darken($white, 26%)
+) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background: $bg;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: $thumb-bg;
+    @include background-transition();
+    &:hover {
+      background-color: $thumb-bg-hover;
+    }
+  }
+}
+
+/// Center placeholder attr in element
+@mixin center-placeholder() {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  &::before {
+    content: attr(placeholder);
+    position: absolute;
+    text-align: center;
+    font-size: $font-size-h1;
+    font-weight: bold;
+    color: $text-divider;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: $z-index-underground;
+    letter-spacing: 0.2em;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.center-placeholder {
+  @include center-placeholder;
+}
+
+/// https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-snap-type
+@mixin scroll-snap-y() {
+  scroll-snap-type: y mandatory;
+}
+
+@mixin scroll-snap-x() {
+  scroll-snap-type: x mandatory;
+}
+
+@mixin scroll-snap-item() {
+  scroll-snap-align: start;
+}

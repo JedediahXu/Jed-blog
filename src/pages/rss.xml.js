@@ -1,6 +1,5 @@
 import rss from '@astrojs/rss';
 import config from '../config'
-import sanitizeHtml from 'sanitize-html';
 
 export async function get(context) {
   const posts = import.meta.glob('./blog/*.{md,mdx}', {
@@ -16,6 +15,7 @@ export async function get(context) {
   });
 
   const allPosts = { ...posts, ...otherPosts,...reship };
+  console.log( allPosts);
   return rss({
     title: config.title,
     description: `Jed is blogging about life, tech.`,
