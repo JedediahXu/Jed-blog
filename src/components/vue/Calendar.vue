@@ -83,7 +83,7 @@ const months = [
 
 @media (min-width: 1600px) and (max-width: 3999px) {
   .calendar {
-    width: 830px;
+    width: 690px;
   }
 }
 
@@ -110,4 +110,3 @@ const months = [
   }
 }
 </style>
-
