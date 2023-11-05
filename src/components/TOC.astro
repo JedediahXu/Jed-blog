@@ -6,6 +6,10 @@ const { headings } = Astro.props as {
     text: string
   }>
 }
+// @ts-ignore
+const { frontmatter } = Astro.props as {
+  title: string
+}
 
 function getIcon(depth: number) {
   switch (depth) {
@@ -21,32 +25,46 @@ function getIcon(depth: number) {
       return 'icon-h-5'
   }
 }
+
+function removeFirstCharAndSpace(title: string) {
+  if (typeof title === 'string' && title.length > 1) {
+    const firstChar = title.charCodeAt(0)
+    if (firstChar >= 0xd800 && firstChar <= 0xdbff) {
+      return title.substring(2).trim()
+    } else {
+      return title.substring(1).trim()
+    }
+  }
+  return title
+}
 ---
 
 {
   headings.length ? (
-    <div
-      class="anchor sticky-module fixed sm:px-10 lg:mt-28 lg:inline-block w-60 catalogue"
-      style=""
-    >
-      <div class="anchor-box">
-        <div class="header">目录表</div>
-        <ol class="catalogue">
-          {headings.map((heading, index) => (
-            <li>
-              <a
-                class={`toc-link text-gray-500 hover:text-gray-900 text-sm mb-2 ${
-                  heading.depth > 2 ? 'ml-4' : ''
-                }`}
-                href={`#${heading.slug}`}
-              >
-                <i class={`toc-icon iconfont ${getIcon(heading.depth)}`} />
-                <span class="truncated-title text">{heading.text}</span>
-              </a>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <div class="anchor sticky-module fixed sm:px-10 lg:mt-28 lg:inline-block w-60 catalogue">
+      <button class="header" title="高高山上走">
+        <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
+        {frontmatter.title && frontmatter.language && frontmatter.quantity ? (
+          <div class="read">
+            {frontmatter.language}，共 {frontmatter.quantity} 字，需阅读 {frontmatter.item}分钟
+          </div>
+        ) : null}
+      </button>
+      <ol class="catalogue ">
+        {headings.map((heading, index) => (
+          <li>
+            <a
+              class={`toc-link text-gray-500 hover:text-gray-900 text-sm mb-2 ${
+                heading.depth > 2 ? 'ml-4' : ''
+              }`}
+              href={`#${heading.slug}`}
+            >
+              <i class={`toc-icon iconfont ${getIcon(heading.depth)}`} />
+              <span class="truncated-title text">{heading.text}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
     </div>
   ) : null
 }
@@ -73,7 +91,6 @@ function getIcon(depth: number) {
     width: 100%;
     border: 1px dashed #dedede;
     border-radius: 4px;
-    margin-bottom: 1rem;
     text-align: left;
   }
 
@@ -111,5 +128,24 @@ function getIcon(depth: number) {
     text-underline-offset: 0.4em;
     text-decoration-thickness: from-font;
     text-decoration-style: dotted;
+  }
+
+  .header {
+    display: flex;
+    flex-shrink: 0;
+    height: 4rem;
+    line-height: 25px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .anchor .header .title {
+    font-weight: 700;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+  .anchor .header .read {
+    font-size: 12px;
   }
 </style>

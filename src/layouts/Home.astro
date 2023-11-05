@@ -5,11 +5,18 @@ import config from '../config'
 ---
 
 <style>
+  .my-sticky-element {
+    position: fixed;
+    top: 0;
+    order: 1;
+    flex-shrink: 0;
+    margin-right: 1.236rem;
+  }
   .active {
     color: #0088f5;
   }
   .md {
-    margin-left: 1rem;
+    margin-left: 13rem;
     margin-right: 1rem;
   }
   a {
@@ -26,7 +33,7 @@ import config from '../config'
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
-      <div class="sm:px-10 lg:mt-10 py-20">
+      <div class="sm:px-10 lg:mt-10 py-20 my-sticky-element">
         <div class="sticky top-5 flex flex-col gap-4">
           <div
             class="w-32 h-32 bg-cover bg-center inline-block mx-auto"
@@ -62,13 +69,13 @@ import config from '../config'
           </div>
         </div>
       </div>
-      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 md w-full">
+      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full">
         <div>
           <slot />
         </div>
       </div>
       <div class="pb-10">
-        <slot name="catalogue"></slot>
+        <slot name="catalogue" />
       </div>
     </div>
   </div>

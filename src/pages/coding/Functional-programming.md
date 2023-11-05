@@ -4,8 +4,11 @@ layout: '../../layouts/Post.astro'
 date: 2023-8-20
 tags: blog
 pin: false
+quantity: 2400
+item: 18
+language: 中文
 categories:
-  - Coding
+  - 编程
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/uPic/Functional.jpg)

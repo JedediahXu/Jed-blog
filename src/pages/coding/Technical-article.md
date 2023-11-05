@@ -4,8 +4,11 @@ layout: '../../layouts/Post.astro'
 date: 2022-07-02
 tags: blog
 pin: false
+quantity: 3400
+item: 17
+language: 中文
 categories:
-  - Coding
+  - 编程
 ---
 ![图片描述](https://chetxu.chetserenade.info/uPic/unfreedom.webp)
 

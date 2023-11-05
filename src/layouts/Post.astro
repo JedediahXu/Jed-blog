@@ -14,24 +14,19 @@ import Home from '../layouts/Home.astro'
   ogDescription={frontmatter.ogDescription}
   ogImage={frontmatter.ogImage}
 >
-  <!-- <TOC headings={headings} /> -->
-  <!-- <nav
-    class="border-b p-4 sm:px-8 px-4 flex gap-4 items-center sticky top-0 bg-white/50 backdrop-blur-lg"
-  >
-    <a class="font-bold" href="/">{config.title}</a>
-    <div class="text-sm flex gap-4">
-      {
-        config.navs.map((nav) => {
-          return <a href={nav.url}>{nav.title}</a>
-        })
-      }
-    </div>
-  </nav> -->
   <Home title="素履以往">
     <div class="prose" style="max-width:65ch">
       <h1>{frontmatter.title}</h1>
+      <div class="text-slate-500"></div>
       <div class="text-slate-500">
-        {dayjs(frontmatter.date).format('YYYY/MM/DD')}
+        <span class="categories">
+          <i class="iconfont icon-clock-outlined"></i>
+          {dayjs(frontmatter.date).format('YYYY/MM/DD')}
+          <span style="margin-left:15px">
+            <i class="iconfont icon-category"></i>
+            {frontmatter.categories}</span
+          >
+        </span>
       </div>
       <slot />
       <hr />
@@ -39,6 +34,6 @@ import Home from '../layouts/Home.astro'
         <Donate />
       </div>
     </div>
-    <div slot="catalogue"><TOC headings={headings} /></div>
+    <div slot="catalogue"><TOC headings={headings} frontmatter={frontmatter} /></div>
   </Home>
 </BaseLayout>
