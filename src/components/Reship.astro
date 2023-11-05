@@ -1,12 +1,7 @@
 ---
-const codingPosts = await Astro.glob('../pages/coding/*.md')
-const blogPosts = await Astro.glob('../pages/blog/*.md')
-
-// 合并 coding 和 blog 文章
-const allPosts = [...codingPosts, ...blogPosts]
-
-// 将所有文章按日期排序
-allPosts.sort((a, b) => {
+const posts = await Astro.glob('../pages/reship/*.md')
+// sort post by date
+posts.sort((a, b) => {
   //@ts-ignore
   return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
 })
@@ -22,7 +17,7 @@ function formatDate(dateString: string | number | Date) {
 
 <div class="flex flex-col gap-2" style="overflow: hidden">
   {
-    allPosts.map((post) => {
+    posts.map((post) => {
       const formattedDate = formatDate(post.frontmatter.date)
       return (
         <div class="post relative calendar">

@@ -5,6 +5,7 @@ import TOC from '../components/TOC.astro'
 import dayjs from 'dayjs'
 import config from '../config'
 const { frontmatter, headings } = Astro.props
+import Home from '../layouts/Home.astro'
 ---
 
 <BaseLayout
@@ -13,8 +14,8 @@ const { frontmatter, headings } = Astro.props
   ogDescription={frontmatter.ogDescription}
   ogImage={frontmatter.ogImage}
 >
-  <TOC headings={headings} />
-  <nav
+  <!-- <TOC headings={headings} /> -->
+  <!-- <nav
     class="border-b p-4 sm:px-8 px-4 flex gap-4 items-center sticky top-0 bg-white/50 backdrop-blur-lg"
   >
     <a class="font-bold" href="/">{config.title}</a>
@@ -25,16 +26,19 @@ const { frontmatter, headings } = Astro.props
         })
       }
     </div>
-  </nav>
-  <div class="prose mx-auto px-4 lg:px-0 my-12 lg:my-12">
-    <h1>{frontmatter.title}</h1>
-    <div class="text-slate-500">
-      {dayjs(frontmatter.date).format('YYYY/MM/DD')}
+  </nav> -->
+  <Home title="素履以往">
+    <div class="prose" style="max-width:65ch">
+      <h1>{frontmatter.title}</h1>
+      <div class="text-slate-500">
+        {dayjs(frontmatter.date).format('YYYY/MM/DD')}
+      </div>
+      <slot />
+      <hr />
+      <div>
+        <Donate />
+      </div>
     </div>
-    <slot />
-    <hr />
-    <div>
-      <Donate />
-    </div>
-  </div>
+    <div slot="catalogue"><TOC headings={headings} /></div>
+  </Home>
 </BaseLayout>

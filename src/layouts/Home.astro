@@ -2,34 +2,6 @@
 import BaseLayout from './BaseLayout.astro'
 import avatar from '../images/avatar.jpg'
 import config from '../config'
-
-import twitter from '../images/twitter.svg'
-import github from '../images/github.svg'
-import juejin from '../images/juejin.svg'
-import youtube from '../images/youtube.svg'
-
-const contacts = [
-  {
-    icon: github,
-    url: 'https://github.com/JedediahXu',
-    title: 'Github',
-  },
-  {
-    icon: juejin,
-    url: 'https://juejin.cn/user/3685218709411085',
-    title: 'Juejin',
-  },
-  {
-    icon: twitter,
-    url: 'https://twitter.com/Lc0916x',
-    title: 'Twitter',
-  },
-  {
-    icon: youtube,
-    url: 'https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ',
-    title: 'YouTube',
-  },
-]
 ---
 
 <style>
@@ -40,34 +12,33 @@ const contacts = [
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  a {
+    text-decoration: underline;
+  }
+  .dark {
+    color: #999;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px 0 5px;
+  }
 </style>
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
-      <div class="text-center sm:px-40 lg:mt-20 py-20">
+      <div class="sm:px-10 lg:mt-10 py-20">
         <div class="sticky top-5 flex flex-col gap-4">
           <div
-            class="w-48 h-48 bg-cover bg-center rounded-full inline-block mx-auto"
+            class="w-32 h-32 bg-cover bg-center inline-block mx-auto"
             style={`background-image: url(${avatar})`}
           >
           </div>
           <div>
             <h1 class="font-bold text-2xl">{config.name}</h1>
           </div>
-          <div class="flex gap-4 justify-center">
-            {
-              contacts.map((contact) => {
-                return (
-                  <a target="_blank" href={contact.url}>
-                    <img src={contact.icon} alt={contact.title} class="w-6 h-6" />
-                  </a>
-                )
-              })
-            }
-          </div>
+          <div class="dark">想太多了</div>
 
-          <div class="flex lg:flex-col gap-4 text-sm mt-4 mx-auto">
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
@@ -91,8 +62,13 @@ const contacts = [
           </div>
         </div>
       </div>
-      <div class="lg:mt-24 mx-4 lg:mx-0 md:w-1/2 lg:w-3/4 xl:w-4/5 mx-auto pb-10 md">
-        <slot />
+      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 md w-full">
+        <div>
+          <slot />
+        </div>
+      </div>
+      <div class="pb-10">
+        <slot name="catalogue"></slot>
       </div>
     </div>
   </div>

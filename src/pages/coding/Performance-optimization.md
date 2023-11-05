@@ -3,7 +3,7 @@ title:  🐝 关于前端性能优化
 layout: '../../layouts/Post.astro'
 date: 2023-09-19
 tags: blog
-pin: false
+pin: true
 categories:
   - Coding
 ---

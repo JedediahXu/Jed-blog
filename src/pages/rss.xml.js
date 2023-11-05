@@ -11,7 +11,11 @@ export async function get(context) {
     eager: true
   });
 
-  const allPosts = { ...posts, ...otherPosts }; // 合并两个文件夹的文章对象
+  const reship = import.meta.glob('./reship/*.{md,mdx}', {
+    eager: true
+  });
+
+  const allPosts = { ...posts, ...otherPosts,...reship };
   return rss({
     title: config.title,
     description: `Jed is blogging about life, tech.`,
@@ -19,7 +23,6 @@ export async function get(context) {
     items: Object.values(allPosts).map(allPosts => ({
       title: allPosts.frontmatter.title,
       link: allPosts.url,
-      content: sanitizeHtml(allPosts.compiledContent()),
       pubDate: allPosts.frontmatter.date,
     }))
   });

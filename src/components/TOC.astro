@@ -1,27 +1,115 @@
 ---
 const { headings } = Astro.props as {
   headings: Array<{
-    depth: number,
-    slug: string,
+    depth: number
+    slug: string
     text: string
   }>
 }
+
+function getIcon(depth: number) {
+  switch (depth) {
+    case 1:
+      return 'icon-h-1'
+    case 2:
+      return 'icon-h-2'
+    case 3:
+      return 'icon-h-3'
+    case 4:
+      return 'icon-h-4'
+    default:
+      return 'icon-h-5'
+  }
+}
 ---
 
-{headings.length ? <div class="fixed top-24 left-8 hidden lg:inline-block">
-  <div class="mb-2 text-sm">
-    索引
-  </div>
-  <div>
-    {headings.map(heading => {
-      return (
-        <a
-          class={`block text-gray-500 hover:text-gray-900 text-sm mb-2 ${heading.depth > 2 ? 'ml-4' : ''}`}
-          href={`#${heading.slug}`}
-        >
-          {heading.text}
-        </a>
-      )
-    })}
-  </div>
-</div> : null}
+{
+  headings.length ? (
+    <div
+      class="anchor sticky-module fixed sm:px-10 lg:mt-28 lg:inline-block w-60 catalogue"
+      style=""
+    >
+      <div class="anchor-box">
+        <div class="header">目录表</div>
+        <ol class="catalogue">
+          {headings.map((heading, index) => (
+            <li>
+              <a
+                class={`toc-link text-gray-500 hover:text-gray-900 text-sm mb-2 ${
+                  heading.depth > 2 ? 'ml-4' : ''
+                }`}
+                href={`#${heading.slug}`}
+              >
+                <i class={`toc-icon iconfont ${getIcon(heading.depth)}`} />
+                <span class="truncated-title text">{heading.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  ) : null
+}
+
+<style>
+  .catalogue {
+    max-height: 36rem;
+    padding: 0.618rem 1rem;
+    padding-left: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+  }
+
+  .anchor {
+    border: 1px dashed #dedede;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: -200px;
+  }
+
+  .anchor .header {
+    display: block;
+    width: 100%;
+    border: 1px dashed #dedede;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .anchor .catalogue li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .toc-link .toc-icon {
+    margin-right: 8px;
+  }
+
+  ul,
+  ol {
+    padding-left: 3em;
+    vertical-align: baseline;
+  }
+
+  .catalogue li {
+    border-bottom: 1px dashed var(--module-bg-darker-2);
+    overflow: hidden;
+  }
+
+  .truncated-title {
+    white-space: nowrap;
+  }
+  .text {
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
+    text-decoration-thickness: from-font;
+    text-decoration-style: dotted;
+  }
+</style>

@@ -2,17 +2,10 @@
 import Home from '../layouts/Home.astro'
 import RecentList from '../components/Recent.astro'
 import Calendar from '../components/vue/Calendar.vue'
-import { Content as Intro } from '../intro.md'
 ---
 
 <Home>
-  <div class="mx-auto text-sm">
-    <h2 class="font-bold mb-6 text-md">ABOUT /「 关于我 」</h2>
-    <div class="prose prose-sm">
-      <Intro />
-    </div>
-  </div>
-  <div class="text-sm mt-8 be-with">
+  <div class="text-sm  be-with">
     <h2 class="font-bold mb-6 text-md">PERECENT TRENDS / 「 近期动态 」</h2>
     <Calendar client:only="vue" />
   </div>

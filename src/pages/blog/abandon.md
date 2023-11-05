@@ -1,9 +1,9 @@
 ---
 title: 🌱 我愿意为此舍弃点什么？
 layout: '../../layouts/Post.astro'
-date: 2023-09-07
+date: 2023-08-07
 tags: blog
-pin: true
+pin: false
 categories:
   - Life
 ---

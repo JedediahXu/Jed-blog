@@ -353,11 +353,7 @@ const displayPhoto = (i: number) => {
   display: none !important;
 }
 
-@media (max-width: 1200px) {
-  .be-with {
-    display: none !important;
-  }
-}
+
 
 /* 新增水印样式 */
 .watermark {

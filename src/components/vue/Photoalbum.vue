@@ -25,7 +25,7 @@ await updateImageSizes();
       <div
         v-for="(image, index) in data.images"
         :key="index"
-        class="w-2/4 2xl:w-1/6 md:w-1/4 p-1 2xl:p-3 md:p-3 h-17 relative"
+        class="w-2/4  md:w-1/4 p-1 2xl:p-3 md:p-3 h-17 relative"
       >
         <div class="relative group rounded-md overflow-hidden">
           <a

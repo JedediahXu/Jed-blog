@@ -1,21 +1,9 @@
 ---
 import Home from '../layouts/Home.astro'
 import TrackMap from '../components/vue/Map.vue'
-const linkedList = {
-  data: [
-    {
-      label: '俊劫学习基地',
-      link: 'https://alexjjwu.fun',
-    },
-    {
-      label: 'Liuzepeng',
-      link: 'https://www.liuzepeng.com',
-    },
-  ],
-}
 ---
 
-<Home title="地图/友链">
+<Home title="地图">
   <div class="mx-auto text-sm">
     <div class="mb-8 flex flex-col gap-1">
       <h1 class="text-xl font-medium mb-4">生活/轨迹</h1>
@@ -24,23 +12,9 @@ const linkedList = {
       </h2>
     </div>
   </div>
-  <div class="w-full md:w-1/2 lg:w-3/4 xl:w-4/5">
+  <div class="w-full">
     <div id="my-gallery" class="flex flex-wrap">
       <TrackMap client:only="vue" />
     </div>
-  </div>
-  <h2 class="mt-10">友情链接:</h2>
-  <div class="prose pb-10">
-    {
-      linkedList.data.map((res) => (
-        <ul>
-          <li>
-            <a href={res.link} target="_blank" rel="noopener noreferrer">
-              {res.label}
-            </a>
-          </li>
-        </ul>
-      ))
-    }
   </div>
 </Home>

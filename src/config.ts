@@ -1,6 +1,6 @@
 export default {
   title: `Jed`,
-  name: 'Jed',
+  name: `Jed's log`,
   since: '2021',
   contacts: [
     {
@@ -10,21 +10,25 @@ export default {
   ],
   navs: [
     {
-      title: '首页',
+      title: 'Home page',
       url: '/'
     },
     {
-      title: '文章归档',
+      title: 'Article archiving',
       url: '/article'
     },
-    // {
-    //   title: '生活相册',
-    //   url: '/photo'
-    // },
-    // {
-    //   title: '生活轨迹',
-    //   url: '/friendlylink'
-    // },
+    {
+      title: 'Know me',
+      url: '/aboutme'
+    },
+    {
+      title: 'Life track',
+      url: '/friendlylink'
+    },
+    {
+      title: 'Life album',
+      url: '/photo'
+    },
     {
       title: 'RSS',
       url: '/rss.xml'
