@@ -1,10 +1,11 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-$monospace-font: Menlo, Monaco, Consolas, "Courier New", monospace;
-$line-space: 22px;
+// scrollbar
+@include scrollbar-style($size: $sm-gap, $bg: #d2cfcf, $thumb-bg: #a7a7a7, $thumb-bg-hover: #CC8C8C);
 
 .markdown-body {
+  font-family: "Monda", Arial, sans-serif;
   word-break: break-word;
   line-height: 1.75;
   font-weight: 400;
@@ -33,6 +34,7 @@ $line-space: 22px;
   h5,
   h6 {
     font-size: 20px;
+    font-weight: 500;
   }
   h2 {
     padding-bottom: 12px;
@@ -66,14 +68,24 @@ $line-space: 22px;
     margin-bottom: 32px;
   }
 
+  code {
+    word-break: break-word;
+    border-radius: 2px;
+    overflow-x: auto;
+    background-color: #fae7e7;
+    color: #ff502c;
+    font-size: 0.89em;
+    padding: 0.065em 0.4em;
+  }
+
   pre {
-    margin-bottom: 15px;
     border-radius: 5px;
-    font-family: $monospace-font;
     overflow: auto;
     position: relative;
+    margin-bottom: 15px;
     line-height: 1.75;
     > code {
+      font-family: "SFMono-Regular", monospace;
       font-size: 12px;
       margin: 0;
       padding: 1.4em !important;
@@ -127,7 +139,7 @@ $line-space: 22px;
     font-weight: 300;
     color: #000;
     border-left: 5px solid #cbcbcb;
-    background: #E8E8E8;
+    background: #e8e8e8;
     &::after {
       display: block;
       content: "";

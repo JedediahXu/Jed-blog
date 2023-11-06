@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { dateToHuman, HumanDate, humanDateToYMD } from "../../utils/moment";
 import CalendarDay from "./Oneday.vue";
 import { data } from "../../data/calendar";
+import { article } from "../../data/article";
 
 const githubContributionsMap = computed(() => {
   const contributionsMap = new Map();
@@ -17,12 +18,31 @@ const githubContributionsMap = computed(() => {
   return contributionsMap;
 });
 
+const articleContributionsMap = computed(() => {
+  const contributionsMap = new Map();
+  for (const week of article.weeks) {
+    for (const day of week.contributionDays) {
+      contributionsMap.set(day.date, {
+        count: day.contributionCount,
+        color: day.color,
+      });
+    }
+  }
+  return contributionsMap;
+});
+
+console.log(articleContributionsMap);
+
 const getDayContributions = (date: string) => {
   return githubContributionsMap.value.get(date)?.count || 0;
 };
 
 const getDayGitHubColor = (date: string) => {
   return githubContributionsMap.value.get(date)?.color;
+};
+
+const getDayArticles = (date: string) => {
+  return articleContributionsMap.value.get(date)?.count || 0;
 };
 
 // current month | day
@@ -61,6 +81,7 @@ const months = [
           :key="i"
           :date="day"
           :tweets="0"
+          :articles="getDayArticles(day)"
           :contributions="getDayContributions(day)"
           :github-color="getDayGitHubColor(day)"
         />

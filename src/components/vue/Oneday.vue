@@ -2,24 +2,26 @@
 import { computed } from "vue";
 
 const props = defineProps<{
-  date?: string;
-  githubColor?: string;
-  contributions: number;
+  date?: string
+  githubColor?: string
+  articles: number
+  contributions: number
 }>();
 
-const total = computed(() => props.contributions);
+const total = computed(() => props.articles  + props.contributions);
 const getPointHeightStyle = (value: number) => {
   return isNaN(value) ? 0 : `${Math.floor(value * 100)}%`;
 };
 </script>
+
 <template>
   <div class="day" :data-date="date">
     <div class="point">
-      <!-- <div
+      <div
         class="item article"
         :style="{ height: getPointHeightStyle(articles / total) }"
-      />
-      <div
+      /> 
+      <!-- <div
         class="item instagram"
         :style="{ height: getPointHeightStyle(instagrams / total) }"
       /> -->
@@ -38,12 +40,12 @@ const getPointHeightStyle = (value: number) => {
         }"
       />
     </div>
-    <div class="tooltip">
+    <div class="tooltip" v-if="total">
       <p class="date">{{ date }}</p>
       <ul class="counts">
         <li class="item article">
           <i class="iconfont icon-quill"></i>
-          <span class="count">暂无数据</span>
+          <span class="count">发生 {{ articles }} 次</span>
           articles
         </li>
         <li class="item contribution">
@@ -160,7 +162,7 @@ const getPointHeightStyle = (value: number) => {
         &.article {
           color: #f8981d;
           /* A token to indicate that twitter is no longer supported */
-          text-decoration: line-through;
+          // text-decoration: line-through;
         }
 
         &.instagram {

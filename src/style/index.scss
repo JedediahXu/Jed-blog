@@ -1,16 +1,5 @@
-body {
-  font-family:
-    SpecialSymbol,
-    DINRegular,
-    -apple-system,
-    BlinkMacSystemFont,
-    PingFang SC,
-    Helvetica Neue,
-    Hiragino Sans GB,
-    Segoe UI,
-    Microsoft YaHei,
-    å¾®è½¯é›…é»‘,
-    sans-serif;
+* {
+  font-family: 'SpecialSymbol', Arial, sans-serif;
 }
 
 #background {
@@ -26,7 +15,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0.12;
   background: url("../images/background.png");
 }
 
