@@ -1,6 +1,7 @@
 ---
 import Home from '../layouts/Home.astro'
 import TrackMap from '../components/vue/Map.vue'
+import config from '../config'
 ---
 
 <Home title="地图">
@@ -8,7 +9,7 @@ import TrackMap from '../components/vue/Map.vue'
     <div class="mb-8 flex flex-col gap-1">
       <h1 class="text-xl font-medium mb-4">生活/轨迹</h1>
       <h2 class="text-sm">
-        𝑇ℎ𝑒𝑟𝑒 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑜𝑛𝑒 ℎ𝑒𝑟𝑜𝑖𝑠𝑚 𝑖𝑛 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑: 𝑡𝑜 𝑠𝑒𝑒 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑 𝑎𝑠 𝑖𝑡 𝑖𝑠, 𝑎𝑛𝑑 𝑡𝑜 𝑙𝑜𝑣𝑒 𝑖𝑡.
+        {config.live}
       </h2>
     </div>
   </div>

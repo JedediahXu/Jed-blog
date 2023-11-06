@@ -51,7 +51,7 @@ import subassembly from './subassembly.vue'
 
 **父组件代码:**
 
-```js
+```vue
 <template>
   <div>我是父组件----1</div>
   <subassembly @getChili="getChili" :title="msg" />

@@ -4,6 +4,7 @@ import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 import juejin from '../images/juejin.svg'
 import youtube from '../images/youtube.svg'
+import config from '../config'
 
 const contacts = [
   {
@@ -28,48 +29,7 @@ const contacts = [
   },
 ]
 
-const linkedList = {
-  data: [
-    {
-      label: 'Surmon',
-      link: 'https://surmon.me',
-    },
-    {
-      label: '俊劫学习基地',
-      link: 'https://alexjjwu.fun',
-    },
-    {
-      label: 'Liuzepeng',
-      link: 'https://www.liuzepeng.com',
-    },
-  ],
-}
 ---
-
-<style>
-  .footer-links {
-    display: flex;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    background-color: #d7e0df;
-    transition: background-color 0.25s;
-    border-radius: 6px;
-  }
-  .item {
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
-    text-decoration-thickness: from-font;
-  }
-  .vertical {
-    position: relative;
-    top: -0.06em;
-    display: inline-block;
-    height: 0.9em;
-    margin: 0 1.236rem;
-    vertical-align: middle;
-    border-left: 1px solid rgba(0, 0, 0, 0.26);
-  }
-</style>
 
 <Home title="关于我">
   <div class="mx-auto mb-6 text-sm">
@@ -101,16 +61,43 @@ const linkedList = {
     <div class="footer-links prose">
       <div>
         {
-          linkedList.data.map((res) => (
-            <>
-              <a class="item" href={res.link} target="_blank" rel="noopener noreferrer">
-                {res.label}
-              </a>
-              <div class="vertical" />
-            </>
-          ))
+          config.linkedList.map(
+            (res: { link: string | URL | null | undefined; label: unknown }) => (
+              <>
+                <a class="item" href={res.link} target="_blank" rel="noopener noreferrer">
+                  {res.label}
+                </a>
+                <div class="vertical" />
+              </>
+            )
+          )
         }
       </div>
     </div>
   </div>
 </Home>
+
+<style>
+  .footer-links {
+    display: flex;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    background-color: #d7e0df;
+    transition: background-color 0.25s;
+    border-radius: 6px;
+  }
+  .item {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: from-font;
+  }
+  .vertical {
+    position: relative;
+    top: -0.06em;
+    display: inline-block;
+    height: 0.9em;
+    margin: 0 1.236rem;
+    vertical-align: middle;
+    border-left: 1px solid rgba(0, 0, 0, 0.26);
+  }
+</style>

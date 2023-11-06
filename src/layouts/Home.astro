@@ -4,32 +4,6 @@ import avatar from '../images/avatar.jpg'
 import config from '../config'
 ---
 
-<style>
-  .my-sticky-element {
-    position: fixed;
-    top: 0;
-    order: 1;
-    flex-shrink: 0;
-    margin-right: 1.236rem;
-  }
-  .active {
-    color: #0088f5;
-  }
-  .md {
-    margin-left: 13rem;
-    margin-right: 1rem;
-  }
-  a {
-    text-decoration: underline;
-  }
-  .dark {
-    color: #999;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 10px 0 5px;
-  }
-</style>
-
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
@@ -43,7 +17,7 @@ import config from '../config'
           <div>
             <h1 class="font-bold text-2xl">{config.name}</h1>
           </div>
-          <div class="dark">想太多了</div>
+          <div class="dark">{config.signature}</div>
 
           <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
             {
@@ -80,3 +54,30 @@ import config from '../config'
     </div>
   </div>
 </BaseLayout>
+
+
+<style>
+  .my-sticky-element {
+    position: fixed;
+    top: 0;
+    order: 1;
+    flex-shrink: 0;
+    margin-right: 1.236rem;
+  }
+  .active {
+    color: #0088f5;
+  }
+  .md {
+    margin-left: 13rem;
+    margin-right: 1rem;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .dark {
+    color: #999;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px 0 5px;
+  }
+</style>

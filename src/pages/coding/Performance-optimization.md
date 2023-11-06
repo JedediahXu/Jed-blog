@@ -13,7 +13,7 @@ categories:
 
 从事前端开发的很难离开**性能优化**这个词，但是关于前端性能方面，其实知识点是相当琐碎的，以至于我们总是感觉**做的不够好** 接下来我们从一道面试题说起:
 
-<blockquote style='margin: 1em 0;padding: 0.5em 1em 0.5em 1.5em;text-indent: 0;color: black;font-weight: 300; border-left: 5px solid #DEDEDE; background: #E8E8E8;'> 从输入 URL 到页面加载完成，发生了什么？ </blockquote>
+> 从输入 URL 到页面加载完成，发生了什么？
 
 这个题的答案，其实很简单,相信很多开发的小伙伴都可以很快速的讲出来。今天我们不去单纯的去聊发生了什么,从性能的层面去考虑。
 
@@ -31,7 +31,6 @@ categories:
 
 当我们从性能方面分析出来之后，我们发现有很多地方都涉及到了性能优化的知识点。首先是
 
-
 1. HTTP协议和TCP连接、Vite构建工具
 2. 图片的合理使用
 3. 代码优化（合并请求、减少DOM）
@@ -39,7 +38,6 @@ categories:
 5. 浏览器缓存机制
 
 以上都是我们对性能优化所涉及到的知识。
-
 
 ### HTTP && Vite方面
 
@@ -53,8 +51,8 @@ categories:
 
 HTTP优化主要围绕两个核心方向展开：
 
-1.  减少请求次数：这包括减少需要从服务器请求的资源数量，以降低页面加载时间。
-1.  减少单个请求所需的时间：这涉及优化每个请求的响应时间，以加快页面渲染速度。
+1. 减少请求次数：这包括减少需要从服务器请求的资源数量，以降低页面加载时间。
+1. 减少单个请求所需的时间：这涉及优化每个请求的响应时间，以加快页面渲染速度。
 
 这两个优化方向直接引导我们关注在日常开发中常见的操作，即资源的压缩和合并，以提高网站性能！
 
@@ -83,45 +81,45 @@ Vite 包括一个内置的开发服务器，针对快速重新加载和热模块
 ```js
 // vite.config.js
 build: {
-				//  argument:boolean | 'terser' | 'esbuild'
-				minify: 'esbuild',
-				emptyOutDir: true,
-				// Do not open when packing
-				sourcemap: false,
-				target: 'es2015',
-				cssTarget: 'chrome80',
-				rollupOptions: {
-					onwarn(warning, warn) {
-						if (warning.code === 'EVAL') return
-						// Use the default warning handling
-						warn(warning)
-					},
-					treeshake: true,
-					output: {
-						manualChunks: {
-							XXX0: ['vue', 'vuex', 'vue-router', 'dayjs', 'axios', 'vue-i18n'],
-							XXX1: ['element-plus', '@element-plus/icons-vue'],
-							XXX2: ['@nutflow/nf-form-elp'],
-							XXX3: ['@smallwei/avue', 'avue-plugin-ueditor'], // 头号目标 1
-							XXX4: ['@nutflow/nf-design-elp'], // 2
-							XXX5: ['@saber/nf-design-base-elp'], // 3
-							XXX6: ['@nutflow/nf-form-design-elp'] // 4
-						}
-					}
-				}
-			},
+    //  argument:boolean | 'terser' | 'esbuild'
+    minify: 'esbuild',
+    emptyOutDir: true,
+    // Do not open when packing
+    sourcemap: false,
+    target: 'es2015',
+    cssTarget: 'chrome80',
+    rollupOptions: {
+     onwarn(warning, warn) {
+      if (warning.code === 'EVAL') return
+      // Use the default warning handling
+      warn(warning)
+     },
+     treeshake: true,
+     output: {
+      manualChunks: {
+       XXX0: ['vue', 'vuex', 'vue-router', 'dayjs', 'axios', 'vue-i18n'],
+       XXX1: ['element-plus', '@element-plus/icons-vue'],
+       XXX2: ['@nutflow/nf-form-elp'],
+       XXX3: ['@smallwei/avue', 'avue-plugin-ueditor'], // 头号目标 1
+       XXX4: ['@nutflow/nf-design-elp'], // 2
+       XXX5: ['@saber/nf-design-base-elp'], // 3
+       XXX6: ['@nutflow/nf-form-design-elp'] // 4
+      }
+     }
+    }
+   },
 ```
+
 上面代码我使用了 Vite 的资源合并功能。在 `rollupOptions` 的 `output` 部分，定义了 `manualChunks`，并指定了不同的模块名称和它们所依赖的模块。这样做可以将这些模块合并到单独的文件中，以减少打包后的文件数量和大小。这是Vite基于Rollup去整合的，并不是Vite自身的功能，Vite使用了Rollup作为默认打包工具，并且也提供了很多选项来进行一些定制。
-
-
 
 在上面的代码中，想必大家也看到了`treeshake: true`这个设置
 
 **Tree Shaking：**
+
 ```js
 // vite.config.js
 build: {
-  rollupOptions: { 
+    rollupOptions: { 
     // 不考虑模块中导出的属性（也就是对象的属性）是否有副作用
     propertySideEffects: false,
     // 不考虑模块是否具有副作用
@@ -129,8 +127,8 @@ build: {
   },
 }
 ```
-在上面的配置中，也可以使用 `treeshake` 选项来配置 Tree Shaking。其中，`propertySideEffects` 和 `moduleSideEffects`属性用于指定哪些属性或模块应该被视为有副作用，从而排除它们不进行 Tree Shaking,以减少最终生成的包的大小。
 
+在上面的配置中，也可以使用 `treeshake` 选项来配置 Tree Shaking。其中，`propertySideEffects` 和 `moduleSideEffects`属性用于指定哪些属性或模块应该被视为有副作用，从而排除它们不进行 Tree Shaking,以减少最终生成的包的大小。
 
 **模块的延迟加载**
 
@@ -143,24 +141,24 @@ build: {
     sidebar: defineAsyncComponent(() => import('./sidebar/index.vue'))
   },
 ```
-异步组件,代码只在实际需要时才加载
 
+异步组件,代码只在实际需要时才加载
 
 **优化项目的依赖项**
 
 ```js
-// vite.config.js
-optimizeDeps: {
-			include: [
-				'echarts',
-				'xxxx',
-				'xxxx',
-				'xxxx',
-			]
-		}
+ // vite.config.js
+ optimizeDeps: {
+    include: [
+     'echarts',
+     'xxxx',
+     'xxxx',
+     'xxxx',
+    ]
+   }
 ```
-我们通过`optimizeDeps` 的配置，Vite就会将指定的依赖项进行预构建，以提高项目的启动性能。这样可以减少不必要的构建时间和资源消耗。可以有效的帮助你更精确地控制优化的范围，以避免不必要的构建和资源浪费
 
+我们通过`optimizeDeps` 的配置，Vite就会将指定的依赖项进行预构建，以提高项目的启动性能。这样可以减少不必要的构建时间和资源消耗。可以有效的帮助你更精确地控制优化的范围，以避免不必要的构建和资源浪费
 
 **Vite的压缩和服务端的压缩**
 
@@ -171,19 +169,15 @@ optimizeDeps: {
 
 Gzip 的内核就是 Deflate，目前我们压缩文件用得最多的就是 Gzip。可以说，Gzip 就是 HTTP 压缩的经典例题。
 
-
 Vite打包时常见的压缩方式: **gzip | brotli**
 
 这里我个人比较喜欢使用 **Brotli** 进行压缩,以下是两者的比较：
 
 1. 浏览器支持：Gzip 是一种较为通用的压缩算法，几乎所有现代浏览器都支持。而 Brotli 是一种较新的压缩算法，虽然在压缩比方面更好，但并不是所有浏览器都支持。如果你的应用主要面向现代浏览器，可以考虑使用 Brotli。如果需要兼容性更广泛，可以选择使用 Gzip。
 
-
 2. 服务器配置：使用 Brotli 压缩需要在服务器上进行相应的配置。如果你的服务器已经配置了 Brotli 压缩，可以考虑使用 Brotli。如果没有配置或配置比较复杂，可以选择使用 Gzip，因为大多数服务器都支持 Gzip 压缩。
 
-
 3. 文件类型：不同类型的文件对压缩算法的效果可能有所不同。一般来说，文本文件（如HTML、CSS、JS）在压缩方面效果更好，而已经经过压缩的文件（如图片、音视频文件）压缩效果可能较小。
-
 
 **依赖分析**
 
@@ -198,24 +192,22 @@ Vite打包时常见的压缩方式: **gzip | brotli**
 
 这里就不一一进行描述了，我们继续往下探讨～
 
-
-
 ### 图片的合理使用
 
-不同业务场景下的图片方案选型是不一样的,比较常见的几种图片格式: 
+不同业务场景下的图片方案选型是不一样的,比较常见的几种图片格式:
 
-- JPEG/JPG : 
+- JPEG/JPG :
 
     **有损压缩、体积小、加载快、不支持透明**
 
     使用场景: 背景图、产品图片等
 
-- GIF: 
+- GIF:
 
    **支持透明度和多帧动画、颜色表有限**
-   
+
    使用场景:loading动画、表情包等
-   
+
 - PNG-8与PNG-24 :
 
     **无损压缩、质量高、体积大、支持透明**
@@ -234,14 +226,10 @@ Vite打包时常见的压缩方式: **gzip | brotli**
 
     使用场景: Logo、小图标等
 
+- WebP:
 
-- WebP: 
- 
-     **与 PNG 相比，WebP 无损图像的尺寸缩小了 26％。在等效的 SSIM 质量指数下，WebP 有损图像比同类 JPEG 图像小 25-34％。 无损 WebP 支持透明度（也称为 alpha 通道），仅需 22％ 的额外字节。对于有损 RGB 压缩可接受的情况，有损 WebP 也支持透明度，与 PNG 相比，通常提供 3 倍的文件大小。** 
-Webp是比较年轻的，在使用之前最好是查询一下他的兼容性。 [WebP相关文档](https://web.dev/articles/serve-images-webp?hl=zh-cn) 
-
-
-
+     **与 PNG 相比，WebP 无损图像的尺寸缩小了 26％。在等效的 SSIM 质量指数下，WebP 有损图像比同类 JPEG 图像小 25-34％。 无损 WebP 支持透明度（也称为 alpha 通道），仅需 22％ 的额外字节。对于有损 RGB 压缩可接受的情况，有损 WebP 也支持透明度，与 PNG 相比，通常提供 3 倍的文件大小。**
+Webp是比较年轻的，在使用之前最好是查询一下他的兼容性。 [WebP相关文档](https://web.dev/articles/serve-images-webp?hl=zh-cn)
 
 ### 代码优化（合并请求、减少DOM）
 
@@ -252,9 +240,6 @@ Webp是比较年轻的，在使用之前最好是查询一下他的兼容性。 
 3. 使用 HTTP/2，如果你的服务器支持 HTTP/2 协议，它可以自动合并多个请求，减少网络传输的开销
 
 对于减少DOM操作,可以从：虚拟DOM、事件委托、少修改CSS的属性避免重绘、各种条件渲染等等，这里就不再叙述了～
-
-
-
 
 ### 服务端渲染方面（SSR）、CDN加速
 
@@ -288,22 +273,18 @@ CDN通常用于存放静态资源，而业务服务器则负责生成动态页�
 
 服务端渲染虽然很快，但是如果你的服务器级别不是特别给力话，再加上在当今互联网时代，用户使用的浏览器数量确实非常庞大，而一个公司的服务器数量相对较少。如果将所有浏览器的渲染压力集中到这些有限的服务器上，显然会给服务器带来巨大的负担。（当然、目前也有很多技术去优化：负载均衡、各种缓存(Redis)技术、异步处理、云技术服务等）具体使用什么技术需要综合考虑一下的～
 
-
 ### 浏览器缓存机制
 
 浏览器缓存是一种简单而有效的前端性能优化手段，可以减少网络IO消耗，提高访问速度。Chrome官方解释了缓存的必要性，指出通过网络获取内容的速度较慢且开销巨大。大型响应需要多次往返通信，这会延迟浏览器获取和处理内容的时间，增加访问者的流量费用。因此，缓存并重复利用之前获取的资源是性能优化的关键。
 
-
 浏览器缓存机制包括四个方面，按照获取资源时请求的优先级排列如下：
 
-1.  Memory Cache（内存缓存）
-2.  Service Worker Cache（Service Worker缓存）
-3.  HTTP Cache（HTTP缓存）
-4.  Push Cache（推送缓存）
-
+1. Memory Cache（内存缓存）
+2. Service Worker Cache（Service Worker缓存）
+3. HTTP Cache（HTTP缓存）
+4. Push Cache（推送缓存）
 
 其中，Memory Cache对应内存缓存，Service Worker Cache对应Service Worker缓存。此外，还有从磁盘缓存（from disk cache）和从内存缓存（from memory cache）获取的资源。
-
 
 HTTP缓存是我们日常开发中最熟悉的一种缓存机制，包括强缓存和协商缓存。强缓存具有较高的优先级，只有在强缓存失效时才会使用协商缓存。
 
@@ -311,12 +292,10 @@ HTTP缓存是我们日常开发中最熟悉的一种缓存机制，包括强缓�
 
 Chrome官方提供了一张清晰权威的图示，展示了浏览器缓存机制的流程。
 
-
 在设置缓存策略时，如果资源内容不可复用，可以直接设置Cache-Control为no-store，拒绝任何形式的缓存。否则，可以考虑是否需要每次都向服务器进行缓存有效确认，如果需要，将Cache-Control设置为no-cache。然后，根据资源是否可以被代理服务器缓存，设置为private或public。接下来，根据资源的过期时间，设置相应的max-age和s-maxage值。最后，配置协商缓存所需的Etag、Last-Modified等参数。
 
 浏览器缓存机制和缓存策略涉及许多知识点，这里也只是简单的概括了一下。
 
 除了上面说的，我们还可以使用浏览器的Lighthouse去进行性能分析，然后”对症下药“ 这里就不再过多介绍了～
-
 
 完。

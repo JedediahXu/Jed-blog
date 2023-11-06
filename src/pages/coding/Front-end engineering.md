@@ -140,19 +140,19 @@ CommonJS 规范最早是 Node 独有的规范，目前也仍然广泛使用，�
 * 在上述代码中，`module.exports`和`exports`很容易混淆，可点击展开查看内部大致实现。
 
 ```jsx
-        var module = {
-          id: 'xxxx', // 我总得知道怎么去找到它吧
-          exports: {} // exports 就是个空对象
-        }
-        // 这行代码是为什么 exports 和 module.exports 用法相似的原因
-        var exports = module.exports
-        var load = function (module) {
-            // 导出的东西
-            var a = 1
-            module.exports = a
-            return module.exports
-        };
-        // 当 require 的时候去找到独特的 id，然后将要使用的东西用立即执行函数包装下，over
+    var module = {
+        id: 'xxxx', // 我总得知道怎么去找到它吧
+        exports: {} // exports 就是个空对象
+    }
+    // 这行代码是为什么 exports 和 module.exports 用法相似的原因
+    var exports = module.exports
+    var load = function (module) {
+        // 导出的东西
+        var a = 1
+        module.exports = a
+        return module.exports
+    };
+    // 当 require 的时候去找到独特的 id，然后将要使用的东西用立即执行函数包装下，over
 ```
 
 重要的是 module 这里，module 是 Node 独有的一个变量
