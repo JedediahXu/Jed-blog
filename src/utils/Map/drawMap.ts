@@ -1,4 +1,5 @@
-import { onMounted, Ref, ref } from 'vue'
+import {  onMounted } from 'vue'
+import{ ref}from 'vue'
 import mapboxgl from 'mapbox-gl';
 import { mapThreeDim } from './mapThreeDim'
 import { skyLoad } from './skyLoad'
@@ -13,7 +14,7 @@ export function initDragMap(
   geoPhoto: unknown,
   geoData: unknown,
 ) {
-  const mapDivElement: Ref<HTMLDivElement | null> = ref(null)
+  const mapDivElement = ref(null)
   const map: any = ref({})
   const marker: unknown = ref({})
   onMounted(initMap)
@@ -50,7 +51,7 @@ export function initDragMap(
  */
 function mapNew(
   map: any,
-  mapDivElement: Ref<HTMLDivElement | null>,
+  mapDivElement: any,
   marker: any,
   popup: unknown,
   geoPhoto: unknown,
@@ -75,7 +76,7 @@ function mapNew(
     })
 
     // 创建一个自定义标记元素
-    const avatarUrl = 'https://chetxu.chetserenade.info/uPic/WechatIMG825.jpeg'; 
+    const avatarUrl = 'src/images/daxu.jpg'; 
     const markerElement = document.createElement('div');
     markerElement.className = 'custom-marker';
     markerElement.style.backgroundImage = `url(${avatarUrl})`;

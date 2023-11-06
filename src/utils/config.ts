@@ -7,7 +7,7 @@ export const geoPhoto = {
 			properties: {
 				id: 2,
 				description:
-					`<img  src="https://chetxu.chetserenade.info/uPic/WechatIMG1128.jpg"/>
+					`<img  src="/src/images/linshi2.jpeg"/>
 					<p>目前，我在济南工作「结识了很多有趣/可爱的好友」</p>`,
 			},
 			geometry: {
@@ -20,7 +20,7 @@ export const geoPhoto = {
 			properties: {
 				id: 2,
 				description:
-					`<img  src="https://chetxu.chetserenade.info/uPic/WechatIMG1214.jpg"/>
+					`<img  src="/src/images/linshi1.jpeg"/>
 					<p>我在这里生活了五年,这里承载着我青春里的大部分记忆「上图是21年的全球S赛,已记不清是哪一场了」</p>`,
 			},
 			geometry: {

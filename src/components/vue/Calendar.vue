@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { dateToHuman, HumanDate, humanDateToYMD } from "../../utils/moment";
+import { dateToHuman } from "/src/utils/moment.ts";
+import { humanDateToYMD } from '/src/utils/moment.ts';
 import CalendarDay from "./Oneday.vue";
 import { data } from "../../data/calendar";
 import { article } from "../../data/article";
@@ -31,7 +32,6 @@ const articleContributionsMap = computed(() => {
   return contributionsMap;
 });
 
-console.log(articleContributionsMap);
 
 const getDayContributions = (date: string) => {
   return githubContributionsMap.value.get(date)?.count || 0;

@@ -15,7 +15,6 @@ export async function get(context) {
   });
 
   const allPosts = { ...posts, ...otherPosts,...reship };
-  console.log( allPosts);
   return rss({
     title: config.title,
     description: `Jed is blogging about life, tech.`,

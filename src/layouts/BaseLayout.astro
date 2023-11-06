@@ -38,10 +38,15 @@ import '../style/iconfont.scss'
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        var markdownBody = document.getElementById('markdown-body')!
-        var links = markdownBody.querySelectorAll('a')
-        for (var i = 0; i < links.length; i++) {
-          links[i].setAttribute('target', '_blank')
+        var markdownBody = document.getElementById('markdown-body')
+        if (markdownBody) {
+          var links = markdownBody.querySelectorAll('a')
+          for (var i = 0; i < links.length; i++) {
+            var link = links[i]
+            if (link.getAttribute('target') !== '_blank') {
+              link.setAttribute('target', '_blank')
+            }
+          }
         }
       })
     </script>

@@ -3,12 +3,9 @@
  * @module transform.moment
  */
 
-export const cloneDate = (date: Date) => {
-  return new Date(date.getTime())
-}
-
 /** deconstruction date */
 export type HumanDate = ReturnType<typeof dateToHuman>
+
 export const dateToHuman = (date: Date) => {
   const week = date.getDay()
   return {
@@ -17,6 +14,10 @@ export const dateToHuman = (date: Date) => {
     month: date.getMonth() + 1,
     year: date.getFullYear()
   }
+}
+
+export const cloneDate = (date: Date) => {
+  return new Date(date.getTime())
 }
 
 export const isSameHumanDay = (target: HumanDate, target2: HumanDate) => {

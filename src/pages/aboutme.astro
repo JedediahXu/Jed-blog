@@ -29,6 +29,7 @@ const contacts = [
     title: 'YouTube',
   },
 ]
+console.log(contacts)
 ---
 
 <Home title="关于我">
@@ -45,13 +46,19 @@ const contacts = [
         contacts.map((contact) => {
           return (
             <a target="_blank" href={contact.url}>
-              <img src={contact.icon} alt={contact.title} class="w-6 h-6" />
+              <img
+                src={contact.icon.src}
+                width={contact.icon.width}
+                height={contact.icon.height}
+                alt={contact.title}
+                class="w-6 h-6"
+              />
             </a>
           )
         })
       }
     </div>
-    <img src={wx} class="w-48 h-48 mt-3" alt="微信" />
+    <img src={wx.src} width={wx.width} height={wx.height} class="w-48 h-48 mt-3" alt="微信" />
   </div>
 
   <h2 class="font-bold mb-3 text-md">LINKS /「 友链 」</h2>

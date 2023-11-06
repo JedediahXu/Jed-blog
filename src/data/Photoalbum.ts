@@ -8,7 +8,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
     {
       label: "ChetXu",
@@ -17,7 +17,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
     {
       label: "ChetXu",
@@ -26,7 +26,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
     {
       label: "ChetXu",
@@ -35,7 +35,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
     {
       label: "ChetXu",
@@ -44,7 +44,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
     {
       label: "ChetXu",
@@ -53,7 +53,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "src/images/cs.jpg",
+      href: "/src/images/cs.jpg",
     },
   ],
 };
