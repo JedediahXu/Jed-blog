@@ -76,7 +76,7 @@ function mapNew(
     })
 
     // 创建一个自定义标记元素
-    const avatarUrl = 'src/images/daxu.jpg'; 
+    const avatarUrl = ' https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/daxu.jpg'; 
     const markerElement = document.createElement('div');
     markerElement.className = 'custom-marker';
     markerElement.style.backgroundImage = `url(${avatarUrl})`;
