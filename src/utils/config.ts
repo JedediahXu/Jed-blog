@@ -7,7 +7,7 @@ export const geoPhoto = {
 			properties: {
 				id: 2,
 				description:
-					`<img  src="https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/linshi/linshi2.jpeg"/>
+					`<img  src=""/>
 					<p>目前，我在济南工作「结识了很多有趣/可爱的好友」</p>`,
 			},
 			geometry: {
@@ -20,7 +20,7 @@ export const geoPhoto = {
 			properties: {
 				id: 2,
 				description:
-					`<img  src="https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/linshi/linshi1.jpeg"/>
+					`<img  src=""/>
 					<p>我在这里生活了五年,这里承载着我青春里的大部分记忆「上图是21年的全球S赛,已记不清是哪一场了」</p>`,
 			},
 			geometry: {
