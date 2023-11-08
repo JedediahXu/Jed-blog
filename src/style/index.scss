@@ -104,3 +104,21 @@
   user-select: none;
   line-height: 2;
 }
+
+@media (max-width: 1025px) {
+  .my-sticky-element {
+    position: inherit;
+  }
+  .md {
+    margin-left: 0;
+  }
+  .c-hidden {
+    display: none;
+  }
+  .calendar {
+    width: auto;
+  }
+  .ml-6{
+    margin-left: 0.1rem;
+  }
+}

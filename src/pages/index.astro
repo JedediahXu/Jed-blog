@@ -10,8 +10,10 @@ import Calendar from '../components/vue/Calendar.vue'
       <span style="color: red;">公告:</span>
        博客近期正在升级中，图片不可访问，接口丢失，手机端暂时未兼容。预计12月前升级完成。
     </div>
-    <h2 class="font-bold mb-6 text-md ">PERECENT TRENDS / 「 近期动态 」</h2>
-    <Calendar client:only="vue" />
+    <div class="c-hidden">
+      <h2 class="font-bold mb-6 text-md ">PERECENT TRENDS / 「 近期动态 」</h2>
+      <Calendar client:only="vue" />
+    </div>
   </div>
   <div class="text-sm mt-8 pb-10">
     <h2 class="font-bold mb-6 text-md">PERECENT ARTICLES/「 近期文章 」</h2>

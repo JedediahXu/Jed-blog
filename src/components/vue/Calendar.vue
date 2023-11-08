@@ -95,7 +95,6 @@ const months = [
 @import "../../style/mixins";
 
 .calendar {
-  width: 630px;
   border-radius: $lg-radius;
   padding: 0.8rem;
   background-color: $module-bg-ashen;
@@ -108,7 +107,7 @@ const months = [
   }
 }
 
-@media (max-width: 1600px) {
+@media(min-width: 1000px) and  (max-width: 1600px) {
   .calendar {
     width: 630px;
   }

@@ -8,7 +8,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
     {
       label: "等待备案",
@@ -17,7 +17,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
     {
       label: "等待备案",
@@ -26,7 +26,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
     {
       label: "等待备案",
@@ -35,7 +35,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
     {
       label: "等待备案",
@@ -44,7 +44,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
     {
       label: "等待备案",
@@ -53,7 +53,7 @@ export  const data = {
         width: 0,
         height: 0,
       },
-      href: "https://www.jedxu.info/@fs/Users/xuhuazhi/Documents/GitHub/Jed-blog/src/images/cs.jpg",
+      href: "",
     },
   ],
 };
