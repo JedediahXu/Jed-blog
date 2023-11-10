@@ -115,6 +115,11 @@ body {
   max-width: 78.5ch;
 }
 
+.text-sm {
+  font-size: 0.99rem !important;
+  line-height: 1.2rem !important;
+}
+
 /* 适用于一些 WebKit 内核的浏览器 */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .markdown-width {

@@ -59,7 +59,7 @@ import config from '../config'
             <h1 class="font-bold text-2xl font-name">{config.name}</h1>
             <div class="theme-dark">
               <div class="flex">
-                <div id="theme">
+                <div id="theme-mobile">
                   <i class="iconfont icon-sun"></i>
                 </div>
                 <span class="ml-3">{config.signature}</span>
@@ -108,54 +108,80 @@ import config from '../config'
 </BaseLayout>
 
 <script>
-  const toggle: HTMLElement | null = document.getElementById('toggle')
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const mobileMenu = document.querySelector('.mobile-menu')
-      const containerMain = document.querySelector('.container-main')
-      const headerNavbar = document.querySelector('.header-navbar')
-
-      // 切换左侧边栏和右侧主区域的 opened 类
-      mobileMenu?.classList.toggle('opened-pc')
-      containerMain?.classList.toggle('opened-mobile')
-      headerNavbar?.classList.toggle('opened-mobile')
-    })
-  }
-
-  const themeElement: HTMLElement | null = document.getElementById('theme')
-  if (themeElement) {
-    themeElement.addEventListener('click', function () {
-      // 切换主题
-      toggleTheme()
-    })
-   
-  }
-
-  let theme = 'light'
+  const toggleButton: HTMLElement | null = document.getElementById('toggle')
+  const themeElement = document.getElementById('theme')
+  const themeElementMobile = document.getElementById('theme-mobile')
+  const mobileMenuSelector = '.mobile-menu'
+  const containerMainSelector = '.container-main'
+  const headerNavbarSelector = '.header-navbar'
+  const themeClass = 'theme-dark'
 
   const toggleTheme = () => {
-    // 切换主题
-    theme = theme === 'light' ? 'dark' : 'light'
+    const element = document.documentElement
+    const isDark = element.getAttribute('data-theme') === 'dark'
 
-    const htmlElement = document.documentElement
-    htmlElement.setAttribute('data-theme', theme)
+    // Switch topic
+    element.setAttribute('data-theme', isDark ? 'light' : 'dark')
 
-    // 更新图标样式
-    const themeElement = document.getElementById('theme')
-    if (themeElement) {
-      const iconElement = themeElement.querySelector('i')
+    // Save the theme selection to local storage
+    localStorage.setItem('theme', isDark ? 'light' : 'dark')
+  }
+
+  const handleToggleClick = () => {
+    toggleTheme()
+
+    // Update the ICONS and styles of theme switching elements
+    const updateThemeIcon = (element: HTMLElement | null) => {
+      // @ts-ignore
+      const iconElement = element.querySelector('i')
       if (iconElement) {
         iconElement.classList.toggle('icon-sun')
         iconElement.classList.toggle('icon-moon')
       }
     }
 
-    // 更新其他需要切换主题的元素样式
-    const darkElements = document.querySelectorAll('.dark')
-    darkElements.forEach((element) => {
-      element.classList.toggle('light')
-      element.classList.toggle('dark')
+    updateThemeIcon(themeElement)
+    updateThemeIcon(themeElementMobile)
+  }
+
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const mobileMenu = document.querySelector(mobileMenuSelector)
+      const containerMain = document.querySelector(containerMainSelector)
+      const headerNavbar = document.querySelector(headerNavbarSelector)
+
+      // Toggle the opened class in the left sidebar and the right main area
+      mobileMenu?.classList.toggle('opened-pc')
+      containerMain?.classList.toggle('opened-mobile')
+      headerNavbar?.classList.toggle('opened-mobile')
     })
+  }
+
+  // Set the theme when the page loads
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
+
+  // @ts-ignore
+  document.documentElement.setAttribute('data-theme', theme)
+
+  // Toggle event listening for the topic
+  if (themeElement !== null) {
+    themeElement.addEventListener('click', handleToggleClick)
+  } else {
+    console.error('未找到 ID 为 "theme" 的元素')
+  }
+
+  if (themeElementMobile !== null) {
+    themeElementMobile.addEventListener('click', handleToggleClick)
+  } else {
+    console.error('未找到 ID 为 "theme" 的元素')
   }
 </script>
 
