@@ -1,4 +1,6 @@
+/* 大屏幕（宽度大于等于 1010px） */
 @media (min-width: 1010px) {
+  /* PC端可见，移动端隐藏 */
   .hidden-pc {
     display: block !important;
   }
@@ -8,7 +10,9 @@
   }
 }
 
+/* 小屏幕（宽度小于 1010px） */
 @media (max-width: 1010px) {
+  /* PC端隐藏，移动端可见 */
   .hidden-pc {
     display: none !important;
   }
@@ -17,19 +21,16 @@
     display: block !important;
   }
 
-  .md {
-    margin-left: 0 !important;
-  }
-  .c-hidden {
+  /* 覆盖 */
+  .hidden-calendar {
     display: none;
   }
+
   .calendar {
-    width: auto;
+    width: auto !important;
   }
-  .ml-6 {
-    margin-left: 0.1rem;
-  }
-  .asider {
+
+  .mobile-menu {
     width: 66%;
     height: 100%;
     position: fixed;
@@ -39,17 +40,16 @@
     transform: translate3d(-100%, 0, 0);
     transition: all 0.38s ease-out;
   }
+
   .opened-pc {
     transform: translateZ(0);
     overflow: hidden;
   }
 
-  .main {
-    transition: all 0.38s ease-out;
-    transform: translate3d(0%, 0, 0);
-  }
-
-  .main2 {
+  .container-main,
+  .header-navbar {
+    display: flex;
+    justify-content: center;
     transition: all 0.38s ease-out;
     transform: translate3d(0%, 0, 0);
   }
@@ -59,11 +59,13 @@
     transition: all 0.38s ease-out;
     transform: translate3d(66%, 0, 0);
   }
+
   .mediate {
     margin-left: 25% !important;
     margin-right: auto;
   }
-  .webfont {
+
+  .nav-webfont {
     margin-left: 25% !important;
     font-weight: 400;
     box-sizing: inherit;
@@ -79,6 +81,7 @@
     display: flex;
     flex-direction: column;
   }
+
   .toggle {
     position: fixed;
     top: 0;
@@ -89,15 +92,18 @@
     backdrop-filter: blur(5px);
     height: 3.5rem;
     display: flex !important;
+    justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid #dedede;
 
+    /* Toggle菜单 */
     .toggle-menu {
       height: 100%;
       width: 15%;
       line-height: 3.5rem;
       text-align: center;
     }
+
     .icon-menu {
       font-weight: 900;
       font-size: 20px;
@@ -112,27 +118,17 @@
     font-weight: 400;
   }
 
-  .top-5 {
-    top: 0.1rem !important;
-  }
-
-  .py-20 {
-    padding-top: 3rem !important;
-  }
-
   .container {
     padding: 4.2rem 1rem 1rem;
     min-height: calc(100vh - 3.5rem);
     transition: width 0.35s;
   }
-  .pb-10 {
-    padding-bottom: 0rem;
-  }
+
   .home {
     padding-bottom: 0rem;
   }
 
-  .be-with {
+  .hide-map-menu {
     display: none !important;
   }
 
@@ -142,5 +138,26 @@
 
   .footer-links {
     padding: 0.4rem !important;
+  }
+
+  /* 覆盖Tailwindcss */
+  .ml-6 {
+    margin-left: 0.1rem;
+  }
+
+  .pb-10 {
+    padding-bottom: 0rem;
+  }
+
+  .top-5 {
+    top: 0.1rem !important;
+  }
+
+  .py-20 {
+    padding-top: 3rem !important;
+  }
+
+  .md {
+    margin-left: 0 !important;
   }
 }

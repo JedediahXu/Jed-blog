@@ -1,5 +1,10 @@
 * {
-  font-family: "SpecialSymbol", Arial, sans-serif;
+  font-family: "SpecialSymbol", Arial, sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 #background {
@@ -15,22 +20,22 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.12;
-  background: url("/src/images/background.png");
+  // opacity: 0.12;
+  // background: url("/src/images/background.png") !important;
 }
 
 .prose-width {
-  max-width: 110ch;
+  max-width: 110ch !important;
 }
 
 .home {
   overflow-x: hidden;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1080px !important;
   padding-bottom: 10px;
   position: relative;
   width: 100%;
-  font-family: webfont-bolder;
+  font-family: webfont-bolder !important;
 }
 
 .desktop-nav {
@@ -43,47 +48,48 @@
   padding: 0 1.236rem;
   text-decoration: none;
   letter-spacing: 0.5px;
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
   will-change: background-color;
   transition: background-color 0.06s;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.webfont {
+.nav-webfont {
   font-weight: 400;
   box-sizing: inherit;
   border-style: solid;
   border-width: 0;
-  font-family: webfont-bolder;
+  font-family: webfont-bolder !important;
   line-height: 29px;
   margin: 0;
   padding: 0;
   width: 100%;
-  color: #cc8c8c;
+  color: #cc8c8c !important;
   align-items: flex-start;
   display: flex;
 }
 
 .calendar {
-  width: 630px;
-  padding: 0.8rem;
+  width: 630px !important;
+  padding: 0.8rem !important;
 }
 
 @media (min-width: 1600px) and (max-width: 3999px) {
   .calendar {
-    width: 690px;
+    width: 690px !important;
   }
   .home {
-    max-width: 1110px;
+    max-width: 1110px !important;
   }
 }
 
 @media (max-width: 1600px) {
   .calendar {
-    width: 630px;
+    width: 630px !important;
   }
 }
+
 .post {
   display: flex;
   flex-direction: column;
@@ -91,34 +97,34 @@
 
 .divider {
   flex: 1;
-  border-top: 1px dashed #000;
-  margin: 10px 0;
+  border-top: 1px dashed $theme-black !important;
+  margin: 10px 0 !important;
 }
 
 .categories {
-  color: #999;
-  margin-bottom: 1.236rem;
-  text-align: center;
-  font-size: 16px;
-  -webkit-user-select: none;
-  user-select: none;
-  line-height: 2;
+  color: #999 !important;
+  margin-bottom: 1.236rem !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  line-height: 2 !important;
 }
 
 .markdown-width {
-  max-width: 72ch;
+  max-width: 78.5ch;
 }
 
 /* 适用于一些 WebKit 内核的浏览器 */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .markdown-width {
-    max-width: 72ch !important;
+    max-width: 78.5ch !important;
   }
 }
 
 /* 适用于 Firefox 浏览器 */
 @-moz-document url-prefix() {
   .markdown-width {
-    max-width: 65ch !important;
+    max-width: 78.5ch !important;
   }
 }

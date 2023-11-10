@@ -1,0 +1,82 @@
+/// @name theme
+
+@mixin css-var(
+  $theme-text,
+  $theme-link,
+  $theme-link-hover,
+  $theme-white,
+  $theme-black,
+  $theme-primary,
+  $theme-body-bg,
+  $logo-rotate,
+  $highlight,
+  $pink,
+  $pink-day
+) {
+  #{--body-bg}: $theme-body-bg;
+  #{--theme-black}: $theme-black;
+  #{--theme-logo-rotate}: $logo-rotate;
+
+  #{--primary-color}: $theme-primary;
+  #{--primary-color-lighter}: rgba($theme-primary, 0.8);
+  #{--primary-color-translucent}: rgba($theme-primary, 0.5);
+
+  $module-bg: rgba($theme-white, 0.6);
+  $module-bg-opaque: rgba($theme-white, 1);
+  #{--module-bg}: $module-bg;
+  #{--module-bg-calendar}: $pink;
+  #{--module-bg-opaque}: $module-bg-opaque;
+  #{--module-bg-lighter}: rgba($module-bg, 0.8);
+  #{--module-bg-translucent}: rgba($module-bg, 0.5);
+  #{--module-bg-darker-1}: darken($module-bg-opaque, 9%);
+  #{--module-bg-darker-2}: darken($module-bg-opaque, 13%);
+  #{--module-bg-darker-3}: darken($module-bg-opaque, 19%);
+  #{--module-bg-darker-4}: darken($module-bg-opaque, 24%);
+  #{--module-bg-darker-5}: darken($module-bg-opaque, 29%);
+  #{--text-reversal}: rgba($theme-white, 0.9);
+
+  #{--link-color}: $theme-link;
+  #{--link-hover}: $theme-link-hover;
+
+  #{--text-color}: $theme-text;
+  #{--text-lighter}: lighter($theme-text, 20%);
+  #{--text-darker}: darken($theme-text, 20%);
+  #{--text-secondary}: rgba($theme-text, 0.5);
+  #{--text-disabled}: rgba($theme-text, 0.38);
+  #{--text-divider}: rgba($theme-text, 0.26);
+  #{--code-calendar-day}: $pink-day;
+  #{--code-highlight}: $highlight;
+  #{--code-danger}: $danger;
+}
+
+@mixin appLightTheme() {
+  @include css-var(
+    $theme-text: rgba(#000, 0.68),
+    $theme-link: rgba(#000, 0.74),
+    $theme-link-hover: rgba(#000, 0.86),
+    $theme-white: #fff,
+    $theme-black: #000,
+    $highlight: #fff5f5,
+    $theme-primary: $surmon,
+    $theme-body-bg: #fff,
+    $pink-day:#eebbeeee,
+    $pink: #fee,
+    $logo-rotate: none
+  );
+}
+
+@mixin appDarkTheme() {
+  @include css-var(
+    $theme-text: #f0f0f0,
+    $theme-link: rgba(#fff, 0.92),
+    $theme-link-hover: #fff,
+    $theme-white: #444,
+    $theme-black: #fff,
+    $theme-primary: #fff,
+    $highlight: rgba(255, 255, 255, 0.08),
+    $theme-body-bg: #000,
+    $pink-day:#2d2d2d,
+    $pink: #444444,
+    $logo-rotate: hue-rotate(180deg) brightness(300%) grayscale(100%)
+  );
+}

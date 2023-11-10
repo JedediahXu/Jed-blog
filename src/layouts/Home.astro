@@ -2,24 +2,30 @@
 import BaseLayout from './BaseLayout.astro'
 import avatar from '../images/avatar.jpg'
 import config from '../config'
-import '../style/mobile.scss'
 ---
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
       <!-- PC -->
-      <div class="sm:px-10 lg:mt-10 py-20 hidden-pc my-sticky-element">
+      <div class="sm:px-10 lg:mt-10 py-20 hidden-pc nav-view">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
             <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
           </div>
           <div class="mediate">
             <h1 class="font-bold text-2xl">{config.name}</h1>
-            <div class="dark">{config.signature}</div>
+            <div class="theme-dark">
+              <div class="flex">
+                <div id="theme">
+                  <i class="iconfont icon-sun"></i>
+                </div>
+                <span class="ml-3">{config.signature}</span>
+              </div>
+            </div>
           </div>
 
-          <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont">
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
@@ -43,17 +49,24 @@ import '../style/mobile.scss'
         </div>
       </div>
 
-      <!-- 手机端 -->
-      <div class="sm:px-10 lg:mt-10 py-20 hidden-mobile asider opened">
+      <!-- Mobile-->
+      <div class="sm:px-10 lg:mt-10 py-20 hidden-mobile mobile-menu opened">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="mediate">
             <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
               <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
             </div>
             <h1 class="font-bold text-2xl font-name">{config.name}</h1>
-            <div class="dark">{config.signature}</div>
+            <div class="theme-dark">
+              <div class="flex">
+                <div id="theme">
+                  <i class="iconfont icon-sun"></i>
+                </div>
+                <span class="ml-3">{config.signature}</span>
+              </div>
+            </div>
           </div>
-          <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont">
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
@@ -77,13 +90,11 @@ import '../style/mobile.scss'
         </div>
       </div>
 
-      
-    
-      <div class="toggle hidden-mobile main2">
+      <div class="toggle hidden-mobile header-navbar">
         <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
         <div class="header-slogan">斯是陋室，唯吾芳馨</div>
       </div>
-      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full main opened">
+      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full container-main opened">
         <div class="container">
           <slot />
         </div>
@@ -100,37 +111,78 @@ import '../style/mobile.scss'
   const toggle: HTMLElement | null = document.getElementById('toggle')
   if (toggle) {
     toggle.addEventListener('click', () => {
-      const asider = document.querySelector('.asider')
-      const main = document.querySelector('.main')
-      const main2 = document.querySelector('.main2')
+      const mobileMenu = document.querySelector('.mobile-menu')
+      const containerMain = document.querySelector('.container-main')
+      const headerNavbar = document.querySelector('.header-navbar')
 
       // 切换左侧边栏和右侧主区域的 opened 类
-      asider?.classList.toggle('opened-pc')
-      main?.classList.toggle('opened-mobile')
-      main2?.classList.toggle('opened-mobile')
+      mobileMenu?.classList.toggle('opened-pc')
+      containerMain?.classList.toggle('opened-mobile')
+      headerNavbar?.classList.toggle('opened-mobile')
+    })
+  }
+
+  const themeElement: HTMLElement | null = document.getElementById('theme')
+  if (themeElement) {
+    themeElement.addEventListener('click', function () {
+      // 切换主题
+      toggleTheme()
+    })
+   
+  }
+
+  let theme = 'light'
+
+  const toggleTheme = () => {
+    // 切换主题
+    theme = theme === 'light' ? 'dark' : 'light'
+
+    const htmlElement = document.documentElement
+    htmlElement.setAttribute('data-theme', theme)
+
+    // 更新图标样式
+    const themeElement = document.getElementById('theme')
+    if (themeElement) {
+      const iconElement = themeElement.querySelector('i')
+      if (iconElement) {
+        iconElement.classList.toggle('icon-sun')
+        iconElement.classList.toggle('icon-moon')
+      }
+    }
+
+    // 更新其他需要切换主题的元素样式
+    const darkElements = document.querySelectorAll('.dark')
+    darkElements.forEach((element) => {
+      element.classList.toggle('light')
+      element.classList.toggle('dark')
     })
   }
 </script>
 
 <style>
-  .my-sticky-element {
+  .nav-view {
     position: fixed;
     top: 0;
     order: 1;
     flex-shrink: 0;
     margin-right: 1.236rem;
   }
+
   .active {
     color: #0088f5;
   }
+
   .md {
     margin-left: 13rem;
     margin-right: 1rem;
   }
+
   a {
     text-decoration: underline;
   }
-  .dark {
+
+  /* 深色样式 */
+  .theme-dark {
     color: #999;
     font-size: 16px;
     font-weight: 300;

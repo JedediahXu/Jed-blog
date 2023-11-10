@@ -14,15 +14,17 @@ $primary: var(--primary-color);
 $primary-lighter: var(--primary-color-lighter);
 $primary-translucent: var(--primary-color-translucent);
 
-$module-bg-darker-1: #E8E8E8;
+$module-bg-darker-1: var(--module-bg-darker-1);
 $module-bg-darker-2: var(--module-bg-darker-2);
 $module-bg-darker-3: var(--module-bg-darker-3);
 $module-bg-darker-4: var(--module-bg-darker-4);
 $module-bg-darker-5: var(--module-bg-darker-5);
 
 $module-bg: var(--module-bg);
-$module-bg-opaque: #eebbeeee;
+$module-bg-opaque: var(--module-bg-darker-1);
+$module-bg-calendar: var(--module-bg-calendar);
 $module-bg-ashen: #ffeeee;
+$module-bg-lighter: var(--module-bg-lighter);
 $module-bg-lighter: var(--module-bg-lighter);
 $module-bg-translucent: var(--module-bg-translucent);
 $module-bg-hover: $module-bg-darker-2;
@@ -35,6 +37,10 @@ $text-secondary: var(--text-secondary);
 $text-disabled: var(--text-disabled);
 $text-divider: var(--text-divider);
 $text-reversal: var(--text-reversal);
+$code-highlight:var(--code-highlight);
+$code-danger:var(--code-danger);
+$code-calendar-day:var(--code-calendar-day);
+
 
 // link colors
 $link-color: var(--link-color);
@@ -43,12 +49,17 @@ $link-hover: var(--link-hover);
 // colors
 $surmon: #0088f5;
 $accent: #4caf50;
+$danger:#f85959;
+$pink-day:#eebbeeee;
+$pink:#fee;
 $red: #ff5722;
 $yellow: #ffeb3b;
 $grey: #c0c0c0;
 $white: #ffffff;
 $black: #000000;
 $mobile-aside-bg: #34393d;
+$highlight:rgba(255, 255, 255, 0.08);
+
 
 // gap
 $gap: 1rem; // ~12px
@@ -107,8 +118,8 @@ $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $font-family-normal: SpecialSymbol, DINRegular, $font-family-base;
 
 // typography
-$font-size-root: 12px;
-$font-size-base: 14px;
+$font-size-root: 13px;
+$font-size-base: 16px;
 $font-size-large: $font-size-base * 1.25; // 17.5px
 $font-size-small: $font-size-base * 0.888; // 12.4px
 

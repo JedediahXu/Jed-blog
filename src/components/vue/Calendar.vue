@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import { dateToHuman } from "/src/utils/moment.ts";
-import { humanDateToYMD } from '/src/utils/moment.ts';
+import { humanDateToYMD } from "/src/utils/moment.ts";
 import CalendarDay from "./Oneday.vue";
 import { data } from "../../data/calendar";
 import { article } from "../../data/article";
@@ -31,7 +31,6 @@ const articleContributionsMap = computed(() => {
   }
   return contributionsMap;
 });
-
 
 const getDayContributions = (date: string) => {
   return githubContributionsMap.value.get(date)?.count || 0;
@@ -97,7 +96,7 @@ const months = [
 .calendar {
   border-radius: $lg-radius;
   padding: 0.8rem;
-  background-color: $module-bg-ashen;
+  background-color: $module-bg-calendar;
   transition: background-color 0.25s;
 }
 
@@ -107,7 +106,7 @@ const months = [
   }
 }
 
-@media(min-width: 1000px) and  (max-width: 1600px) {
+@media (min-width: 1000px) and (max-width: 1600px) {
   .calendar {
     width: 630px;
   }

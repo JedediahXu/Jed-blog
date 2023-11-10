@@ -81,7 +81,7 @@ const displayPhoto = (i: number) => {
           </button>
         </div>
       </div>
-      <div class="legends be-with">
+      <div class="legends hide-map-menu">
         <div class="current-location" @click="displayCurrentLocation">
           <i class="iconfont icon-location"></i>
           <span class="text">苟活于此，代码为伴</span>
