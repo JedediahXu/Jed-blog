@@ -105,20 +105,20 @@
   line-height: 2;
 }
 
-@media (max-width: 1025px) {
-  .my-sticky-element {
-    position: inherit;
+.markdown-width {
+  max-width: 72ch;
+}
+
+/* 适用于一些 WebKit 内核的浏览器 */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .markdown-width {
+    max-width: 72ch !important;
   }
-  .md {
-    margin-left: 0;
-  }
-  .c-hidden {
-    display: none;
-  }
-  .calendar {
-    width: auto;
-  }
-  .ml-6{
-    margin-left: 0.1rem;
+}
+
+/* 适用于 Firefox 浏览器 */
+@-moz-document url-prefix() {
+  .markdown-width {
+    max-width: 65ch !important;
   }
 }

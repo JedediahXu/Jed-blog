@@ -2,20 +2,22 @@
 import BaseLayout from './BaseLayout.astro'
 import avatar from '../images/avatar.jpg'
 import config from '../config'
+import '../style/mobile.scss'
 ---
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
-      <div class="sm:px-10 lg:mt-10 py-20 my-sticky-element">
+      <!-- PC -->
+      <div class="sm:px-10 lg:mt-10 py-20 hidden-pc my-sticky-element">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
             <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
           </div>
-          <div>
+          <div class="mediate">
             <h1 class="font-bold text-2xl">{config.name}</h1>
+            <div class="dark">{config.signature}</div>
           </div>
-          <div class="dark">{config.signature}</div>
 
           <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
             {
@@ -35,23 +37,80 @@ import config from '../config'
               })
             }
           </div>
-
-          <div class="text-slate-500 text-sm">
+          <div class="text-slate-500 text-sm mediate">
             Blog since {config.since}
           </div>
         </div>
       </div>
-      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full">
-        <div>
+
+      <!-- 手机端 -->
+      <div class="sm:px-10 lg:mt-10 py-20 hidden-mobile asider opened">
+        <div class="sticky top-5 flex flex-col gap-4">
+          <div class="mediate">
+            <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
+              <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
+            </div>
+            <h1 class="font-bold text-2xl font-name">{config.name}</h1>
+            <div class="dark">{config.signature}</div>
+          </div>
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto webfont">
+            {
+              config.navs.map((nav) => {
+                const { pathname } = Astro.url
+                const trimmedPathname = pathname === '/' ? pathname : pathname.replace(/\/$/, '')
+                const isActive = trimmedPathname === nav.url
+                return (
+                  <a
+                    href={nav.url}
+                    class:list={isActive ? 'active' : ''}
+                    rel={nav.url.startsWith('http') ? 'noopener' : undefined}
+                  >
+                    {nav.title}
+                  </a>
+                )
+              })
+            }
+          </div>
+          <div class="text-slate-500 text-sm mediate">
+            Blog since {config.since}
+          </div>
+        </div>
+      </div>
+
+      
+    
+      <div class="toggle hidden-mobile main2">
+        <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
+        <div class="header-slogan">斯是陋室，唯吾芳馨</div>
+      </div>
+      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full main opened">
+        <div class="container">
           <slot />
         </div>
       </div>
-      <div class="pb-10">
+
+      <div class="pb-10 hidden-pc">
         <slot name="catalogue" />
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const toggle: HTMLElement | null = document.getElementById('toggle')
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const asider = document.querySelector('.asider')
+      const main = document.querySelector('.main')
+      const main2 = document.querySelector('.main2')
+
+      // 切换左侧边栏和右侧主区域的 opened 类
+      asider?.classList.toggle('opened-pc')
+      main?.classList.toggle('opened-mobile')
+      main2?.classList.toggle('opened-mobile')
+    })
+  }
+</script>
 
 <style>
   .my-sticky-element {
@@ -76,14 +135,5 @@ import config from '../config'
     font-size: 16px;
     font-weight: 300;
     margin: 10px 0 5px;
-  }
-
-  @media (max-width: 1025px) {
-    .my-sticky-element {
-      position: inherit;
-    }
-    .md {
-      margin-left: 0;
-    }
   }
 </style>
