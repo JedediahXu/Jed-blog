@@ -20,12 +20,26 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  // opacity: 0.12;
-  // background: url("/src/images/background.png") !important;
+  opacity: 0.12;
+  background: url("/src/images/background.png") !important;
 }
 
 .prose-width {
   max-width: 110ch !important;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    line-height: 35px;
+    display: flex;
+  }
+
+  a {
+    color: #2e9fff;
+  }
+  svg {
+    color: #2e9fff;
+  }
 }
 
 .home {

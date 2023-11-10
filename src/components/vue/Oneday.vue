@@ -158,7 +158,7 @@ const getPointHeightStyle = (value: number) => {
 
       .item {
         line-height: 1.8em;
-        font-size: $font-size-small;
+        font-size: 13px;
         &.article {
           color: #f8981d;
           /* A token to indicate that twitter is no longer supported */

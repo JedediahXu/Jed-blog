@@ -34,30 +34,70 @@ console.log(contacts)
 
 <Home title="关于我">
   <div class="mx-auto mb-6 text-sm">
-    <h1 class="text-xl font-medium mb-4">关于我</h1>
+    <h1 class="text-xl font-medium mb-4 mt-2">关于我</h1>
     <div class="prose-width">
-      <p>
-        {config.ego}
-      </p>
+      <span> 👋 你好, 我是JedXu, 目前居住在中国山东济南</span>
+      <span>
+        🌐 本站是我用Astro实现的
+      </span>
+      <span>
+        💻 我是一名前端工程师, 我的主要技术栈包括Vue, React, TypeScript, Tailwindcss和Vite
+      </span>
+      <span> 🏅 我的长期目标是创造自己的产品</span>
+      <span> 🍻 在我的空闲时间，我喜欢探索各种美食，打篮球，爬山以及看一些娱乐视频</span>
+      <span>
+        🔮 你可以在<a href="https://github.com/JedediahXu" target="_blank">Github</a><svg
+          aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          shape-rendering="geometricPrecision"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="1em"
+          class="flex mx-1 text-current self-center"
+          ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"
+          ></path><path d="M10 14L21 3"></path></svg
+        >和 <a href="https://juejin.cn/user/3685218709411085" target="_blank">Juejin</a><svg
+          aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          shape-rendering="geometricPrecision"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="1em"
+          class="flex mx-1 text-current self-center"
+          ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"
+          ></path><path d="M10 14L21 3"></path></svg
+        >上看到更多我的新闻。
+      </span>
+      <div class="flex gap-4 mb-4 mt-4">
+        {
+          contacts.map((contact) => {
+            return (
+              <a target="_blank" href={contact.url}>
+                <img
+                  src={contact.icon.src}
+                  width={contact.icon.width}
+                  height={contact.icon.height}
+                  alt={contact.title}
+                  class="w-6 h-6"
+                />
+              </a>
+            )
+          })
+        }
+      </div>
     </div>
-    <div class="mt-5 font-bold text-md">{config.friend}</div>
-    <div class="flex gap-4 mb-4 mt-4">
-      {
-        contacts.map((contact) => {
-          return (
-            <a target="_blank" href={contact.url}>
-              <img
-                src={contact.icon.src}
-                width={contact.icon.width}
-                height={contact.icon.height}
-                alt={contact.title}
-                class="w-6 h-6"
-              />
-            </a>
-          )
-        })
-      }
-    </div>
+    <div class="mt-2 font-bold text-md">{config.friend}</div>
+
     <img src={wx.src} width={wx.width} height={wx.height} class="w-48 h-48 mt-3" alt="微信" />
   </div>
 
@@ -85,7 +125,7 @@ console.log(contacts)
 <style>
   .footer-links {
     display: flex;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
     transition: background-color 0.25s;
     border-radius: 6px;
   }
