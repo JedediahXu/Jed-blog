@@ -24,11 +24,11 @@ categories:
 
 首先,如果一个软件开发团队没有前端基建都会遇到什么问题？（下图为GPT的回答）
 
-![不使用.jpg](../../../Img/不使用.jpg)
+![不使用.jpg](https://chetxu.chetserenade.info/article/%E4%B8%8D%E4%BD%BF%E7%94%A8.jpg)
 
 再看一下,前端基建的好处？（下图为GPT的回答）
 
-![使用.jpg](../../../Img/使用.jpg)
+![使用.jpg](https://chetxu.chetserenade.info/article/%E4%BD%BF%E7%94%A8.jpg)
 
 那我们如何去做好前端基建那？很显然,我们需要知道一个成熟的`前端基础建设`是什么样子的。其实呢？没有一个明确的标准,而且公司业务不同,前端的技术栈,基建等都会不同。这里我们需要结合我们公司现有的一些产品去做基建。
 
@@ -36,7 +36,7 @@ categories:
 
 先来看一组结合我们目前现状 所构想出来的图表：
 
-![系统架构图.png](../../../Img/系统架构图.png)
+![系统架构图.png](https://chetxu.chetserenade.info/article/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 ### 规范层
 
@@ -67,13 +67,13 @@ categories:
 **脚手架：**  身为前端开发人员,脚手架肯定十分熟悉,通过像Vue、React、Nuxt、Next这些官方的脚手架,我们可以很轻松的建议有意义最基础的前端项目代码（一行代码、然后选配置既可以）但是随着我们业务的迭代、业务场景的频繁切换,我们可能需要在这些基础的模板中进行长久的沉淀。
 
 下面是一些场景的模板：
-![总.png](../../../Img/总.png)
+![总.png](https://chetxu.chetserenade.info/article/%E6%80%BB.png)
 
 > 前端脚手架
 
 上面,我们讲了前端项目模版,那如何更好的去管理模版呢？答案就是脚手架,假如没有脚手架,我们很可能是直接将模版代码放在一个单独的仓库中,每次开启一个新项目,就clone到本地,然后在copy一份出来,这样虽然也可以做,但是脚手架可以通过命令更好更快捷的帮助我们去管理项目模版,以及进行项目初始化等等操作。
 
-![脚手架.png](../../../Img/脚手架.png)
+![脚手架.png](https://chetxu.chetserenade.info/article/%E8%84%9A%E6%89%8B%E6%9E%B6.png)
 
 脚手架的技术栈和传统的前端项目的技术栈有所不同,上面图中也有说到,底层依赖`Node`,`Lerna`,`Yargs`等
 
@@ -166,13 +166,13 @@ Snippet库 效果：
 
 ### 概览
 
-![概览.png](../../../Img/概览.png)
+![概览.png](https://chetxu.chetserenade.info/article/%E6%A6%82%E8%A7%88.png)
 
 ## 四、实现方案
 
 **物料实现方案:**
 
-![物料.png](../../../Img/物料.png)
+![物料.png](https://chetxu.chetserenade.info/article/%E7%89%A9%E6%96%99.png)
 
 **概念：**
 
@@ -183,7 +183,7 @@ Snippet库 效果：
 
 **流程图：**
 
-![流程.png](../../../Img/流程.png)
+![流程.png](https://chetxu.chetserenade.info/article/%E6%B5%81%E7%A8%8B.png)
 
 不同团队将通过物料和文档系统作为协作渠道,也作为跨团队交流的基础。当业务团队有新需求时,他们会首先检查物料库,看是否存在现有的业务组件或解决方案可供使用。如果有可用资源,他们将直接采用,否则会考虑重新开发,并评估是否将其纳入物料平台。这一模式有助于促进个人成长和团队知识积累,也更符合软件团队的实际需求。
 
@@ -199,7 +199,7 @@ Snippet库 效果：
 #### 关于新框架
 
 **目前新框架结构图**:
-![vue前端.png](../../../Img/vue前端.png)
+![vue前端.png](https://chetxu.chetserenade.info/article/vue%E5%89%8D%E7%AB%AF.png)
 
 - **产品升级V2迁移：**
 
@@ -213,7 +213,7 @@ Snippet库 效果：
 
 ## 五、总结
 
-![xu.png](../../../Img/xu.png)
+![xu.png](https://chetxu.chetserenade.info/article/xu.png)
 
   **技术的价值在于解决业务问题**：
 

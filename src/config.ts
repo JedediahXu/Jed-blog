@@ -18,12 +18,12 @@ export default {
       url: '/article'
     },
     {
-      title: 'About me',
-      url: '/aboutme'
-    },
-    {
       title: 'Life track',
       url: '/friendlylink'
+    },
+    {
+      title: 'About me',
+      url: '/aboutme'
     },
     {
       title: 'Life album',
