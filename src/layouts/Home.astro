@@ -121,10 +121,10 @@ import config from '../config'
     const isDark = element.getAttribute('data-theme') === 'dark'
 
     // Switch topic
-    element.setAttribute('data-theme', isDark ? 'light' : 'dark')
+    element.setAttribute('data-theme', isDark ? 'light' : 'light')
 
     // Save the theme selection to local storage
-    localStorage.setItem('theme', isDark ? 'light' : 'dark')
+    localStorage.setItem('theme', isDark ? 'light' : 'light')
   }
 
   const handleToggleClick = () => {
@@ -179,7 +179,7 @@ import config from '../config'
   }
 
   if (themeElementMobile !== null) {
-    // themeElementMobile.addEventListener('click', handleToggleClick)
+    themeElementMobile.addEventListener('click', handleToggleClick)
   } else {
     console.error('未找到 ID 为 "theme" 的元素')
   }
