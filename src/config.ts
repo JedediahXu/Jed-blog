@@ -47,5 +47,9 @@ export default {
         label: 'Liuzepeng',
         link: 'https://www.liuzepeng.com',
       },
+      {
+        label: 'evex.one',
+        link: 'https://evex.one/',
+      },
   ]
 }
