@@ -8,7 +8,8 @@
     @include appLightTheme();
   }
   &[data-theme='dark'] {
-    @include appDarkTheme();
+    //  appDarkTheme();
+    @include appLightTheme();
   }
 
   // device
