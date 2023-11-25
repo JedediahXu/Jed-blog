@@ -146,24 +146,6 @@ export  const data = {
       href: "https://chetxu.chetserenade.info/JedXu/11981694758899_.pic_hd.jpg",
     },
     {
-      label: "过年",
-      time: "2022/2/01",
-      size: {
-        width: 0,
-        height: 0,
-      },
-      href: "https://chetxu.chetserenade.info/JedXu/IMG_2644.JPG",
-    },
-    {
-      label: "淄博碧桂园",
-      time: "2021/12/08",
-      size: {
-        width: 0,
-        height: 0,
-      },
-      href: "https://chetxu.chetserenade.info/JedXu/11921694758831_.pic_hd.jpg",
-    },
-    {
       label: "周村孝妇河",
       time: "2021/10/20",
       size: {
