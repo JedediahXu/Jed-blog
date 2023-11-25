@@ -1,7 +1,7 @@
 ---
 title:   👨‍💻 函数式编程
 layout: '../../layouts/Post.astro'
-date: 2023-8-20
+date: 2023-08-20
 tags: blog
 pin: false∑
 quantity: 2400

@@ -1,7 +1,7 @@
 ---
 title:   🥷 通往计算机世界的地图
 layout: '../../layouts/Post.astro'
-date: 2022-03-02
+date: 2021-03-02
 tags: blog
 pin: false
 quantity: 7900

@@ -18,16 +18,16 @@ export default {
       url: '/article'
     },
     {
-      title: 'Life track',
-      url: '/friendlylink'
-    },
-    {
       title: 'About me',
       url: '/aboutme'
     },
     {
       title: 'Life album',
       url: '/photo'
+    },
+    {
+      title: 'Life track',
+      url: '/friendlylink'
     },
     {
       title: 'RSS',

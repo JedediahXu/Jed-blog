@@ -1,7 +1,7 @@
 ---
 title:  ✨ 前端工程化
 layout: "../../layouts/Post.astro"
-date: 2022-12-22
+date: 2022-03-22
 tags: blog
 pin: true
 quantity: 1400

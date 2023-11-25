@@ -1,7 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro'
-import avatar from '../images/avatar.jpg'
 import config from '../config'
+
+let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
 ---
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
@@ -11,7 +12,7 @@ import config from '../config'
       <div class="sm:px-10 lg:mt-10 py-20 hidden-pc nav-view">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
-            <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
+            <img src={avatar}  alt="头像" />
           </div>
           <div class="mediate">
             <h1 class="font-bold text-2xl">{config.name}</h1>
@@ -54,7 +55,7 @@ import config from '../config'
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="mediate">
             <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
-              <img src={avatar.src} width={avatar.width} height={avatar.height} alt="头像" />
+              <img src={avatar} alt="头像" />
             </div>
             <h1 class="font-bold text-2xl font-name">{config.name}</h1>
             <div class="theme-dark">
@@ -92,7 +93,7 @@ import config from '../config'
 
       <div class="toggle hidden-mobile header-navbar">
         <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
-        <div class="header-slogan">斯是陋室，唯吾芳馨</div>
+        <div class="header-slogan">Front end</div>
       </div>
       <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full container-main opened">
         <div class="container">
