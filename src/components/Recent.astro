@@ -2,8 +2,10 @@
 const codingPosts = await Astro.glob('../pages/coding/*.md')
 const blogPosts = await Astro.glob('../pages/blog/*.md')
 
+const reship = await Astro.glob('../pages/reship/*.md')
+
 // 合并 coding 和 blog 文章
-const allPosts = [...codingPosts, ...blogPosts]
+const allPosts = [...codingPosts, ...blogPosts,...reship]
 
 // 将所有文章按日期排序
 allPosts.sort((a, b) => {

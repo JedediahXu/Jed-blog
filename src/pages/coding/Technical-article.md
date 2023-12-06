@@ -1,5 +1,5 @@
 ---
-title: 🌸  Vue3-Setup介绍
+title: 🌸  Vue Setup语法简介与最佳实践
 layout: '../../layouts/Post.astro'
 date: 2022-05-02
 tags: blog
