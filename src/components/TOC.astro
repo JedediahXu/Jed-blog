@@ -88,7 +88,7 @@ function convertToChineseTime(timeString: string) {
     <div class="anchor sticky-module fixed sm:px-10 lg:mt-28 lg:inline-block w-60 catalogue">
       <button class="header" title="高高山上走">
         <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
-        {frontmatter.title && frontmatter.language && frontmatter.quantity ? (
+        {frontmatter.title && frontmatter.language  ? (
           <div class="read">
             {frontmatter.language}，共 {minutesRead.words} 字，需阅读 {convertToChineseTime(minutesRead.text)}
           </div>
