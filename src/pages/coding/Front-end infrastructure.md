@@ -4,7 +4,6 @@ layout: '../../layouts/Post.astro'
 date: 2023-09-16
 tags: blog
 pin: true
-quantity: 1300
 language: 中文
 categories:
   - 编程

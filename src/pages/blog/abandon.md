@@ -4,7 +4,6 @@ layout: '../../layouts/Post.astro'
 date: 2023-08-07
 tags: blog
 pin: false
-quantity: 500
 language: 中文
 categories:
   - 生活

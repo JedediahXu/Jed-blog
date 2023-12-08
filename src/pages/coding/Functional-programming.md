@@ -3,8 +3,7 @@ title:   👨‍💻 函数式编程
 layout: '../../layouts/Post.astro'
 date: 2023-08-20
 tags: blog
-pin: false∑
-quantity: 2400
+pin: false
 language: 中文
 categories:
   - 编程

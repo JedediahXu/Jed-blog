@@ -90,7 +90,7 @@ function convertToChineseTime(timeString: string) {
         <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
         {frontmatter.title && frontmatter.language && frontmatter.quantity ? (
           <div class="read">
-            {frontmatter.language}，共 {frontmatter.quantity} 字，需阅读 {convertToChineseTime(minutesRead)}
+            {frontmatter.language}，共 {minutesRead.words} 字，需阅读 {convertToChineseTime(minutesRead.text)}
           </div>
         ) : null}
       </button>

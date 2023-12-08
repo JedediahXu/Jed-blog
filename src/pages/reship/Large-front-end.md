@@ -4,7 +4,6 @@ layout: '../../layouts/Post.astro'
 date: 2021-08-20
 tags: blog
 pin: true
-quantity: 21,000
 language: 中文
 categories:
   - 转载

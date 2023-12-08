@@ -1,10 +1,9 @@
 ---
-title: 🌸  Vue Setup语法简介与最佳实践
+title: 🌸  Vue Setup简介与实践
 layout: '../../layouts/Post.astro'
 date: 2022-05-02
 tags: blog
 pin: false
-quantity: 3400
 language: 中文
 categories:
   - 编程
