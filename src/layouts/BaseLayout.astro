@@ -35,12 +35,39 @@ import '../style/app.scss'
     </script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <script>
+      document.addEventListener('copy', function (event: ClipboardEvent) {
+
+        let selection = window.getSelection()
+
+        if (selection !== null) {
+          let selectedText = selection.toString()
+          let fixedText =
+            '作者：' +
+            'JedXu' +
+            '\n' +
+            '链接：' +
+            'https://jedxu.info/' +
+            '\n' +
+            '来源：' +
+            'JedXu.info' +
+            '\n' +
+            '著作权归作者所有，商业转载请联系作者获得授权，非商业转载请注明出处。' +
+            '\n'
+          const newText: string = `${selectedText}\n\n${fixedText}`
+          if (event.clipboardData) {
+            event.preventDefault()
+            event.clipboardData.setData('text/plain', newText)
+          }
+
+        }
+      })
+
       document.addEventListener('DOMContentLoaded', function () {
-        var markdownBody = document.getElementById('markdown-body')
+        let markdownBody = document.getElementById('markdown-body')
         if (markdownBody) {
-          var links = markdownBody.querySelectorAll('a')
-          for (var i = 0; i < links.length; i++) {
-            var link = links[i]
+          let links = markdownBody.querySelectorAll('a')
+          for (let i = 0; i < links.length; i++) {
+            let link = links[i]
             if (link.getAttribute('target') !== '_blank') {
               link.setAttribute('target', '_blank')
             }
