@@ -1,43 +1,16 @@
-# Astro Starter Kit: Minimal
+# Jed's log
 
-```
-npm create astro@latest -- --template minimal
-```
+A minimalist personal blog
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Stack:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Typescript**: 类型化javascript以获得更好的工具
+- **Tailwind CSS**: 实用优先的CSS框架
+- **Vue3**: 部分采用了Vue3组件形式
+- **Mapbox**: 地图展示
 
-## 🚀 Project Structure
+## Plan Todo:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **UI**: 更好看的UI样式（简约风格）
+- **Dark mode**: 在明暗模式之间切换
+- **Responsive**: 手机端良好的设计
