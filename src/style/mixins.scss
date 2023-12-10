@@ -69,12 +69,12 @@
 
 /// Box shadow
 @mixin box-shadow($alpha: 0.6, $blur-radius: 8px) {
-  box-shadow: rgba($black, $alpha) 0px 0px $blur-radius;
+  box-shadow: rgba(#000000, $alpha) 0px 0px $blur-radius;
 }
 
 /// Box shadow
 @mixin drop-shadow($alpha: 0.6, $blur-radius: 1px) {
-  filter: drop-shadow(0px 0px $blur-radius rgba($black, $alpha));
+  filter: drop-shadow(0px 0px $blur-radius rgba(#000000, $alpha));
 }
 
 /// Title shadow
@@ -83,8 +83,8 @@
   color: $text-color;
   text-shadow:
     0px 0px 0px $text-color,
-    0px 0px 2px rgba($black, 0.6),
-    0px 0px 4px rgba($black, 0.6);
+    0px 0px 2px rgba(#000000, 0.6),
+    0px 0px 4px rgba(#000000, 0.6);
 }
 
 /// General module background
@@ -97,29 +97,29 @@
 }
 
 /// Transform transition
-@mixin transform-transition($time: $transition-time-fast) {
+@mixin transform-transition($time: 0.1s) {
   transition: transform $time;
 }
 
 /// Visibility transition
-@mixin visibility-transition($time: $transition-time-fast) {
+@mixin visibility-transition($time: 0.1s) {
   transition:
     opacity $time,
     visibility $time;
 }
 
 /// Color transition
-@mixin color-transition($time: $transition-time-fast) {
+@mixin color-transition($time: 0.1s) {
   transition: color $time;
 }
 
 /// BackgroundColor transition
-@mixin background-transition($time: $transition-time-fast) {
+@mixin background-transition($time: 0.1s) {
   transition: background-color $time;
 }
 
 /// Filter transition
-@mixin filter-transition($time: $transition-time-fast) {
+@mixin filter-transition($time: 0.1s) {
   transition: filter $time;
 }
 
@@ -142,10 +142,10 @@
 /// @param {ThumbBackgroundColor} $thumb-bg
 /// @param {ThumbBackgroundColorHover} $thumb-bg-hover
 @mixin scrollbar-style(
-  $size: $sm-gap,
-  $bg: $white,
-  $thumb-bg: darken($white, 18%),
-  $thumb-bg-hover: darken($white, 26%)
+  $size: 8px,
+  $bg: #ffffff,
+  $thumb-bg: darken(#ffffff, 18%),
+  $thumb-bg-hover: darken(#ffffff, 26%)
 ) {
   ::-webkit-scrollbar {
     width: $size;
@@ -175,13 +175,12 @@
     content: attr(placeholder);
     position: absolute;
     text-align: center;
-    font-size: $font-size-h1;
     font-weight: bold;
-    color: $text-divider;
+    color: rgba(#000, 0.68);
     top: 50%;
     left: 50%;
     width: 100%;
-    z-index: $z-index-underground;
+    z-index: -1;
     letter-spacing: 0.2em;
     transform: translate(-50%, -50%);
   }
@@ -191,15 +190,3 @@
   @include center-placeholder;
 }
 
-/// https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-snap-type
-@mixin scroll-snap-y() {
-  scroll-snap-type: y mandatory;
-}
-
-@mixin scroll-snap-x() {
-  scroll-snap-type: x mandatory;
-}
-
-@mixin scroll-snap-item() {
-  scroll-snap-align: start;
-}

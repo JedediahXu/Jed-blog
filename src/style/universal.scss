@@ -14,23 +14,21 @@ body {
   position: relative !important;
   // Forefox: https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
   scrollbar-width: thin;
+
+  @include scrollbar-style(
+    $size: 12px,
+    $bg: $module-bg,
+    $thumb-bg: #444,
+    $thumb-bg-hover: $module-bg-darker-3
+  );
 }
 
 @include scrollbar-style(
-  $size: $sm-gap,
+  $size: 8px,
   $bg: $module-bg,
   $thumb-bg: $module-bg-darker-3,
   $thumb-bg-hover: $module-bg-darker-4
 );
-
-body {
-  @include scrollbar-style(
-    $size: $xs-gap,
-    $bg: $module-bg,
-    $thumb-bg: $module-bg-darker-1,
-    $thumb-bg-hover: $module-bg-darker-3
-  );
-}
 
 [hidden],
 [v-cloak] {
@@ -63,14 +61,14 @@ input {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px $white inset;
+  box-shadow: 0 0 0px 1000px #ffffff inset;
 }
 
 ::selection,
 ::-moz-selection,
 ::-webkit-selection {
   background: $primary;
-  color: $text-reversal;
+  color: #444;
 }
 
 .mammon-box {
@@ -96,7 +94,7 @@ select:-webkit-autofill {
 // for page transition
 .page-enter-active,
 .page-leave-active {
-  transition: width 0s, opacity $transition-time-fast * 0.3 linear;
+  transition: width 0s, opacity 0.1s * 0.3 linear;
 }
 .page-enter-from,
 .page-leave-to {

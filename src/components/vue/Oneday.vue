@@ -64,7 +64,6 @@ const getPointHeightStyle = (value: number) => {
 </template>
 
 <style lang="scss" scoped>
-@import "../../style/variables";
 @import "../../style/mixins";
 
 
@@ -77,19 +76,19 @@ const getPointHeightStyle = (value: number) => {
   border-radius: $radius;
   background-color: rgba(238, 187, 238, .9333333333);
   &.dark {
-    background-color: $module-bg-darker-1;
+    background-color: #444;
     .point {
       filter: brightness(86%);
     }
     .tooltip {
-      color: $text-reversal;
-      #{--background}: rgba($white, 0.9);
+      color: #444;
+      #{--background}: rgba(#ffffff, 0.9);
     }
   }
 
   &:not([data-total-count="0"]) {
     &:hover {
-      outline: 1px solid $theme-black;
+      outline: 1px solid #000;
     }
     .point:hover {
       & + .tooltip {
@@ -118,18 +117,18 @@ const getPointHeightStyle = (value: number) => {
   }
 
   .tooltip {
-    #{--background}: rgba($black, 0.9);
+    #{--background}: rgba(#000000, 0.9);
     position: absolute;
     left: 22px;
     top: 0;
     transform: translateY(-50%);
     white-space: nowrap;
-    z-index: $z-index-normal + 1;
-    padding: $sm-gap $gap;
-    padding-right: $lg-gap;
+    z-index:  0 + 1;
+    padding: 8px 1rem;
+    padding-right: 1rem;
     background-color: var(--background);
-    border-radius: $sm-radius;
-    color: $text-reversal;
+    border-radius: 4px;
+    color: #444;
     @include hidden();
     &::before {
       $size: 4px;
@@ -148,7 +147,7 @@ const getPointHeightStyle = (value: number) => {
     .date {
       color: #fff;
       font-weight: bold;
-      margin-bottom: $xs-gap;
+      margin-bottom: 4px;
     }
 
     .counts {
@@ -176,7 +175,7 @@ const getPointHeightStyle = (value: number) => {
         }
 
         .count {
-          margin-left: $sm-gap;
+          margin-left: 8px;
           font-weight: bold;
         }
       }

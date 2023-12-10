@@ -1,3 +1,5 @@
+// font-display: https://developer.mozilla.org/zh-cn/docs/Web/CSS/@font-face/font-display
+
 @font-face {
   font-family: "iconfont";
 
@@ -6,6 +8,27 @@
     url("//at.alicdn.com/t/c/font_64825_p79jvio1bx.woff?t=1691503777660") format("woff"),
     url("//at.alicdn.com/t/c/font_64825_p79jvio1bx.ttf?t=1691503777660") format("truetype");
 }
+
+
+@font-face {
+  font-family: SpecialSymbol;
+  src: local('PingFang SC'), local('Microsoft Yahei');
+  unicode-range: U+02C2, U+02C3, U+003C, U+003E, U+3009;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Monda;
+  src: url('/public/fonts/Monda-Regular.ttf');
+  unicode-range: U+21-3B, U+3D, U+3F-5F, U+61-7D;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SFMono-Regular';
+  src: url('/public/fonts/SFMonoRegular.otf') format('opentype');
+}
+
 
 .iconfont {
   font-family: "iconfont" !important;

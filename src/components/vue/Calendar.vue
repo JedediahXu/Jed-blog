@@ -90,11 +90,10 @@ const months = [
 </template>
 
 <style lang="scss" scoped>
-@import "../../style/variables";
 @import "../../style/mixins";
 
 .calendar {
-  border-radius: $lg-radius;
+  border-radius: 4px;
   padding: 0.8rem;
   background-color: #fee;
   transition: background-color 0.25s;
