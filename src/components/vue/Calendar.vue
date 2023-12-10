@@ -96,7 +96,7 @@ const months = [
 .calendar {
   border-radius: $lg-radius;
   padding: 0.8rem;
-  background-color: $module-bg-calendar;
+  background-color: #fee;
   transition: background-color 0.25s;
 }
 

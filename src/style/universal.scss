@@ -1,30 +1,6 @@
 @import './theme.scss';
 @import './variables.scss';
 
-:root {
-  background-color: $body-bg;
-  // theme
-  &[data-theme='light'] {
-    @include appLightTheme();
-  }
-  &[data-theme='dark'] {
-    //  appDarkTheme();
-    @include appLightTheme();
-  }
-
-  // device
-  &[data-device='desktop'] {
-    .container {
-      width: $container-width;
-      margin: 0 auto;
-    }
-  }
-  &[data-device='mobile'] {
-    .container {
-      width: 100%;
-    }
-  }
-}
 
 body {
   color: $text;
@@ -33,11 +9,8 @@ body {
   font-family: $font-family-normal;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  // MARK: keep false
-  // scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // WORKAROUND: for Google AdSense layout
   position: relative !important;
   // Forefox: https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
   scrollbar-width: thin;

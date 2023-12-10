@@ -25,10 +25,6 @@ export default {
       title: 'Life album',
       url: '/photo'
     },
-    // {
-    //   title: 'Life track',
-    //   url: '/friendlylink'
-    // },
     {
       title: 'RSS',
       url: '/rss.xml'

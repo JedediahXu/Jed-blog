@@ -75,7 +75,7 @@ const getPointHeightStyle = (value: number) => {
   width: 11px;
   height: 11px;
   border-radius: $radius;
-  background-color: $code-calendar-day;
+  background-color: rgba(238, 187, 238, .9333333333);
   &.dark {
     background-color: $module-bg-darker-1;
     .point {

@@ -1,0 +1,65 @@
+<script>
+  class ThemeToggle extends HTMLElement {
+    #button: HTMLButtonElement | null = null
+    #sunIcon: HTMLElement | null = null
+    #moonIcon: HTMLElement | null = null
+
+    constructor() {
+      super()
+      this.#initializeElements()
+      this.#button!.addEventListener('click', () => this.#toggleTheme())
+    }
+
+    #initializeElements() {
+      this.#button = this.querySelector('button') as HTMLButtonElement
+      this.#sunIcon = this.querySelector('.sun-icon') as HTMLElement
+      this.#moonIcon = this.querySelector('.moon-icon') as HTMLElement
+    }
+
+    #toggleTheme() {
+      const isPressed = this.#button!.getAttribute('aria-pressed') === 'true'
+      this.#dispatchThemeChangeEvent(isPressed ? 'light' : 'dark')
+      this.#updateIconsOpacity(isPressed)
+      this.#button!.setAttribute('aria-pressed', String(!isPressed))
+    }
+
+    #dispatchThemeChangeEvent(theme: string) {
+      const themeChangeEvent = new CustomEvent('theme-change', { detail: { theme } })
+      document.dispatchEvent(themeChangeEvent)
+    }
+
+    #updateIconsOpacity(isPressed: boolean) {
+      this.#sunIcon!.style.opacity = isPressed ? '1' : '0'
+      this.#moonIcon!.style.opacity = isPressed ? '0' : '1'
+    }
+  }
+
+  customElements.define('theme-toggle', ThemeToggle)
+</script>
+
+<script>
+  const button = document.getElementById('toggle-theme') as HTMLButtonElement
+  const sunIcon = document.querySelector('.sun-icon') as HTMLElement
+  const moonIcon = document.querySelector('.moon-icon') as HTMLElement
+
+  function setButtonPressed() {
+    const bodyThemeIsDark = document.documentElement.classList.contains('dark')
+    button.setAttribute('aria-pressed', String(bodyThemeIsDark))
+    sunIcon.style.opacity = bodyThemeIsDark ? '0' : '1'
+    moonIcon.style.opacity = bodyThemeIsDark ? '1' : '0'
+  }
+
+  setButtonPressed()
+</script>
+
+
+<theme-toggle class="relative h-6 w-6">
+  <button id="toggle-theme" class="group">
+    <span class="absolute left-0 right-0 top-0 opacity-0 sun-icon">
+      <i class="iconfont icon-sun"></i>
+    </span>
+    <span class="absolute left-0 right-0 top-0 opacity-0 moon-icon">
+			<i class="iconfont icon-moon"></i>
+    </span>
+  </button>
+</theme-toggle>

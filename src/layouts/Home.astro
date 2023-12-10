@@ -1,27 +1,28 @@
 ---
+import ToggleTheme from '../components/ToggleTheme.astro'
 import BaseLayout from './BaseLayout.astro'
 import config from '../config'
 
-let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
+let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
 ---
 
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
       <!-- PC -->
-      <div class="sm:px-10 lg:mt-10 py-20 hidden-pc nav-view">
+      <div id="pc-container" class="sm:px-10 lg:mt-10 py-20 hidden-pc nav-view">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
-            <img src={avatar}  alt="头像" />
+            <img src={avatar} alt="头像" />
           </div>
           <div class="mediate">
             <h1 class="font-bold text-2xl">{config.name}</h1>
             <div class="theme-dark">
               <div class="flex">
                 <div id="theme">
-                  <i class="iconfont icon-sun"></i>
+                  <ToggleTheme />
                 </div>
-                <span class="ml-3">{config.signature}</span>
+                <span class="ml-6 mt-1">{config.signature}</span>
               </div>
             </div>
           </div>
@@ -51,7 +52,7 @@ let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
       </div>
 
       <!-- Mobile-->
-      <div class="sm:px-10 lg:mt-10 py-20 hidden-mobile mobile-menu opened">
+      <div id="mobile-container" class="sm:px-10 lg:mt-10 py-20 hidden-mobile mobile-menu opened">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="mediate">
             <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
@@ -60,10 +61,10 @@ let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
             <h1 class="font-bold text-2xl font-name">{config.name}</h1>
             <div class="theme-dark">
               <div class="flex">
-                <div id="theme-mobile">
-                  <i class="iconfont icon-sun"></i>
+                <div id="theme">
+                  <ToggleTheme />
                 </div>
-                <span class="ml-3">{config.signature}</span>
+                <span class="ml-6 mt-1" style="margin-left:24px">{config.signature}</span>
               </div>
             </div>
           </div>
@@ -109,41 +110,10 @@ let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
 </BaseLayout>
 
 <script>
-  const toggleButton: HTMLElement | null = document.getElementById('toggle')
-  const themeElement = document.getElementById('theme')
-  const themeElementMobile = document.getElementById('theme-mobile')
+  const toggleButton = document.getElementById('toggle')
   const mobileMenuSelector = '.mobile-menu'
   const containerMainSelector = '.container-main'
   const headerNavbarSelector = '.header-navbar'
-  const themeClass = 'theme-dark'
-
-  const toggleTheme = () => {
-    const element = document.documentElement
-    const isDark = element.getAttribute('data-theme') === 'dark'
-
-    // Switch topic
-    element.setAttribute('data-theme', isDark ? 'light' : 'light')
-
-    // Save the theme selection to local storage
-    localStorage.setItem('theme', isDark ? 'light' : 'light')
-  }
-
-  const handleToggleClick = () => {
-    toggleTheme()
-
-    // Update the ICONS and styles of theme switching elements
-    const updateThemeIcon = (element: HTMLElement | null) => {
-      // @ts-ignore
-      const iconElement = element.querySelector('i')
-      if (iconElement) {
-        iconElement.classList.toggle('icon-sun')
-        iconElement.classList.toggle('icon-moon')
-      }
-    }
-
-    updateThemeIcon(themeElement)
-    updateThemeIcon(themeElementMobile)
-  }
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
@@ -151,39 +121,32 @@ let avatar = "https://chetxu.chetserenade.info/article/avatar.jpg"
       const containerMain = document.querySelector(containerMainSelector)
       const headerNavbar = document.querySelector(headerNavbarSelector)
 
-      // Toggle the opened class in the left sidebar and the right main area
+      // 使用可选链操作符确保元素不为 null
       mobileMenu?.classList.toggle('opened-pc')
       containerMain?.classList.toggle('opened-mobile')
       headerNavbar?.classList.toggle('opened-mobile')
     })
   }
 
-  // Set the theme when the page loads
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })()
+  function toggleView() {
+    const pcContainer = document.getElementById('pc-container')
+    const mobileContainer = document.getElementById('mobile-container')
 
-  // @ts-ignore
-  document.documentElement.setAttribute('data-theme', theme)
-
-  // Toggle event listening for the topic
-  if (themeElement !== null) {
-    themeElement.addEventListener('click', handleToggleClick)
-  } else {
-    console.error('未找到 ID 为 "theme" 的元素')
+    if (pcContainer && mobileContainer) {
+      if (window.innerWidth > 1010) {
+        pcContainer.style.display = 'block'
+        mobileContainer.style.display = 'none'
+        mobileContainer.innerHTML = ''
+      } else {
+        pcContainer.style.display = 'none'
+        mobileContainer.style.display = 'block'
+        pcContainer.innerHTML = ''
+      }
+    }
   }
 
-  if (themeElementMobile !== null) {
-    themeElementMobile.addEventListener('click', handleToggleClick)
-  } else {
-    console.error('未找到 ID 为 "theme" 的元素')
-  }
+  window.addEventListener('resize', toggleView)
+  toggleView()
 </script>
 
 <style>

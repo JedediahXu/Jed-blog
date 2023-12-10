@@ -1,6 +1,4 @@
-/* 大屏幕（宽度大于等于 1010px） */
 @media (min-width: 1010px) {
-  /* PC端可见，移动端隐藏 */
   .hidden-pc {
     display: block !important;
   }
@@ -10,9 +8,7 @@
   }
 }
 
-/* 小屏幕（宽度小于 1010px） */
 @media (max-width: 1010px) {
-  /* PC端隐藏，移动端可见 */
   .hidden-pc {
     display: none !important;
   }

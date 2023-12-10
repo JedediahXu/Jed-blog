@@ -1,8 +1,9 @@
 ---
 import '../style/app.scss'
+import ProviderTheme from '../components/ProviderTheme.astro'
 ---
 
-<html lang="en" data-theme="light">
+<html lang="en" class='scroll-smooth'>
   <head>
     <meta charset="utf-8" />
     <meta name="baidu-site-verification" content="code-XojSSkyEM8" />
@@ -22,10 +23,11 @@ import '../style/app.scss'
       content={Astro.props.ogDescription || 'Jed is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
+    <ProviderTheme />
     <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" /> -->
   </head>
 
-  <body>
+  <body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white w-full h-full'>
     <div id="background">
       <div class="image"></div>
     </div>
