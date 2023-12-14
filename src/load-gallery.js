@@ -14,7 +14,6 @@ lightbox.on('uiRegister', function () {
     isButton: true,
     tagName: 'a',
 
-    // SVG with outline
     html: {
       isCustomSVG: true,
       inner:

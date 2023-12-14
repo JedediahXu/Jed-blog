@@ -1,6 +1,6 @@
 ---
 const posts = await Astro.glob('../pages/coding/*.md')
-// sort post by date
+
 posts.sort((a, b) => {
   //@ts-ignore
   return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)

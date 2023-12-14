@@ -1,6 +1,6 @@
 ---
 title: 🌸  Vue Setup简介与实践
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2022-05-02
 tags: blog
 pin: false

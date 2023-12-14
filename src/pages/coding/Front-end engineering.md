@@ -1,6 +1,6 @@
 ---
 title:  ✨ 前端工程化
-layout: "../../layouts/Post.astro"
+layout: '@/layouts/Post'
 date: 2022-03-22
 tags: blog
 pin: true

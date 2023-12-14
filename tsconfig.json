@@ -2,6 +2,28 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "preserve",
-    "strictNullChecks": true
-  }
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@/components/*": [
+        "src/components/*.astro"
+      ],
+      "@/components/vue/*": [
+        "src/components/vue/*.vue"
+      ],
+      "@/layouts/*": [
+        "src/layouts/*.astro"
+      ],
+      "@/utils/*": [
+        "src/utils/*.ts"
+      ],
+      "@/data/*": [
+        "src/data/*.ts"
+      ],
+      "@/style/*": [
+        "src/style/*.scss"
+      ]
+    }
+  },
 }

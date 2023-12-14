@@ -1,6 +1,6 @@
 ---
 title:  🐝 关于前端性能优化
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2023-04-19
 tags: blog
 pin: true

@@ -1,6 +1,6 @@
 ---
 title:   🌼 前端建设
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2023-09-16
 tags: blog
 pin: true

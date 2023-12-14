@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { dateToHuman } from "/src/utils/moment.ts";
-import { humanDateToYMD } from "/src/utils/moment.ts";
+import { dateToHuman,humanDateToYMD } from "@/utils/moment";
 import CalendarDay from "./Oneday.vue";
-import { data } from "../../data/calendar";
-import { article } from "../../data/article";
+import { data } from "@/data/calendar";
+import { article } from "@/data/article";
 
 const githubContributionsMap = computed(() => {
   const contributionsMap = new Map();
@@ -90,7 +89,7 @@ const months = [
 </template>
 
 <style lang="scss" scoped>
-@import "../../style/mixins";
+@import "@/style/mixins";
 
 .calendar {
   border-radius: 4px;

@@ -1,6 +1,6 @@
 ---
 title:   👨‍💻 函数式编程
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2023-08-20
 tags: blog
 pin: false

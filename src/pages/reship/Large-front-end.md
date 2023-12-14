@@ -1,6 +1,6 @@
 ---
 title:  💻 大前端必备的编译基础原理
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2021-08-20
 tags: blog
 pin: true

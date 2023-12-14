@@ -28,6 +28,6 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "sass": "^1.65.1"
+    "sass": "^1.69.5"
   }
 }

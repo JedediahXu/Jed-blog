@@ -1,11 +1,12 @@
 ---
-import '../style/app.scss'
-import ProviderTheme from '../components/ProviderTheme.astro'
+import '@/style/app'
+import ProviderTheme from '@/components/ProviderTheme'
+import FixedText from '@/components/FixedText'
+import BaiduStatistics from '@/components/BaiduStatistics'
 ---
 
-<html lang="en" class='scroll-smooth'>
+<html lang="en" class="scroll-smooth">
   <head>
-    <ProviderTheme />
     <meta charset="utf-8" />
     <meta name="baidu-site-verification" content="code-XojSSkyEM8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,56 +25,12 @@ import ProviderTheme from '../components/ProviderTheme.astro'
       content={Astro.props.ogDescription || 'Jed is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
+    <ProviderTheme />
   </head>
 
-  <body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white w-full h-full'>
-    <div id="background">
-      <div class="image"></div>
-    </div>
+  <body class="bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white w-full h-full">
     <slot />
-    <script>
-      import '../load-gallery.js'
-    </script>
-    <script>
-      document.addEventListener('copy', function (event: ClipboardEvent) {
-
-        let selection = window.getSelection()
-
-        if (selection !== null) {
-          let selectedText = selection.toString()
-          let fixedText =
-            '作者：' +
-            'JedXu' +
-            '\n' +
-            '链接：' +
-            'https://jedxu.info/' +
-            '\n' +
-            '来源：' +
-            'JedXu.info' +
-            '\n' +
-            '著作权归作者所有，商业转载请联系作者获得授权，非商业转载请注明出处。' +
-            '\n'
-          const newText: string = `${selectedText}\n\n${fixedText}`
-          if (event.clipboardData) {
-            event.preventDefault()
-            event.clipboardData.setData('text/plain', newText)
-          }
-
-        }
-      })
-
-      document.addEventListener('DOMContentLoaded', function () {
-        let markdownBody = document.getElementById('markdown-body')
-        if (markdownBody) {
-          let links = markdownBody.querySelectorAll('a')
-          for (let i = 0; i < links.length; i++) {
-            let link = links[i]
-            if (link.getAttribute('target') !== '_blank') {
-              link.setAttribute('target', '_blank')
-            }
-          }
-        }
-      })
-    </script>
+    <FixedText />
+    <BaiduStatistics />
   </body>
 </html>

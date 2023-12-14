@@ -10,7 +10,6 @@
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
-  color: #000;
 
   h1,
   h2,
@@ -56,8 +55,8 @@
 
   img {
     max-width: 100%;
-    user-select:none;
-    pointer-events:none;
+    user-select: none;
+    pointer-events: none;
   }
 
   hr {
@@ -134,11 +133,10 @@
   }
 
   blockquote {
-    color: #666;
+    background-color:rgba(167, 167, 167, 0.2);
     padding: 1px 20px;
-    margin: 15px 0;
+    margin: 9px 0;
     font-weight: 300;
-    color: #000;
     border-left: 5px solid #cbcbcb;
     &::after {
       display: block;
@@ -209,7 +207,7 @@
       line-height: 2em !important;
       border-radius: 3px !important;
       &:hover {
-        background-color: #444 !important;
+        background-color: rgba(213, 209, 209, 0.5) !important;
       }
 
       > p {
@@ -287,8 +285,8 @@
     img {
       display: block;
       max-width: 100%;
-      user-select:none;
-      pointer-events:none;
+      user-select: none;
+      pointer-events: none;
       padding: 8px;
       color: transparent;
       cursor: pointer;
@@ -311,8 +309,8 @@
       width: auto;
       img {
         min-width: auto;
-        user-select:none;
-        pointer-events:none;
+        user-select: none;
+        pointer-events: none;
         min-height: auto;
       }
     }
@@ -338,7 +336,7 @@
       /* show custom failed icon */
       .placeholder.error {
         visibility: visible;
-        color: rgba(#000, 0.68),
+        color: rgba(#000, 0.68);
       }
       /* hide original image failed icon when error */
       img {

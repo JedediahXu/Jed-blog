@@ -1,6 +1,6 @@
 ---
 title:   🥷 通往计算机世界的地图
-layout: '../../layouts/Post.astro'
+layout: '@/layouts/Post'
 date: 2021-03-02
 tags: blog
 pin: false
