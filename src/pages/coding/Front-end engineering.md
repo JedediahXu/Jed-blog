@@ -7,6 +7,12 @@ pin: true
 language: 中文
 categories:
   - 编程
+label:
+  - 原创
+description:
+  - 工程化即系统化、模块化、规范化的一个过程
+image:
+  - 'https://chetxu.chetserenade.info/uPic/web-javascript.jpg'
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/uPic/web-javascript.jpg)

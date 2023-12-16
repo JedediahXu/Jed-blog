@@ -7,6 +7,12 @@ pin: false
 language: 中文
 categories:
   - 编程
+label:
+  - 原创
+description:
+  - 函数式编程最早起源于数学中的范畴论
+image:
+  - 'https://chetxu.chetserenade.info/uPic/Functional.jpg'
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/uPic/Functional.jpg)

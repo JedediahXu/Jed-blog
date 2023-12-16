@@ -7,6 +7,12 @@ pin: false
 language: 中文
 categories:
   - 生活
+label:
+  - 原创
+description:
+  - 我总在虚度与充实中来回变换，我依旧是三分钟热度
+image:
+  - 'https://chetxu.chetserenade.info/JedXu/think-deeply.jpg'
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/JedXu/think-deeply.jpg)

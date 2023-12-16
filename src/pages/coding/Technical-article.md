@@ -7,7 +7,14 @@ pin: false
 language: 中文
 categories:
   - 编程
+label:
+  - 原创
+description:
+  - 简化使用`Composition API`时冗长的模板代码...
+image:
+  - 'https://chetxu.chetserenade.info/uPic/unfreedom.webp'
 ---
+
 ![图片描述](https://chetxu.chetserenade.info/uPic/unfreedom.webp)
 
 ## 一、基本使用

@@ -7,6 +7,12 @@ pin: true
 language: 中文
 categories:
   - 编程
+label:
+  - 原创
+description:
+  - 从输入 URL 到页面加载完成，发生了什么？
+image:
+  - 'https://chetxu.chetserenade.info/JedXu/javascript-design-pattern.jpg'
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/JedXu/javascript-design-pattern.jpg)

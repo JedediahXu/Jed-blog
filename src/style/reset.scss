@@ -181,3 +181,138 @@
     max-width: 78.5ch !important;
   }
 }
+
+/* 文章列表 */
+.item-content {
+  width: 630px;
+  display: flex;
+  height: 9rem;
+  padding: 0.618rem;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: background-color 0.1s;
+}
+.item-thumbnail {
+  flex-shrink: 0;
+  width: 186px;
+  height: 8rem;
+  margin-right: 1.236rem;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.item-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 8rem;
+  padding-right: 0.309rem;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3px;
+  font-size: 14px;
+  margin-bottom: 0.618rem;
+  font-weight: 700;
+}
+.language {
+  opacity: 0.5;
+  font-size: 14px;
+  color: rgba(240, 240, 240, 0.26);
+}
+.description {
+  margin: 0;
+  line-height: 1.8em;
+  text-overflow: ellipsis;
+  font-size: 13.58px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.item-meta {
+  height: 2em;
+  line-height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
+  font-size: 12.432px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  color: var(--text-secondary);
+}
+.article-item {
+  margin-bottom: 1.236rem;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.image {
+  height: 100%;
+  min-width: 100%;
+  width: 189px;
+  max-width: 189px;
+  border-color: transparent;
+  background-color: var(--module-bg-darker-2);
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transform: translate(0);
+  transition:
+    transform 0.25s,
+    opacity 0.25s;
+}
+.item-content:hover .item-thumbnail .image {
+  opacity: 0.88;
+  transform: translate(-3px);
+}
+
+.article-item > .item-content > .item-thumbnail .item-oirigin.original {
+  background-color: #0088f5b3;
+}
+
+.article-item > .item-content > .item-thumbnail .item-oirigin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  z-index: 1;
+  padding: 0 0.618rem;
+  border-bottom-right-radius: 2px;
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  transition:
+    opacity 0.1s,
+    visibility 0.1s;
+}
+
+.article-item > .item-content > .item-body .title .link:hover {
+  color: var(--link-color);
+  border-color: initial;
+  margin-left: 0.309rem;
+  text-decoration: underline;
+}
+
+.article-item > .item-content:hover .item-thumbnail .item-oirigin {
+  opacity: 1;
+}
+
+.repost {
+  background-color: #ff5722b3;
+}
+
+.article-item .item-background {
+  position: absolute;
+  width: 630px;
+  height: 100%;
+  z-index: -1;
+  background-size: 120%;
+  background-position: 0% 50%;
+  opacity: 0.08;
+}

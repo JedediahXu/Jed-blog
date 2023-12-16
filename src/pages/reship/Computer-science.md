@@ -6,12 +6,18 @@ tags: blog
 pin: false
 language: 中文
 categories:
-- 转载
+  - 转载
+label:
+  - 转载
+description:
+  - 计算机科学 Computer Science
+image:
+  - 'https://chetxu.chetserenade.info/uPic/640.jpeg'
 ---
+
 ![图片描述](https://chetxu.chetserenade.info/uPic/640.jpeg)
 
 **原文来自：**[微信公众号：原理](https://mp.weixin.qq.com/s/W_z55JN2k_i2Mgluyz_cMA)
-
 
 ### 计算机科学 Computer Science
 

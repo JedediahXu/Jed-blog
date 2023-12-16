@@ -7,6 +7,12 @@ pin: true
 language: 中文
 categories:
   - 转载
+label:
+  - 转载
+description:
+  - 在我刚刚进入大学，从零开始学习 C 语言的时候...
+image:
+  - 'https://chetxu.chetserenade.info/article/WebAssembly.jpg'
 ---
 
 ![图片描述](https://chetxu.chetserenade.info/article/WebAssembly.jpg)

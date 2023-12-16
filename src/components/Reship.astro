@@ -19,16 +19,41 @@ function formatDate(dateString: string | number | Date) {
   {
     posts.map((post) => {
       const formattedDate = formatDate(post.frontmatter.date)
+      const isRepost = post.frontmatter.label == '转载'
+
       return (
-        <div class="post relative calendar">
-          {post.frontmatter.pin && <div class="absolute -left-6">✱</div>}
-          <a href={post.url}>
-            <div class="flex">
-              <span>{post.frontmatter.title}</span>
-              <div class="divider" />
-              <span>{formattedDate}</span>
+        <div class="article-item list-item">
+          <div
+            class="item-background"
+            style={`background-image: url('${post.frontmatter.image}');`}
+          />
+          <div class="item-content dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
+            <a href={post.url} class="item-thumbnail">
+              <span class={`item-oirigin  ${isRepost ? 'repost' : 'original'}`}>
+                {post.frontmatter.label}
+              </span>
+              <img src={post.frontmatter.image} class="image" />
+            </a>
+            <div class="item-body">
+              <div>
+                <h5 class="title">
+                  <a class="link" href={post.url}>
+                    {post.frontmatter.title}
+                  </a>
+                  <span class="language">{post.frontmatter.language}</span>
+                </h5>
+                <p class="description">{post.frontmatter.description}</p>
+              </div>
+              <div class="item-meta">
+                <span>
+                  <i class="iconfont icon-clock-outlined" />
+                  {formattedDate}
+                  <i class="iconfont icon-category" style="margin-left:25px" />
+                  <span style="margin-left:5px">{post.frontmatter.categories}</span>
+                </span>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       )
     })
