@@ -15,7 +15,7 @@ const getPointHeightStyle = (value: number) => {
 </script>
 
 <template>
-  <div class="day bg-day dark:bg-slate-600" :data-date="date">
+  <div class="day bg-lunarLight dark:bg-slate-600" :data-date="date">
     <div class="point">
       <div
         class="item article"
@@ -40,7 +40,7 @@ const getPointHeightStyle = (value: number) => {
         }"
       />
     </div>
-    <div class="tooltip bg-somber dark:bg-slate-800" v-if="total">
+    <div class="tooltip bg-techNoir dark:bg-slate-800" v-if="total">
       <p class="date">{{ date }}</p>
       <ul class="counts">
         <li class="item article">

@@ -7,11 +7,13 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				white: '#f5f5f5',
-				pale:"#FFFFFFE5",
-				somber:"#000000E5",
-				day:' #eebbeeec',
-				mark:'rgba(68, 68, 68, .6)',
+				snowfallWhite: '#dedede',
+				crystalClear: "#FFFFFFE5",
+				techNoir: "#000000E5",
+				lunarLight: ' #eebbeeec',
+				markerShadow: 'rgba(68, 68, 68, .6)',
+				frostedGlass: 'rgba(255, 255, 255, .6)',
+				codeReveal: 'rgba(255, 255, 255, .9)',
 			},
 			fontFamily: {
 				body: ['Manrope', ...defaultTheme.fontFamily.sans]

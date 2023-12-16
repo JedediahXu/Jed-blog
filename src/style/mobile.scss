@@ -90,7 +90,8 @@
     display: flex !important;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid #dedede;
+    // background-color: rgba(68, 68, 68, .6);
+    // border-bottom: 1px solid #dedede;
 
     /* Toggle菜单 */
     .toggle-menu {
@@ -115,7 +116,7 @@
   }
 
   .container {
-    padding: 4.2rem 1rem 1rem;
+    padding: 4.2rem 0.8em 1rem;
     min-height: calc(100vh - 3.5rem);
     transition: width 0.35s;
   }
