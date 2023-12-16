@@ -1,7 +1,7 @@
 @import "./mixins.scss";
 
 // scrollbar
-@include scrollbar-style($size: 4px, $bg: #d2cfcf, $thumb-bg: #a7a7a7, $thumb-bg-hover: #cc8c8c);
+@include scrollbar-style($size: 7px, $bg: #d2cfcf, $thumb-bg: #a7a7a7, $thumb-bg-hover: #cc8c8c);
 
 .markdown-body {
   font-family: "Monda", Arial, sans-serif;

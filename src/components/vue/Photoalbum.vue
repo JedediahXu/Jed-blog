@@ -29,10 +29,10 @@ await updateImageSizes();
       >
         <div class="relative group rounded-md overflow-hidden">
           <div class="date-top">
-           <div class="group-hover:opacity-0 transition duration-200">
-              <span class="date-label group-hover:opacity-0 transition duration-200">"{{
-                image.label
-              }}"</span>
+            <div class="group-hover:opacity-0 transition duration-200">
+              <span class="date-label group-hover:opacity-0 transition duration-200"
+                >"{{ image.label }}"</span
+              >
             </div>
           </div>
           <a
@@ -43,12 +43,8 @@ await updateImageSizes();
             class="block overflow-hidden"
           >
             <div class="transition-transform transform group-hover:scale-110">
-              <div style="width: 100%; height: 260px; position: relative">
-                <img
-                  :src="image.href"
-                  :alt="image.label"
-                  style="width: 100%; height: 260px; object-fit: cover"
-                />
+              <div class="transform-img">
+                <img :src="image.href" :alt="image.label" class="img-width" />
               </div>
             </div>
           </a>
@@ -71,7 +67,7 @@ await updateImageSizes();
   bottom: 0.318rem;
   left: 0.5rem;
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -81,7 +77,7 @@ await updateImageSizes();
   left: 0.5rem;
   color: #fff;
   z-index: 999;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -89,5 +85,16 @@ await updateImageSizes();
 .date-label {
   opacity: 0.8;
   transition: opacity 0.2s;
+}
+
+.transform-img {
+  width: 100%;
+  height: 260px;
+  position: relative;
+}
+.img-width {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 </style>

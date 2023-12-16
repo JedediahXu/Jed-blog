@@ -2,25 +2,25 @@
 import { computed } from "vue";
 
 const props = defineProps<{
-  date?: string
-  githubColor?: string
-  articles: number
-  contributions: number
+  date?: string;
+  githubColor?: string;
+  articles: number;
+  contributions: number;
 }>();
 
-const total = computed(() => props.articles  + props.contributions);
+const total = computed(() => props.articles + props.contributions);
 const getPointHeightStyle = (value: number) => {
   return isNaN(value) ? 0 : `${Math.floor(value * 100)}%`;
 };
 </script>
 
 <template>
-  <div class="day" :data-date="date">
+  <div class="day bg-day dark:bg-slate-600" :data-date="date">
     <div class="point">
       <div
         class="item article"
         :style="{ height: getPointHeightStyle(articles / total) }"
-      /> 
+      />
       <!-- <div
         class="item instagram"
         :style="{ height: getPointHeightStyle(instagrams / total) }"
@@ -40,7 +40,7 @@ const getPointHeightStyle = (value: number) => {
         }"
       />
     </div>
-    <div class="tooltip" v-if="total">
+    <div class="tooltip bg-somber dark:bg-slate-800" v-if="total">
       <p class="date">{{ date }}</p>
       <ul class="counts">
         <li class="item article">
@@ -66,6 +66,9 @@ const getPointHeightStyle = (value: number) => {
 <style lang="scss" scoped>
 @import "@/style/mixins";
 
+li {
+  text-decoration: none;
+}
 
 .day {
   $size: 11px;
@@ -74,7 +77,6 @@ const getPointHeightStyle = (value: number) => {
   width: 11px;
   height: 11px;
   border-radius: $radius;
-  background-color: rgba(238, 187, 238, .9333333333);
   &.dark {
     background-color: #444;
     .point {
@@ -117,16 +119,15 @@ const getPointHeightStyle = (value: number) => {
   }
 
   .tooltip {
-    #{--background}: rgba(#000000, 0.9);
+    #{--background}: rgba(#000000, 0.7);
     position: absolute;
     left: 22px;
     top: 0;
     transform: translateY(-50%);
     white-space: nowrap;
-    z-index:  0 + 1;
+    z-index: 0 + 1;
     padding: 8px 1rem;
     padding-right: 1rem;
-    background-color: var(--background);
     border-radius: 4px;
     color: #444;
     @include hidden();
@@ -157,7 +158,7 @@ const getPointHeightStyle = (value: number) => {
 
       .item {
         line-height: 1.8em;
-        font-size: 13px;
+        font-size: 12px;
         &.article {
           color: #f8981d;
           /* A token to indicate that twitter is no longer supported */

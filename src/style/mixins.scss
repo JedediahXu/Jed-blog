@@ -12,7 +12,6 @@
   @return #{if($important, "!important", "")};
 }
 
-
 /// Text underline
 @mixin text-underline($offset: 0.3em) {
   text-decoration: underline;
@@ -37,16 +36,15 @@
   transition: background-color $time;
 }
 
-
 // Scrollbar
 /// @param {Size} $size
 /// @param {BackgroundColor} $bg
 /// @param {ThumbBackgroundColor} $thumb-bg
 /// @param {ThumbBackgroundColorHover} $thumb-bg-hover
 @mixin scrollbar-style(
-  $size: 8px,
+  $size: 20px,
   $bg: #ffffff,
-  $thumb-bg: darken(#ffffff, 18%),
+  $thumb-bg: darken(#ffffff, 20%),
   $thumb-bg-hover: darken(#ffffff, 26%)
 ) {
   ::-webkit-scrollbar {

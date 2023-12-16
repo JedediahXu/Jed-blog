@@ -49,6 +49,7 @@ const todayHuman = dateToHuman(today);
 const currentMonthDays = Array.from({ length: todayHuman.day }).map((_, i) => {
   return humanDateToYMD({ ...todayHuman, day: i + 1 });
 });
+
 const getPrevMonthFullDays = (date: HumanDate, prevMonths: number) => {
   const targetMonth = new Date(date.year, date.month - prevMonths, 0);
   const daysCount = targetMonth.getDate();
@@ -71,7 +72,7 @@ const months = [
 </script>
 
 <template>
-  <div class="calendar">
+  <div class="calendar bg-pale  dark:bg-slate-800 ">
     <ul class="aggregate-calendar">
       <li class="month" v-for="(month, index) in months" :key="index">
         <calendar-day
@@ -94,7 +95,6 @@ const months = [
 .calendar {
   border-radius: 4px;
   padding: 0.8rem;
-  background-color: #fee;
   transition: background-color 0.25s;
 }
 
