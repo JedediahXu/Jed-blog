@@ -1,0 +1,211 @@
+---
+const { posts } = Astro.props
+function formatDate(dateString: string | number | Date) {
+  const date = new Date(dateString)
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0') // Months are 0-based, so add 1
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+---
+
+<div class="flex flex-col gap-2" style="overflow: hidden">
+  {
+    posts.map(
+      (post: {
+        frontmatter: {
+          date: string | number | Date
+          label: unknown
+          image: string | null | undefined
+          title: unknown
+          language: unknown
+          description: unknown
+          categories: unknown
+        }
+        url: string | URL | null | undefined
+      }) => {
+        const formattedDate = formatDate(post.frontmatter.date)
+        const isRepost = post.frontmatter.label == '转载'
+
+        return (
+          <div class="article-item list-item">
+            <div
+              class="item-background"
+              style={`background-image: url('${post.frontmatter.image}');`}
+            />
+            <div class="item-content dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
+              <a href={post.url} class="item-thumbnail">
+                <span class={`item-oirigin  ${isRepost ? 'repost' : 'original'}`}>
+                  {post.frontmatter.label}
+                </span>
+                <img src={post.frontmatter.image} class="image" />
+              </a>
+              <div class="item-body">
+                <div>
+                  <h5 class="title">
+                    <a class="link" href={post.url}>
+                      {post.frontmatter.title}
+                    </a>
+                    <span class="language">{post.frontmatter.language}</span>
+                  </h5>
+                  <p class="description">{post.frontmatter.description}</p>
+                </div>
+                <div class="item-meta">
+                  <span>
+                    <i class="iconfont icon-clock-outlined" />
+                    {formattedDate}
+                    <i class="iconfont icon-category" style="margin-left:25px" />
+                    <span style="margin-left:5px">{post.frontmatter.categories}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    )
+  }
+</div>
+
+<style lang="scss" scoped>
+  .item-content {
+    width: 630px;
+    display: flex;
+    height: 9rem;
+    padding: 0.618rem;
+    overflow: hidden;
+    border-radius: 2px;
+    transition: background-color 0.1s;
+  }
+
+  .item-thumbnail {
+    flex-shrink: 0;
+    width: 186px;
+    height: 8rem;
+    margin-right: 1.236rem;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .item-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8rem;
+    padding-right: 0.309rem;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    font-size: 14px;
+    margin-bottom: 0.618rem;
+    font-weight: 700;
+  }
+
+  .language {
+    opacity: 0.5;
+    font-size: 14px;
+    color: rgba(240, 240, 240, 0.26);
+  }
+
+  .description {
+    margin: 0;
+    line-height: 1.8em;
+    text-overflow: ellipsis;
+    font-size: 13.58px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+  }
+
+  .item-meta {
+    height: 2em;
+    line-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    overflow: hidden;
+    font-size: 12.432px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    color: var(--text-secondary);
+  }
+
+  .article-item {
+    margin-bottom: 1.236rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .image {
+    height: 100%;
+    min-width: 100%;
+    width: 189px;
+    max-width: 189px;
+    border-color: transparent;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    transform: translate(0);
+    transition:
+      transform 0.25s,
+      opacity 0.25s;
+  }
+
+  .item-content:hover .item-thumbnail .image {
+    opacity: 0.88;
+    transform: translate(-3px);
+  }
+
+  .article-item > .item-content > .item-thumbnail .item-oirigin.original {
+    background-color: #0088f5b3;
+    transition:
+      opacity 0.1s,
+      visibility 0.1s;
+  }
+
+  .article-item > .item-content > .item-thumbnail .item-oirigin {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    z-index: 1;
+    padding: 0 0.618rem;
+    border-bottom-right-radius: 2px;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  .article-item > .item-content > .item-body .title .link:hover {
+    border-color: initial;
+    margin-left: 0.309rem;
+    text-decoration: underline;
+  }
+
+  .article-item > .item-content:hover .item-thumbnail .item-oirigin {
+    opacity: 1;
+  }
+
+  .repost {
+    background-color: #ff5722b3;
+  }
+
+  .article-item .item-background {
+    position: absolute;
+    width: 630px;
+    height: 100%;
+    z-index: -1;
+    background-size: 120%;
+    background-position: 0% 50%;
+    opacity: 0.08;
+  }
+</style>

@@ -1,0 +1,177 @@
+---
+const { posts } = Astro.props
+function formatDate(dateString: string | number | Date) {
+  const date = new Date(dateString)
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0') // Months are 0-based, so add 1
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+---
+
+<div class="flex flex-col gap-2" style="overflow: hidden">
+  {
+    posts.map(
+      (post: {
+        frontmatter: {
+          date: string | number | Date
+          label: unknown
+          image: string | null | undefined
+          title: unknown
+          language: unknown
+          description: unknown
+          categories: unknown
+        }
+        url: string | URL | null | undefined
+      }) => {
+        const formattedDate = formatDate(post.frontmatter.date)
+        const isRepost = post.frontmatter.label == '转载'
+
+        return (
+          <div class="article-item list-item ">
+            <div class=" dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
+              <div class="thumbnail">
+                <span class={`original ${isRepost ? 'reprint' : 'oirigin'}`}>
+                  {post.frontmatter.label}
+                </span>
+                <img src={post.frontmatter.image} class="image" />
+              </div>
+
+              <div class="content">
+                <div class="body">
+                  <h5 class="title">
+                    <a class="link" href={post.url}>
+                      {post.frontmatter.title}
+                    </a>
+                    <span class="language">{post.frontmatter.language}</span>
+                  </h5>
+                  <p class="description">{post.frontmatter.description}</p>
+                </div>
+
+                <div class="meta">
+                  <span>
+                    <i class="iconfont icon-clock-outlined" />
+                    {formattedDate}
+                  </span>
+                  <span>
+                    <i class="iconfont icon-category" />
+                    <span style="margin-left:5px">{post.frontmatter.categories}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    )
+  }
+</div>
+
+<style lang="scss">
+  .article-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 0.6rem;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .item-thumbnail {
+    flex-shrink: 0;
+    width: 186px;
+    height: 8rem;
+    margin-right: 1.236rem;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .title,
+  .article-item .content .body .title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 0.618rem;
+    font-weight: 700;
+  }
+
+  .language {
+    opacity: 0.5;
+    font-size: 14px;
+  }
+
+  .articles .list .list-item {
+    margin-bottom: 1.4rem;
+  }
+
+  .article-item .content .body {
+    padding: 0.5rem 0.6rem 0.4rem;
+  }
+
+  .article-item .content .body .description {
+    margin: 0;
+    line-height: 2em;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .article-item .thumbnail {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .article-item .thumbnail .original,
+  .article-item .thumbnail .reprint {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 0 1rem;
+    border-bottom-left-radius: 2px;
+    opacity: 0.8;
+    line-height: 1.7rem;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .article-item .thumbnail .image {
+    width: 100%;
+    height: 5rem;
+    min-height: calc((100vw - 2rem) * 0.34);
+    max-height: 8rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .article-item .content .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem;
+    border-top: 1px dashed #817b7b;
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+
+  .article-item .thumbnail .oirigin {
+    background-color: #0088f5b3;
+  }
+
+  .article-item .thumbnail .reprint {
+    background-color: #ff5722b3;
+  }
+</style>

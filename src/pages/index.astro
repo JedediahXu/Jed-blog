@@ -6,17 +6,17 @@ import Calendar from '@/components/vue/Calendar'
 
 <Home>
   <div class="text-sm be-with">
-    <div class="prose-width mb-5 mt-2 text-md">
+    <div class="prose-width mb-5 mt-2 text-md desktop">
       <span> 👋 嘿,我是JedXu</span>
       <span> 一名靠摸爬滚打自学的前端工程师</span>
     </div>
-    <div class="hidden-calendar">
-      <h2 class="font-bold mb-6 text-md">PERECENT TRENDS / 「 近期动态 」</h2>
+    <div class="desktop">
+      <h2 class="font-bold mb-6 text-md ">PERECENT TRENDS / 「 近期动态 」</h2>
       <Calendar client:only="vue" />
     </div>
   </div>
-  <div class="text-sm mt-8 pb-10">
-    <h2 class="font-bold mb-6 text-md">PERECENT ARTICLES/「 近期文章 」</h2>
+  <div class="text-sm">
+    <h2 class="font-bold mt-6 mb-6 text-md desktop">PERECENT ARTICLES/「 近期文章 」</h2>
     <div class="ml-6 md:ml-0">
       <RecentList />
     </div>

@@ -10,7 +10,7 @@ categories:
 label:
   - 原创
 description:
-  - 函数式编程最早起源于数学中的范畴论
+  - 最早起源于数学中的范畴论
 image:
   - 'https://chetxu.chetserenade.info/uPic/Functional.jpg'
 ---

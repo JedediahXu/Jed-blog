@@ -10,7 +10,7 @@ categories:
 label:
   - 转载
 description:
-  - 在我刚刚进入大学，从零开始学习 C 语言的时候...
+  - 从零开始学习 C 语言的时候...
 image:
   - 'https://chetxu.chetserenade.info/article/WebAssembly.jpg'
 ---

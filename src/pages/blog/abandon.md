@@ -10,7 +10,7 @@ categories:
 label:
   - 原创
 description:
-  - 我总在虚度与充实中来回变换，我依旧是三分钟热度
+  - 我总在虚度与充实中来回变换
 image:
   - 'https://chetxu.chetserenade.info/JedXu/think-deeply.jpg'
 ---

@@ -1,4 +1,7 @@
 ---
+import ArticleList from './ArticleList.astro'
+import MobileArticleList from './MobileArticleList.astro'
+
 const posts = await Astro.glob("../pages/blog/*.md");
 // sort post by date
 posts.sort((a, b) => {
@@ -6,56 +9,12 @@ posts.sort((a, b) => {
   return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
 });
 
-function formatDate(dateString: string | number | Date) {
-  const date = new Date(dateString)
-  const year = date.getFullYear()
-  const month = String(date.getMonth() + 1).padStart(2, '0') // Months are 0-based, so add 1
-  const day = String(date.getDate()).padStart(2, '0')
-  return `${year}-${month}-${day}`
-}
 ---
 
-<div class="flex flex-col gap-2" style="overflow: hidden">
-  {
-    posts.map((post) => {
-      const formattedDate = formatDate(post.frontmatter.date)
-      const isRepost = post.frontmatter.label == '转载'
+<div class="desktop">
+  <ArticleList posts={posts} />
+</div>
 
-      return (
-        <div class="article-item list-item">
-          <div
-            class="item-background"
-            style={`background-image: url('${post.frontmatter.image}');`}
-          />
-          <div class="item-content dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
-            <a href={post.url} class="item-thumbnail">
-              <span class={`item-oirigin  ${isRepost ? 'repost' : 'original'}`}>
-                {post.frontmatter.label}
-              </span>
-              <img src={post.frontmatter.image} class="image" />
-            </a>
-            <div class="item-body">
-              <div>
-                <h5 class="title">
-                  <a class="link" href={post.url}>
-                    {post.frontmatter.title}
-                  </a>
-                  <span class="language">{post.frontmatter.language}</span>
-                </h5>
-                <p class="description">{post.frontmatter.description}</p>
-              </div>
-              <div class="item-meta">
-                <span>
-                  <i class="iconfont icon-clock-outlined" />
-                  {formattedDate}
-                  <i class="iconfont icon-category" style="margin-left:25px" />
-                  <span style="margin-left:5px">{post.frontmatter.categories}</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    })
-  }
+<div class="mobile">
+  <MobileArticleList posts={posts} />
 </div>

@@ -10,7 +10,7 @@ categories:
 label:
   - 原创
 description:
-  - 工程化即系统化、模块化、规范化的一个过程
+  - 工程化即系统化、模块化、规范化
 image:
   - 'https://chetxu.chetserenade.info/uPic/web-javascript.jpg'
 ---

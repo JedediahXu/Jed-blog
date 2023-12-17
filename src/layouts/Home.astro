@@ -9,7 +9,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
 <BaseLayout title={Astro.props.title ? `${Astro.props.title} | ${config.title}` : config.title}>
   <div>
     <div class="lg:flex home">
-      <div id="pc-container" class="sm:px-10 lg:mt-10 py-20 hidden-pc nav-view">
+      <div id="pc-container" class="sm:px-10 lg:mt-10 py-20 desktop nav-view">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
             <img src={avatar} alt="头像" />
@@ -50,7 +50,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
         </div>
       </div>
 
-      <div id="mobile-container" class="sm:px-10 lg:mt-10 py-20 hidden-mobile mobile-menu opened">
+      <div id="mobile-container" class="sm:px-10 lg:mt-10 py-20 mobile mobile-menu opened">
         <div class="sticky top-5 flex flex-col gap-4">
           <div class="mediate">
             <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
@@ -90,17 +90,17 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
         </div>
       </div>
 
-      <div class="toggle bg-frostedGlass dark:bg-markerShadow hidden-mobile header-navbar">
+      <div class="toggle bg-frostedGlass dark:bg-markerShadow mobile header-navbar">
         <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
-        <div class="header-slogan">Front end(手机端UI正在重构)</div>
+        <div class="header-slogan">Jed's log</div>
       </div>
-      <div class="lg:mt-28 mx-4 lg:mx-0 pb-10 ml-52 md w-full container-main opened">
+      <div class="lg:mt-28 mx-4 lg:mx-0 ml-52 md w-full container-main opened">
         <div class="container">
           <slot />
         </div>
       </div>
 
-      <div class="pb-10 hidden-pc">
+      <div class="desktop">
         <slot name="catalogue" />
       </div>
     </div>

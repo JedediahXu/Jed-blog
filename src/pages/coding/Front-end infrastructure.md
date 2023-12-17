@@ -10,7 +10,7 @@ categories:
 label:
   - 原创
 description:
-  - 前端开发决定了用户在使用网站或应用程序时的体验
+  - 前端开发决定了用户在使用网站时的体验
 image:
   - 'https://chetxu.chetserenade.info/article/front-end.jpg'
 ---
