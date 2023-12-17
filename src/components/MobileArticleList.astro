@@ -29,37 +29,38 @@ function formatDate(dateString: string | number | Date) {
 
         return (
           <div class="article-item list-item ">
-            <div class=" dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
-              <div class="thumbnail">
-                <span class={`original ${isRepost ? 'reprint' : 'oirigin'}`}>
-                  {post.frontmatter.label}
-                </span>
-                <img src={post.frontmatter.image} class="image" />
-              </div>
-
-              <div class="content">
-                <div class="body">
-                  <h5 class="title">
-                    <a class="link" href={post.url}>
-                      {post.frontmatter.title}
-                    </a>
-                    <span class="language">{post.frontmatter.language}</span>
-                  </h5>
-                  <p class="description">{post.frontmatter.description}</p>
-                </div>
-
-                <div class="meta">
-                  <span>
-                    <i class="iconfont icon-clock-outlined" />
-                    {formattedDate}
+            <a class="link" href={post.url}>
+              <div class=" dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
+                <div class="thumbnail">
+                  <span class={`original ${isRepost ? 'reprint' : 'oirigin'}`}>
+                    {post.frontmatter.label}
                   </span>
-                  <span>
-                    <i class="iconfont icon-category" />
-                    <span style="margin-left:5px">{post.frontmatter.categories}</span>
-                  </span>
+                  <img src={post.frontmatter.image} class="image" alt="Article topic Picture" />
+                </div>
+                <div class="content">
+                  <div class="body">
+                    <h5 class="title">
+                      <a class="link" href={post.url}>
+                        {post.frontmatter.title}
+                      </a>
+                      <span class="language">{post.frontmatter.language}</span>
+                    </h5>
+                    <p class="description">{post.frontmatter.description}</p>
+                  </div>
+
+                  <div class="meta">
+                    <span>
+                      <i class="iconfont icon-clock-outlined" />
+                      {formattedDate}
+                    </span>
+                    <span>
+                      <i class="iconfont icon-category" />
+                      <span style="margin-left:5px">{post.frontmatter.categories}</span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         )
       }
