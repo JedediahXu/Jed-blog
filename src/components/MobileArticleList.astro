@@ -40,9 +40,7 @@ function formatDate(dateString: string | number | Date) {
                 <div class="content">
                   <div class="body">
                     <h5 class="title">
-                      <a class="link" href={post.url}>
-                        {post.frontmatter.title}
-                      </a>
+                      <p class="link">{post.frontmatter.title}</p>
                       <span class="language">{post.frontmatter.language}</span>
                     </h5>
                     <p class="description">{post.frontmatter.description}</p>

@@ -46,7 +46,7 @@ function formatDate(dateString: string | number | Date) {
                     <a class="link" href={post.url}>
                       {post.frontmatter.title}
                     </a>
-                    <span class="language">{post.frontmatter.language}</span>
+                    <span class="language  text-dullGrey  dark:text-snowfallWhite">{post.frontmatter.language}</span>
                   </h5>
                   <p class="description">{post.frontmatter.description}</p>
                 </div>
@@ -109,7 +109,6 @@ function formatDate(dateString: string | number | Date) {
   .language {
     opacity: 0.5;
     font-size: 14px;
-    color: rgba(240, 240, 240, 0.26);
   }
 
   .description {
