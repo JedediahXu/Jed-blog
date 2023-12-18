@@ -28,12 +28,12 @@ import { ViewTransitions } from 'astro:transitions'
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
     <ProviderTheme />
+    <ViewTransitions />
   </head>
 
   <body
     class="bg-snowfallWhite text-stone-950 dark:bg-[#232323] dark:text-snowfallWhite w-full h-full"
   >
-    <!-- <ViewTransitions /> -->
     <slot />
     <FixedText />
     <BaiduStatistics />

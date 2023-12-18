@@ -54,6 +54,17 @@
     transform: translate3d(66%, 0, 0);
   }
 
+  .close-mask {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+  }
+
   .mediate {
     margin-left: 25% !important;
     margin-right: auto;

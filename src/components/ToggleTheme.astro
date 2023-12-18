@@ -38,20 +38,21 @@
 </script>
 
 <script>
-  const button = document.getElementById('toggle-theme') as HTMLButtonElement
-  const sunIcon = document.querySelector('.sun-icon') as HTMLElement
-  const moonIcon = document.querySelector('.moon-icon') as HTMLElement
+  document.addEventListener('astro:page-load', () => {
+    const button = document.getElementById('toggle-theme') as HTMLButtonElement
+    const sunIcon = document.querySelector('.sun-icon') as HTMLElement
+    const moonIcon = document.querySelector('.moon-icon') as HTMLElement
 
-  function setButtonPressed() {
-    const bodyThemeIsDark = document.documentElement.classList.contains('dark')
-    button.setAttribute('aria-pressed', String(bodyThemeIsDark))
-    sunIcon.style.opacity = bodyThemeIsDark ? '0' : '1'
-    moonIcon.style.opacity = bodyThemeIsDark ? '1' : '0'
-  }
+    function setButtonPressed() {
+      const bodyThemeIsDark = document.documentElement.classList.contains('dark')
+      button.setAttribute('aria-pressed', String(bodyThemeIsDark))
+      sunIcon.style.opacity = bodyThemeIsDark ? '0' : '1'
+      moonIcon.style.opacity = bodyThemeIsDark ? '1' : '0'
+    }
 
-  setButtonPressed()
+    setButtonPressed()
+  })
 </script>
-
 
 <theme-toggle class="relative h-6 w-6">
   <button id="toggle-theme" class="group" aria-label="Toggle Theme">
@@ -59,7 +60,7 @@
       <i class="iconfont icon-sun"></i>
     </span>
     <span class="absolute left-0 right-0 top-0 opacity-0 moon-icon">
-			<i class="iconfont icon-moon"></i>
+      <i class="iconfont icon-moon"></i>
     </span>
   </button>
 </theme-toggle>
