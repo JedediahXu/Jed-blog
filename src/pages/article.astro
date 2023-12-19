@@ -6,22 +6,92 @@ import ReshipList from '@/components/Reship'
 ---
 
 <Home title="素履以往">
-  <div class="mx-auto text-sm">
+  <div class="mx-auto text-sm items" data-category="编程">
     <h2 class="font-bold mb-6 mt-2 text-md desktop">CODING /「 编程 」</h2>
     <div class="ml-6 md:ml-0">
       <CodingList />
     </div>
   </div>
-  <div class="text-sm mt-8">
+
+  <div class="text-sm mt-8 items" data-category="生活">
     <h2 class="font-bold mb-6 text-md desktop">ESSAYS / 「 生活 」</h2>
     <div class="ml-6 md:ml-0">
       <PostList />
     </div>
   </div>
-  <div class="text-sm mt-1">
+
+  <div class="text-sm mt-1 items" data-category="转载">
     <h2 class="font-bold mb-6 text-md desktop">RESHIP / 「 转载 」</h2>
     <div class="ml-6 md:ml-0">
       <ReshipList />
     </div>
   </div>
+
+  <div slot="catalogue">
+    <div class="anchor catalogue sm:px-10 lg:mt-28 lg:inline-block desktop">
+      <button class="header" title="文章">
+        <div class="title font-bold text-md desktop"># 文章分类</div>
+        <div
+          class="category-button rounded-lg mt-2 text-md hover:bg-slate-400 py-1"
+          data-category="编程"
+        >
+          「 编程 」
+        </div>
+        <div
+          class="category-button rounded-lg mt-2 text-md hover:bg-slate-400 py-1"
+          data-category="生活"
+        >
+          「 生活 」
+        </div>
+        <div
+          class="category-button rounded-lg mt-2 text-md hover:bg-slate-400 py-1"
+          data-category="转载"
+        >
+          「 转载 」
+        </div>
+      </button>
+    </div>
+  </div>
 </Home>
+
+<script>
+  type HTMLElementEvent<T extends HTMLElement> = Event & {
+    target: T
+  }
+
+  let selectedCategory: string = '全部'
+
+  function selectCategory(category: string): void {
+    selectedCategory = category
+    const allItems = document.querySelectorAll<HTMLElement>('.items')
+    allItems.forEach((item) => {
+      if (item.dataset.category === selectedCategory || selectedCategory === '全部') {
+        item.style.display = 'block'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+
+    const allButtons = document.querySelectorAll<HTMLElement>('.category-button')
+    allButtons.forEach((button) => {
+      if (button.dataset.category === selectedCategory) {
+        button.classList.add('bg-slate-400')
+      } else {
+        button.classList.remove('bg-slate-400')
+      }
+    })
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const catalogueElement = document.querySelector<HTMLElement>('.anchor.catalogue')
+    if (catalogueElement) {
+      // @ts-ignore
+      catalogueElement.addEventListener('click', (event: HTMLElementEvent<HTMLElement>) => {
+        if (event.target.matches('.category-button')) {
+          // @ts-ignore
+          selectCategory(event.target.dataset.category)
+        }
+      })
+    }
+  })
+</script>

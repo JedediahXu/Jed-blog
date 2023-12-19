@@ -99,6 +99,22 @@
   color: #0088f5;
 }
 
+.catalogue {
+  position: fixed;
+}
+
+.anchor {
+  padding: 1rem 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.anchor .header {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
 @media (min-width: 1600px) and (max-width: 3999px) {
   .calendar {
     width: 690px !important;
