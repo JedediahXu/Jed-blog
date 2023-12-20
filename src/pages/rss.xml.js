@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import config from '../config'
 
-export async function get(context) {
+export async function GET(context) {
   const posts = import.meta.glob('./blog/*.{md,mdx}', {
     eager: true
   });
