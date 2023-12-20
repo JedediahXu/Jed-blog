@@ -99,7 +99,6 @@
   color: #0088f5;
 }
 
-
 .anchor {
   padding: 1rem 1rem 1rem 0;
   display: flex;
@@ -110,6 +109,29 @@
   display: block;
   width: 100%;
   text-align: left;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+}
+
+.navigation-a {
+  margin-left: 0;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagefind-ui__search-clear.svelte-e9gkc3 {
+  border-radius: 0;
+  padding-left: 10px;
 }
 
 @media (min-width: 1600px) and (max-width: 3999px) {

@@ -2,21 +2,74 @@
 import Home from '@/layouts/Home'
 import RecentList from '@/components/Recent'
 import Calendar from '@/components/vue/Calendar'
+import PageFind from '@/components/PageFind'
+
+import twitter from '../images/twitter.svg'
+import github from '../images/github.svg'
+import juejin from '../images/juejin.svg'
+import youtube from '../images/youtube.svg'
+
+const contacts = [
+  {
+    icon: github,
+    url: 'https://github.com/JedediahXu',
+    title: 'Github',
+  },
+  {
+    icon: juejin,
+    url: 'https://juejin.cn/user/3685218709411085',
+    title: 'Juejin',
+  },
+  {
+    icon: twitter,
+    url: 'https://twitter.com/Lc0916x',
+    title: 'Twitter',
+  },
+  {
+    icon: youtube,
+    url: 'https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ',
+    title: 'YouTube',
+  },
+]
 ---
 
 <Home>
   <div class="text-sm be-with">
-    <div class="prose-width mb-5 mt-2 text-md desktop">
+    <div class="prose-width mb-5 mt-2 text-md desktop" data-pagefind-ignore>
       <span> 👋 嘿,我是JedXu</span>
       <span> 一名靠摸爬滚打自学的前端工程师</span>
     </div>
+    <h2 class="font-bold mb-6 text-md" data-pagefind-ignore>PERECENT TRENDS / 「 近期动态 」</h2>
+    <div class="prose-width mb-5 mt-2 text-md desktop">
+      <div class="navigation bg-frostedGlass dark:bg-markerShadow">
+        {
+          contacts.map((contact) => {
+            return (
+              <a
+                class="navigation-a dark:hover:bg-lightGray hover:bg-crystalClear"
+                target="_blank"
+                href={contact.url}
+              >
+                <img
+                  src={contact.icon.src}
+                  width={contact.icon.width}
+                  height={contact.icon.height}
+                  alt={contact.title}
+                  class="w-6"
+                />
+              </a>
+            )
+          })
+        }
+        <PageFind transition:persist />
+      </div>
+    </div>
     <div class="desktop">
-      <h2 class="font-bold mb-6 text-md">PERECENT TRENDS / 「 近期动态 」</h2>
       <Calendar client:only="vue" />
     </div>
   </div>
-  <div class="text-sm">
-    <h2 class="font-bold mt-6 mb-6 text-md desktop">PERECENT ARTICLES/「 近期文章 」</h2>
+  <div class="text-sm" data-pagefind-ignore>
+    <h2 class="font-bold mt-6 mb-6 text-md desktop" data-pagefind-ignore>PERECENT ARTICLES/「 近期文章 」</h2>
     <div class="ml-6 md:ml-0">
       <RecentList />
     </div>

@@ -72,7 +72,7 @@ const months = [
 </script>
 
 <template>
-  <div class="calendar bg-crystalClear  dark:bg-slate-800 ">
+  <div class="calendar bg-crystalClear  dark:bg-slate-800 " data-pagefind-ignore>
     <ul class="aggregate-calendar">
       <li class="month" v-for="(month, index) in months" :key="index">
         <calendar-day

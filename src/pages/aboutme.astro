@@ -1,38 +1,11 @@
 ---
 import Home from '@/layouts/Home'
-import twitter from '../images/twitter.svg'
-import github from '../images/github.svg'
-import juejin from '../images/juejin.svg'
-import youtube from '../images/youtube.svg'
 import config from '../config'
-let wx ="https://chetxu.chetserenade.info/article/wx.webp"
-
-const contacts = [
-  {
-    icon: github,
-    url: 'https://github.com/JedediahXu',
-    title: 'Github',
-  },
-  {
-    icon: juejin,
-    url: 'https://juejin.cn/user/3685218709411085',
-    title: 'Juejin',
-  },
-  {
-    icon: twitter,
-    url: 'https://twitter.com/Lc0916x',
-    title: 'Twitter',
-  },
-  {
-    icon: youtube,
-    url: 'https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ',
-    title: 'YouTube',
-  },
-]
+let wx = 'https://chetxu.chetserenade.info/article/wx.webp'
 ---
 
 <Home title="关于我">
-  <div class="mx-auto mb-6 text-sm">
+  <div class="mx-auto mb-6 text-sm" data-pagefind-ignore>
     <h1 class="text-xl font-medium mb-4 mt-2">关于我</h1>
     <div class="prose-width">
       <span> 👋 你好, 我是JedXu, 目前居住在中国山东济南</span>
@@ -66,31 +39,14 @@ const contacts = [
           >Juejin
         </a>上看到更多
       </span>
-      <div class="flex gap-4 mb-4 mt-4">
-        {
-          contacts.map((contact) => {
-            return (
-              <a target="_blank" href={contact.url}>
-                <img
-                  src={contact.icon.src}
-                  width={contact.icon.width}
-                  height={contact.icon.height}
-                  alt={contact.title}
-                  class="w-6 h-6"
-                />
-              </a>
-            )
-          })
-        }
-      </div>
     </div>
     <div class="mt-2 font-bold text-md">{config.friend}</div>
 
-    <img src={wx}  class="w-48 h-48 mt-3" alt="微信" />
+    <img src={wx} class="w-48 h-48 mt-3" alt="微信" />
   </div>
 
-  <h2 class="font-bold mb-3 text-md  desktop">LINKS /「 友链 」</h2>
-  <div class="mx-auto text-sm desktop">
+  <h2 class="font-bold mb-3 text-md desktop" data-pagefind-ignore>LINKS /「 友链 」</h2>
+  <div class="mx-auto text-sm desktop" data-pagefind-ignore>
     <div class="footer-links prose">
       <div>
         {

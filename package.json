@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro preview --host ",
-    "build": "astro build ",
+    "start": "astro preview ",
+    "build": "astro build && pagefind --site dist",
+    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -13,6 +14,7 @@
     "@astrojs/rss": "^4.0.1",
     "@astrojs/tailwind": "^5.0.3",
     "@astrojs/vue": "^4.0.4",
+    "@pagefind/default-ui": "^1.0.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/probe-image-size": "^7.2.0",
     "astro": "^4.0.6",
@@ -20,6 +22,7 @@
     "auth0-js": "^9.22.1",
     "dayjs": "^1.11.7",
     "mdast-util-to-string": "^4.0.0",
+    "motion": "^10.16.4",
     "photoswipe": "^5.3.8",
     "probe-image-size": "^7.2.3",
     "reading-time": "^1.5.0",
@@ -28,6 +31,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "pagefind": "^1.0.4",
     "sass": "^1.69.5"
   }
 }

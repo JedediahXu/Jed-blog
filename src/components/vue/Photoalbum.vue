@@ -20,7 +20,7 @@ await updateImageSizes();
 </script>
 
 <template>
-  <div class="md:ml-0 md:mr-20 pb-10">
+  <div class="md:ml-0 md:mr-20 pb-10" data-pagefind-ignore>
     <div id="my-gallery" class="flex flex-wrap">
       <div
         v-for="(image, index) in data.images"

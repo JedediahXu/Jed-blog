@@ -1,6 +1,8 @@
 ---
 import ToggleTheme from '@/components/ToggleTheme'
 import BaseLayout from './BaseLayout.astro'
+import PageFind from '@/components/PageFind'
+
 import config from '../config'
 
 let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
@@ -14,8 +16,8 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
           <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
             <img src={avatar} alt="头像" />
           </div>
-          <div class="mediate">
-            <h1 class="font-bold text-2xl">{config.name}</h1>
+          <div class="mediate" data-pagefind-ignore>
+            <p class="font-bold text-2xl">{config.name}</p>
             <div class="text-gray-500 text-base font-light my-2">
               <div class="flex">
                 <div id="theme">
@@ -26,7 +28,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
             </div>
           </div>
 
-          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont">
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont" data-pagefind-ignore>
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
@@ -44,7 +46,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
               })
             }
           </div>
-          <div class="text-slate-500 text-sm mediate">
+          <div class="text-slate-500 text-sm mediate" data-pagefind-ignore>
             Blog since {config.since}
           </div>
         </div>
@@ -56,7 +58,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
             <div class="w-32 h-32 bg-cover bg-center inline-block mx-auto">
               <img src={avatar} alt="头像" />
             </div>
-            <h1 class="font-bold text-2xl font-name">{config.name}</h1>
+            <p class="font-bold text-2xl font-name">{config.name}</p>
             <div class="text-gray-400 text-base font-light my-2">
               <div class="flex">
                 <div id="theme">
@@ -66,7 +68,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
               </div>
             </div>
           </div>
-          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont">
+          <div class="flex lg:flex-col gap-4 mt-4 mx-auto nav-webfont" data-pagefind-ignore>
             {
               config.navs.map((nav) => {
                 const { pathname } = Astro.url
@@ -84,16 +86,19 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
               })
             }
           </div>
-          <div class="text-slate-500 text-sm mediate">
+          <div class="text-slate-500 text-sm mediate" data-pagefind-ignore>
             Blog since {config.since}
           </div>
         </div>
       </div>
 
       <div>
-        <div class="toggle bg-frostedGlass dark:bg-markerShadow mobile header-navbar">
+        <div class="toggle bg-frostedGlass dark:bg-markerShadow mobile header-navbar" data-pagefind-ignore>
           <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
-          <div class="header-slogan">Jed's log</div>
+          <div class="header-slogan" data-pagefind-ignore>Jed's log</div>
+          <div class="toggle-menu">
+            <!-- <PageFind transition:persist /> -->
+          </div>
         </div>
 
         <div id="shading" class="shading container-mains opened"></div>
