@@ -33,7 +33,7 @@ function formatDate(dateString: string | number | Date) {
               class="item-background"
               style={`background-image: url('${post.frontmatter.image}');`}
             />
-            <div class="item-content dark:r:bg-lightGray r:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
+            <div class="item-content dark:hover:bg-lightGray hover:bg-crystalClear bg-frostedGlass  dark:bg-markerShadow">
               <a href={post.url} class="item-thumbnail">
                 <span class={`item-oirigin  ${isRepost ? 'repost' : 'original'}`}>
                   {post.frontmatter.label}

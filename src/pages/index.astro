@@ -39,7 +39,10 @@ const contacts = [
       <span> 👋 嘿,我是JedXu</span>
       <span> 一名靠摸爬滚打自学的前端工程师</span>
     </div>
-    <h2 class="font-bold mb-6 text-md" data-pagefind-ignore>PERECENT TRENDS / 「 近期动态 」</h2>
+    <h2 class="font-bold mb-6 text-md desktop" data-pagefind-ignore>PERECENT TRENDS / 「 近期动态 」</h2>
+    <div class="desktop">
+      <Calendar client:only="vue" />
+    </div>
     <div class="prose-width mb-5 mt-2 text-md desktop">
       <div class="navigation bg-frostedGlass dark:bg-markerShadow">
         {
@@ -63,9 +66,6 @@ const contacts = [
         }
         <PageFind transition:persist />
       </div>
-    </div>
-    <div class="desktop">
-      <Calendar client:only="vue" />
     </div>
   </div>
   <div class="text-sm" data-pagefind-ignore>
