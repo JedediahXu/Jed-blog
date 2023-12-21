@@ -1,16 +1,51 @@
 # Jed's log
 
-A minimalist personal blog
+**A minimalist personal blog**
+
+**My personal website and blog, powered by [Astro(4)](https://astro.build/) complete.**
 
 ## Stack:
 
-- **Typescript**: 类型化javascript以获得更好的工具
-- **Tailwind CSS**: 实用优先的CSS框架
-- **Vue3**: 部分采用了Vue3组件形式
-- **Mapbox**: 地图展示
+- **Astro**:  Astro powers the world's fastest websites
+- **Typescript**: Typed JavaScript for better tools
+- **Tailwind CSS**: Practical First CSS Framework
+- **Vue3**: Partially adopting Vue3 component form
 
 ## Plan Todo:
 
-- **UI**: 更好看的UI样式（简约风格）
-- **Dark mode**: 在明暗模式之间切换
-- **Responsive**: 手机端良好的设计
+- **UI**: Better looking UI style (minimalist style)
+- **Dark mode**: Switching between light and dark modes
+- **Responsive**: Good design for mobile device
+
+
+**[Jedxu.inf](https://jedxu.info/)**
+
+----
+
+## Screenshot
+
+![White Theme](https://chetxu.chetserenade.info/article/WechatIMG1640.jpg)
+
+![Black Theme](https://chetxu.chetserenade.info/article/WechatIMG1641.jpg)
+
+![Photo album](https://chetxu.chetserenade.info/article/WechatIMG1642.jpg)
+
+![mobile phone](https://chetxu.chetserenade.info/article/WechatIMG1655.jpg)
+
+![mobile menu](https://chetxu.chetserenade.info/article/WechatIMG1656.jpg)
+
+## Development Setup
+
+```bash
+# install dependencies
+$ pnpm install
+
+$ pnpm run dev
+$ pnpm run build
+$ pnpm run start
+
+```
+
+### License
+
+Licensed under the [MIT](/LICENSE) License.
