@@ -31,6 +31,10 @@
     margin-right: 0rem;
   }
 
+  .articles {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .calendar {
     width: auto !important;
   }

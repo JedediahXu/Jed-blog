@@ -1,0 +1,128 @@
+---
+const { posts } = Astro.props
+---
+
+<section
+  class="related-body markdown-width font-monda break-words mt-5 mb-5 leading-7 font-normal text-base overflow-x-hidden"
+>
+  <div class="relative overflow-hidden mb-5">
+    <div>
+      <ul class="grid articles gap-4 p-0 m-0 list-none">
+        {
+          posts.length > 0 ? (
+            posts.map(
+              (post: {
+                url: any
+                frontmatter: {
+                  title: unknown
+                  image: string | null | undefined
+                  description: unknown
+                }
+              }) => (
+                <li class="list-item dark:hover:bg-lightGray w-auto transition-colors duration-200 rounded overflow-hidden bg-frostedGlass dark:bg-markerShadow">
+                  <a class="item-article block" href={post.url}>
+                    <picture class="thumbnail list-item block w-full h-22 opacity-90 bg-module-bg-darker-2 transition-all duration-100">
+                      <img
+                        class="w-full h-full object-cover object-center"
+                        src={post.frontmatter.image}
+                        alt=""
+                      />
+                    </picture>
+                    <div class="title  dark:text-snowfallWhite">{post.frontmatter.title}</div>
+                    <div class="description dark:text-secondary  w-full px-2 transition-colors duration-100 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                      {post.frontmatter.description}
+                    </div>
+                  </a>
+                </li>
+              )
+            )
+          ) : (
+            // 暂时还没有相关的文章
+            <span class="text-gray-500" />
+          )
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .related-body {
+    font-family: 'Monda', Arial, sans-serif;
+    word-break: break-word;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.75;
+    font-weight: 400;
+    font-size: 15px;
+    overflow-x: hidden;
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .description {
+      margin-bottom: 0.618rem;
+      font-size: 12.432px;
+    }
+
+    .list-item {
+      width: auto;
+      transition: background- 0.25s;
+      overflow: hidden;
+    }
+
+    .thumbnail:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2) 20%,
+        rgba(0, 0, 0, 0.1) 50%,
+        transparent 90%
+      );
+    }
+
+    .title {
+      font-size: 13.58px;
+      margin-top: 0.618rem;
+      margin-bottom: 0.309rem;
+      font-weight: 700;
+      display: block;
+      width: 100%;
+      padding: 0 0.618rem;
+      transition: color 0.1s;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .thumbnail {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 5.5rem;
+      opacity: 0.88;
+      background-color: var(--module-bg-darker-2);
+      transition: all 0.1s;
+    }
+
+    a:hover,
+    a:focus {
+      color: rgba(0, 0, 0, 0.86);
+    }
+
+    .item-article:hover .thumbnail {
+      opacity: 1;
+    }
+  }
+</style>

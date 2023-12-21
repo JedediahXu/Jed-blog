@@ -1,12 +1,31 @@
 ---
 import Home from '../layouts/Home.astro'
 import Donate from '@/components/Donate'
+import ListRelatedPosts from '@/components/ListRelatedPosts'
 import TOC from '@/components/TOC'
 import BaseLayout from './BaseLayout.astro'
 import dayjs from 'dayjs'
 import config from '../config'
 
-const { frontmatter, headings } = Astro.props
+const { frontmatter, headings, title } = Astro.props
+console.log(frontmatter.categories)
+
+const codingPosts = await Astro.glob('../pages/coding/*.md')
+const blogPosts = await Astro.glob('../pages/blog/*.md')
+const reship = await Astro.glob('../pages/reship/*.md')
+
+const posts = [...codingPosts, ...blogPosts, ...reship]
+
+const filteredPosts = posts.filter(
+  (post) =>
+    post.frontmatter.categories.join(',') === frontmatter.categories.join(',') &&
+    post.frontmatter.title !== frontmatter.title
+)
+
+// random
+filteredPosts.sort(() => Math.random() - 0.5)
+
+const relatedPosts = filteredPosts.slice(0, 4)
 ---
 
 <BaseLayout
@@ -33,10 +52,12 @@ const { frontmatter, headings } = Astro.props
         </span>
       </div>
       <slot />
-      <hr />
-      <div>
-        <Donate />
-      </div>
+    </div>
+    <div>
+      <ListRelatedPosts posts={relatedPosts} />
+    </div>
+    <div>
+      <Donate />
     </div>
     <div slot="catalogue"><TOC headings={headings} frontmatter={frontmatter} /></div>
   </Home>
