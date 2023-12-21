@@ -7,8 +7,7 @@ import BaseLayout from './BaseLayout.astro'
 import dayjs from 'dayjs'
 import config from '../config'
 
-const { frontmatter, headings, title } = Astro.props
-console.log(frontmatter.categories)
+const { frontmatter, headings } = Astro.props
 
 const codingPosts = await Astro.glob('../pages/coding/*.md')
 const blogPosts = await Astro.glob('../pages/blog/*.md')
