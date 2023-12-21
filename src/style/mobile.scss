@@ -31,7 +31,7 @@
     margin-right: 0rem;
   }
 
-  .articles {
+  .mobile-articles {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
@@ -143,7 +143,7 @@
   }
 
   .container {
-    padding: 5rem 0.2em 1rem;
+    padding: 5rem 0.8em 1rem;
     min-height: calc(100vh - 3.5rem);
     transition: width 0.35s;
   }

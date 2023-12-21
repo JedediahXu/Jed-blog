@@ -7,7 +7,7 @@ const { posts } = Astro.props
 >
   <div class="relative overflow-hidden mb-5">
     <div>
-      <ul class="grid articles gap-4 p-0 m-0 list-none">
+      <ul class="grid mobile-articles gap-4 p-0 m-0 list-none">
         {
           posts.length > 0 ? (
             posts.map(
@@ -57,7 +57,7 @@ const { posts } = Astro.props
     font-size: 15px;
     overflow-x: hidden;
 
-    .articles {
+    .mobile-articles {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 1rem;
