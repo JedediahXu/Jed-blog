@@ -22,18 +22,6 @@
 
 ----
 
-## Screenshot
-
-![White Theme](https://chetxu.chetserenade.info/article/WechatIMG1640.jpg)
-
-![Black Theme](https://chetxu.chetserenade.info/article/WechatIMG1641.jpg)
-
-![Photo album](https://chetxu.chetserenade.info/article/WechatIMG1642.jpg)
-
-![mobile phone](https://chetxu.chetserenade.info/article/WechatIMG1655.jpg)
-
-![mobile menu](https://chetxu.chetserenade.info/article/WechatIMG1656.jpg)
-
 ## Development Setup
 
 ```bash
@@ -45,6 +33,19 @@ $ pnpm run build
 $ pnpm run start
 
 ```
+
+## Screenshot
+
+![White Theme](/screenhots/WhitePC.png)
+
+![Black Theme](/screenhots/BlackPC.png)
+
+![Photo album](/screenhots/Album.png)
+
+![mobile phone](/screenhots/MobileEnd.png)
+
+![mobile menu](/screenhots/MobileEndMenu.png)
+
 
 ### License
 
