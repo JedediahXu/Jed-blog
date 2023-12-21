@@ -4,6 +4,10 @@
 
 **My personal website and blog, powered by [Astro(4)](https://astro.build/) complete.**
 
+**Preview Address: [Jedxu.inf](https://jedxu.info/)**
+
+----
+
 ## Stack:
 
 - **Astro**:  Astro powers the world's fastest websites
@@ -16,11 +20,6 @@
 - **UI**: Better looking UI style (minimalist style)
 - **Dark mode**: Switching between light and dark modes
 - **Responsive**: Good design for mobile device
-
-
-**[Jedxu.inf](https://jedxu.info/)**
-
-----
 
 ## Development Setup
 
