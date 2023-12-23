@@ -34,6 +34,12 @@ export  const article = {
           contributionCount: 1,
           color: "#FCC580"
         },
+        { 
+          weekday: 0,
+          date: "2023-12-23",
+          contributionCount: 1,
+          color: "#FCC580"
+        },
       ]
     },
   ]
