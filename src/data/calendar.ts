@@ -616,8 +616,8 @@ export  const data = {
         {
           weekday: 1,
           date: "2023-12-23",
-          contributionCount: 1,
-          color: "#9be9a8"
+          contributionCount: 5,
+          color: "#40c463"
         },
         {
           weekday: 1,
@@ -634,8 +634,8 @@ export  const data = {
         {
           weekday: 1,
           date: "2023-12-27",
-          contributionCount: 1,
-          color: "#9be9a8"
+          contributionCount: 4,
+          color: "#40c463"
         },
         {
           weekday: 1,
@@ -658,7 +658,7 @@ export  const data = {
         {
           weekday: 1,
           date: "2023-12-31",
-          contributionCount: 1,
+          contributionCount: 2,
           color: "#9be9a8"
         },
         {
