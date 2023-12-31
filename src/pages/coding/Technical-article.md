@@ -12,10 +12,10 @@ label:
 description:
   - 简化使用`Composition API`时冗长的模板代码...
 image:
-  - 'https://chetxu.chetserenade.info/uPic/unfreedom.webp'
+  - 'https://chetxu.chetserenade.info/article/hello-world.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/uPic/unfreedom.webp)
+![图片描述](https://chetxu.chetserenade.info/article/hello-world.jpg)
 
 ## 一、基本使用
 

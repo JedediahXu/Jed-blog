@@ -12,8 +12,10 @@ label:
 description:
   - 前端开发决定了用户在使用网站时的体验
 image:
-  - 'https://chetxu.chetserenade.info/article/front-end.jpg'
+  - 'https://chetxu.chetserenade.info/article/UUU.jpg'
 ---
+
+![图片描述](https://chetxu.chetserenade.info/article/UUU.jpg)
 
 > 注：本文可能只有部分观点是正确的,但也不妨一读,如果你有更好的想法或建议欢迎与我交流,希望你的见解一针见血！
 

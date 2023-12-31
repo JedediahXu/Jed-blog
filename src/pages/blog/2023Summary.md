@@ -12,10 +12,10 @@ label:
 description:
   - 人生如梦，瞬息万变
 image:
-  - 'https://chetxu.chetserenade.info/article/JInan.jpg'
+  - 'https://chetxu.chetserenade.info/article/WechatIMG151.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/article/JInan.jpg)
+![图片描述](https://chetxu.chetserenade.info/article/WechatIMG151.jpg)
 
 ### 一、JOURNEY
 
