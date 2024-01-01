@@ -2,6 +2,20 @@
   display: none;
 }
 
+@media (min-width: 1024px) {
+  .mt-28 {
+    margin-top: 7rem;
+    margin-left: 12rem !important;
+    margin-right: 1.3rem !important;
+  }
+}
+
+.anchor-catalogue {
+  margin-top: 7rem !important;
+  margin-left: 0.1rem !important;
+  margin-right: 1.3rem !important;
+}
+
 @media (min-width: 1010px) {
   .desktop {
     display: block !important;
