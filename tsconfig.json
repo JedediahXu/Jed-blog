@@ -18,8 +18,8 @@
       "@/utils/*": [
         "src/utils/*.ts"
       ],
-      "@/server/*": [
-        "src/server/*.ts"
+      "@/data/*": [
+        "src/data/*.ts"
       ],
       "@/style/*": [
         "src/style/*.scss"

@@ -3,15 +3,11 @@ import Home from '@/layouts/Home'
 import RecentList from '@/components/Recent'
 import Calendar from '@/components/vue/Calendar'
 import PageFind from '@/components/PageFind'
-import { getArticleData } from "@/server/getters/article";
 
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 import juejin from '../images/juejin.svg'
 import youtube from '../images/youtube.svg'
-
-// Article collection
-const articleData = await getArticleData();
 
 const contacts = [
   {
@@ -43,11 +39,9 @@ const contacts = [
       <span> 👋 嘿,我是JedXu</span>
       <span> 一名靠摸爬滚打自学的前端工程师</span>
     </div>
-    <h2 class="font-bold mb-6 text-md desktop" data-pagefind-ignore>
-      PERECENT TRENDS / 「 近期动态 」
-    </h2>
+    <h2 class="font-bold mb-6 text-md desktop" data-pagefind-ignore>PERECENT TRENDS / 「 近期动态 」</h2>
     <div class="desktop">
-      <Calendar client:only="vue" article={articleData} />
+      <Calendar client:only="vue" />
     </div>
     <div class="prose-width mb-5 mt-2 text-md desktop">
       <div class="navigation bg-frostedGlass dark:bg-markerShadow">
@@ -75,9 +69,7 @@ const contacts = [
     </div>
   </div>
   <div class="text-sm" data-pagefind-ignore>
-    <h2 class="font-bold mt-6 mb-6 text-md desktop" data-pagefind-ignore>
-      PERECENT ARTICLES/「 近期文章 」
-    </h2>
+    <h2 class="font-bold mt-6 mb-6 text-md desktop" data-pagefind-ignore>PERECENT ARTICLES/「 近期文章 」</h2>
     <div class="ml-6 md:ml-0">
       <RecentList />
     </div>
