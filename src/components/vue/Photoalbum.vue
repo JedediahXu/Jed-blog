@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import probe from "probe-image-size";
-import { data } from "@/data/Photoalbum";
+import { data } from "@/server/getters/Photoalbum";
 
 async function updateImageSizes() {
   for (let i = 0; i < data.images.length; i++) {
@@ -98,3 +98,4 @@ await updateImageSizes();
   object-fit: cover;
 }
 </style>
+src/server/getters/Photoalbum

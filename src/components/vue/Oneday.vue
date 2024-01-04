@@ -15,7 +15,13 @@ const getPointHeightStyle = (value: number) => {
 </script>
 
 <template>
-  <div class="day bg-lunarLight dark:bg-slate-600" :data-date="date" data-pagefind-ignore>
+  <div
+    class="day bg-lunarLight dark:bg-slate-600"
+    :data-date="date"
+    :data-total-count="total"
+    :data-contribution-count="contributions"
+    data-pagefind-ignore
+  >
     <div class="point">
       <div
         class="item article"
