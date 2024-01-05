@@ -7,12 +7,17 @@
 // Reference: @author Surmon <https://github.com/surmon-china>
 import axios from '../services/axios'
 
+const { MY_SECRET_TOKEN } = process.env;
+
+console.log(MY_SECRET_TOKEN,'----');
+
+
 const graphqlGitHub = <T = any>(query: string): Promise<T> => {
   return axios
     .request<any>({
       // https://github.com/settings/tokens
       // Set the environment variable in Netlify to store your private token
-      headers: { Authorization: `bearer ${process.env.MY_SECRET_TOKEN}` },
+      headers: { Authorization: `bearer ${MY_SECRET_TOKEN}` },
       url: `https://api.github.com/graphql`,
       method: 'POST',
       data: JSON.stringify({
