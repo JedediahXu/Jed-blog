@@ -7,9 +7,12 @@
 // Reference: @author Surmon <https://github.com/surmon-china>
 import axios from '../services/axios'
 
+console.log(process,'----1');
+
+console.log(process.env,'----2');
+
 const { MY_SECRET_TOKEN } = process.env;
 
-console.log(MY_SECRET_TOKEN,'----');
 
 
 const graphqlGitHub = <T = any>(query: string): Promise<T> => {
