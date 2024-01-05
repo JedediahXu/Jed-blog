@@ -7,7 +7,6 @@
 // Reference: @author Surmon <https://github.com/surmon-china>
 import axios from '../services/axios'
 
-console.log(process.env,'----2');
 
 console.log(MY_SECRET_TOKEN);
 
