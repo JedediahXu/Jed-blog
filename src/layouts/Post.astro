@@ -1,6 +1,6 @@
 ---
 import Home from '../layouts/Home.astro'
-import Donate from '@/components/Donate'
+import Donate from '@/components/vue/Donate'
 import ListRelatedPosts from '@/components/ListRelatedPosts'
 import TOC from '@/components/TOC'
 import BaseLayout from './BaseLayout.astro'
@@ -12,7 +12,6 @@ const { frontmatter, headings } = Astro.props
 const codingPosts = await Astro.glob('../pages/coding/*.md')
 const blogPosts = await Astro.glob('../pages/blog/*.md')
 const reship = await Astro.glob('../pages/reship/*.md')
-
 const posts = [...codingPosts, ...blogPosts, ...reship]
 
 const filteredPosts = posts.filter(
@@ -23,7 +22,6 @@ const filteredPosts = posts.filter(
 
 // random
 filteredPosts.sort(() => Math.random() - 0.5)
-
 const relatedPosts = filteredPosts.slice(0, 4)
 ---
 
@@ -56,7 +54,7 @@ const relatedPosts = filteredPosts.slice(0, 4)
       <ListRelatedPosts posts={relatedPosts} />
     </div>
     <div>
-      <Donate />
+      <Donate client:only="vue" />
     </div>
     <div slot="catalogue"><TOC headings={headings} frontmatter={frontmatter} /></div>
   </Home>

@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import CalendarDay from "./Oneday.vue";
 import { dateToHuman, humanDateToYMD } from "@/utils/moment";
 import { getGitHubContributions } from "@/server/getters/github";
 
 let data = null;
+const props = defineProps<{
+  article: any;
+}>();
 
 const now = new Date();
 const end = now.toISOString();
@@ -18,13 +21,9 @@ try {
   console.error("Error reading data:", error);
 }
 
-const props = defineProps<{
-  article: any;
-}>();
-
-const githubContributionsMap = computed(() => {
+const createContributionsMap = (weeks) => {
   const contributionsMap = new Map();
-  for (const week of data.weeks) {
+  for (const week of weeks) {
     for (const day of week.contributionDays) {
       if (day.contributionCount > 0) {
         contributionsMap.set(day.date, {
@@ -35,20 +34,13 @@ const githubContributionsMap = computed(() => {
     }
   }
   return contributionsMap;
-});
+};
 
-const articleContributionsMap = computed(() => {
-  const contributionsMap = new Map();
-  for (const week of props.article.weeks) {
-    for (const day of week.contributionDays) {
-      contributionsMap.set(day.date, {
-        count: day.contributionCount,
-        color: day.color,
-      });
-    }
-  }
-  return contributionsMap;
-});
+const githubContributionsMap = computed(() => createContributionsMap(data.weeks));
+
+const articleContributionsMap = computed(() =>
+  createContributionsMap(props.article.weeks)
+);
 
 const getDayContributions = (date: string) => {
   return githubContributionsMap.value.get(date)?.count || 0;
@@ -88,6 +80,22 @@ const months = [
   getPrevMonthFullDays(todayHuman, 1),
   currentMonthDays,
 ];
+
+// remove placeholders
+const onCalendarRendered = () => {
+  const skeletonElement = document.getElementById("skeleton");
+  if (skeletonElement) {
+    skeletonElement.remove();
+  }
+  const calendarElement = document.getElementById("calendar");
+  if (calendarElement) {
+    calendarElement.style.display = "block";
+  }
+};
+
+onMounted(() => {
+  onCalendarRendered();
+});
 </script>
 
 <template>
@@ -146,4 +154,3 @@ const months = [
   }
 }
 </style>
-src/server/getters/article

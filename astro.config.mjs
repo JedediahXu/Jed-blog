@@ -9,7 +9,7 @@ export default defineConfig({
     syntaxHighlight: 'shiki',
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
-      // 选择 Shiki 内置的主题（或添加你自己的主题）
+      // Choose Shiki's built-in theme (or add your own)
       // https://github.com/shikijs/shiki/blob/main/docs/themes.md
       theme: 'dark-plus',
       wrap: false,

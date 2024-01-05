@@ -27,11 +27,12 @@ import { ViewTransitions } from 'astro:transitions'
       content={Astro.props.ogDescription || 'Jed is blogging about life, tech.'}
     />
     <meta property="og:type" content={Astro.props.ogType || 'website'} />
+    <script is:inline src="https://cdn.staticfile.org/twikoo/1.6.9/twikoo.all.min.js"></script>
     <ProviderTheme />
     <ViewTransitions />
   </head>
 
-  <body 
+  <body
     class="bg-snowfallWhite text-stone-950 dark:bg-[#232323] dark:text-snowfallWhite w-full h-full"
   >
     <slot />

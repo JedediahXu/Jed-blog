@@ -2,13 +2,13 @@
 import ArticleList from './ArticleList.astro'
 import MobileArticleList from './MobileArticleList.astro'
 
-const posts = await Astro.glob("../pages/blog/*.md");
+const posts = await Astro.glob("../pages/blog/*.md")
+
 // sort post by date
 posts.sort((a, b) => {
   //@ts-ignore
   return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
 });
-
 ---
 
 <div class="desktop">

@@ -49,3 +49,9 @@ export default {
       },
   ]
 }
+
+export const twikoo = {
+  enabled: true,
+  url: "https://jedxu.netlify.app/.netlify/functions/twikoo",
+  recent_limit: 5,
+}

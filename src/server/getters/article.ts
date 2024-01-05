@@ -1,6 +1,6 @@
 /**
  * @file Article getter
- * @module server.getter.github
+ * @module server.getter.article
  * @author JedediahXu <https://github.com/JedediahXu>
  */
 
@@ -19,7 +19,7 @@ export async function getArticleData() {
     return result.data.date;
   });
 
-  const modifiedDates = posts.map((post, index) => {
+  const modifiedDates = posts.map((post) => {
     const dateString = post.toISOString();
     return dateString.split('T')[0]
   });
