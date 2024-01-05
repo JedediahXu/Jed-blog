@@ -1,4 +1,4 @@
- // TODO:  Plan to have dynamic access to Instagram images
+// Plan to have dynamic access to Instagram images
 export  const data = {
   images: [
     {
