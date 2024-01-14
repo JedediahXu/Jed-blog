@@ -7,6 +7,15 @@ import probe from "probe-image-size";
 const data = {
   images: [
     {
+      label: "天空 🛫",
+      time: "2024/01/07",
+      size: {
+        width: 0,
+        height: 0,
+      },
+      href:"https://chetxu.chetserenade.info/ieslab/WechatIMG1845.jpg"
+    },
+    {
       label: "棒 👍",
       time: "2023/08/14",
       size: {
