@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { computed } from "vue";
-import probe from "probe-image-size";
+import { computed, ref, onMounted } from "vue";
+import ImageModal from "./ImageModal.vue";
 
 // In order to solve [ERROR] [vite] Could not resolve "../../../src/server/getters/photoalbum" from "src/components/vue/Photoalbum.vue"
 // I put it here temporarily, but I'll change it later
-const data = {
+const data = ref({
   images: [
     {
       label: "天空 🛫",
@@ -13,7 +13,7 @@ const data = {
         width: 0,
         height: 0,
       },
-      href:"https://chetxu.chetserenade.info/ieslab/WechatIMG1845.jpg"
+      href: "https://chetxu.chetserenade.info/ieslab/WechatIMG1845.jpg",
     },
     {
       label: "棒 👍",
@@ -277,27 +277,36 @@ const data = {
       href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1177.jpg",
     },
   ],
+});
+
+const isAlertVisible = ref(false);
+const currentIndex = ref(0);
+const isModalVisible = ref(false);
+
+const isMobile = computed(() => {
+  return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+});
+
+const openModal = (index) => {
+  if (!isMobile.value) {
+    currentIndex.value = index;
+    isModalVisible.value = true;
+  } else {
+    // TODO: Temporary processing, will be optimized later
+    alert("对不起，暂不支持手机查看，请上电脑查看");
+  }
 };
 
-async function updateImageSizes() {
-  for (let i = 0; i < data.images.length; i++) {
-    const image = data.images[i];
-    try {
-      const result = await probe(image.href);
-      data.images[i].size.width = result.width;
-      data.images[i].size.height = result.height;
-    } catch (error) {
-      console.error(`Could not get image size: ${image.href}`);
-    }
-  }
-}
-
-await updateImageSizes();
+const handleImageChange = (newIndex) => {
+  currentIndex.value = newIndex;
+};
 </script>
 
 <template>
   <div class="md:ml-0 md:mr-20 pb-10" data-pagefind-ignore>
-    <div id="my-gallery" class="flex flex-wrap">
+    <div class="flex flex-wrap">
       <div
         v-for="(image, index) in data.images"
         :key="index"
@@ -311,16 +320,15 @@ await updateImageSizes();
               >
             </div>
           </div>
-          <a
-            :data-pswp-width="image.size.width"
-            :data-pswp-height="image.size.height"
-            :href="image.href"
-            data-cropped="true"
-            class="block overflow-hidden"
-          >
+          <a data-cropped="true" class="block overflow-hidden">
             <div class="transition-transform transform group-hover:scale-110">
               <div class="transform-img">
-                <img :src="image.href" :alt="image.label" class="img-width" />
+                <img
+                  :src="image.href"
+                  :alt="image.label"
+                  class="img-width"
+                  @click="openModal(index)"
+                />
               </div>
             </div>
           </a>
@@ -334,6 +342,17 @@ await updateImageSizes();
         </div>
       </div>
     </div>
+  </div>
+  <image-modal
+    :images="data.images"
+    :current-index="currentIndex"
+    :is-visible="isModalVisible"
+    @close="isModalVisible = false"
+    @change="handleImageChange"
+  />
+  <div v-if="isAlertVisible" class="alert-modal">
+    <p>对不起，暂不支持手机查看，请上电脑查看</p>
+    <button @click="isAlertVisible = false">关闭</button>
   </div>
 </template>
 
