@@ -255,13 +255,21 @@
 @media (min-width: 768px) {
   #twikoo {
     width: 650px !important;
+    padding: 10px;
+    border-radius: 6px;
   }
 }
 
 @media (max-width: 767px) {
   #twikoo {
     max-width: 78.5ch !important;
+    padding: 10px;
+    border-radius: 6px;
   }
+}
+
+.tk-comments-no {
+  border-top: 1px dashed #ababab;
 }
 
 .el-loading-spinner {
