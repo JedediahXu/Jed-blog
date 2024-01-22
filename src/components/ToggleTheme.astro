@@ -20,7 +20,6 @@
       const isPressed = this.#button!.getAttribute('aria-pressed') === 'true'
       this.#dispatchThemeChangeEvent(isPressed ? 'light' : 'dark')
       this.#updateIconsOpacity(isPressed)
-      this.updateTwikooColor(isPressed)
       this.#button!.setAttribute('aria-pressed', String(!isPressed))
     }
 
@@ -32,15 +31,6 @@
     #updateIconsOpacity(isPressed: boolean) {
       this.#sunIcon!.style.opacity = isPressed ? '1' : '0'
       this.#moonIcon!.style.opacity = isPressed ? '0' : '1'
-    }
-
-    updateTwikooColor(isPressed: boolean) {
-      const twikoo = document.querySelector('#twikoo')
-      console.log(isPressed,'<====');
-      if (twikoo) {
-        // @ts-ignore
-        twikoo.style.background = isPressed ? '#ffffffe5' : 'rgba(68, 68, 68, .6)'
-      }
     }
   }
 
@@ -61,10 +51,6 @@
     }
 
     setButtonPressed()
-
-    const themeToggle = document.querySelector('theme-toggle') as any
-    const isDark = document.documentElement.classList.contains('dark')
-    themeToggle.updateTwikooColor(!isDark)
   })
 </script>
 

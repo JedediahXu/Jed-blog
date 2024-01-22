@@ -16,7 +16,8 @@ module.exports = {
 				dullGrey:'#B2C5DE',
 				frostedGlass: 'rgba(255, 255, 255, .6)',
 				codeReveal: 'rgba(255, 255, 255, .9)',
-				secondary:'rgba(240, 240, 240, .5)'
+				secondary:'rgba(240, 240, 240, .5)',
+				commentBackground:'#ffffffe5',
 			},
 			fontFamily: {
 				body: ['Manrope', ...defaultTheme.fontFamily.sans]

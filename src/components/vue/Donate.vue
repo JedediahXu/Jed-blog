@@ -15,6 +15,11 @@ const loadTwikoo = () => {
     });
   `;
   document.head.append(script);
+
+  const twikooElement = document.querySelector('#twikoo');
+  if (twikooElement) {
+    twikooElement.classList.add('bg-commentBackground', 'dark:bg-[#44444499]');
+  }
 };
 
 const onPopState = () => {
