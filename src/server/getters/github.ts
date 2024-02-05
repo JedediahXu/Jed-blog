@@ -15,6 +15,8 @@ const graphqlGitHub = <T = any>(query: string): Promise<T> => {
     .request<any>({
       // https://github.com/settings/tokens
       // Set the environment variable in Netlify to store your private token
+      // Note: tokens may expire
+      
       // TODO: Look out.
       // Here I do not do the proxy on the server side, 
       // Authorization will be exposed in the browser,
