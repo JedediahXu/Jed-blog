@@ -3,9 +3,9 @@ const { posts } = Astro.props
 ---
 
 <section
-  class="related-body markdown-width font-monda break-words mt-5  leading-7 font-normal text-base overflow-x-hidden"
+  class="related-body markdown-width font-monda break-words mt-5 leading-7 font-normal text-base overflow-x-hidden"
 >
-  <div class="relative overflow-hidden ">
+  <div class="relative overflow-hidden">
     <div>
       <ul class="grid mobile-articles gap-4 p-0 m-0 list-none">
         {
@@ -28,8 +28,10 @@ const { posts } = Astro.props
                         alt=""
                       />
                     </picture>
-                    <div class="title  dark:text-snowfallWhite">{post.frontmatter.title}</div>
-                    <div class="description dark:text-secondary  w-full px-2 transition-colors duration-100 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                    <div class="title defaultColor dark:text-snowfallWhite">
+                      {post.frontmatter.title}
+                    </div>
+                    <div class=" defaultColor description dark:text-secondary  w-full px-2 transition-colors duration-100 overflow-hidden overflow-ellipsis whitespace-nowrap">
                       {post.frontmatter.description}
                     </div>
                   </a>
