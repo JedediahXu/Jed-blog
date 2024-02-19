@@ -2,7 +2,7 @@ export default {
   title: `Jed`,
   name: `Jed's log`,
   since: '2021',
-  signature:'想太多了',
+  signature:'Me',
   ego:`Hi！✨
   我是一名「前端开发工程师」`,
   friend:'Maybe we can make friends',

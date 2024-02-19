@@ -84,12 +84,16 @@ function convertToChineseTime(timeString: string) {
 
 {
   headings.length ? (
-    <div class="anchor sticky-module fixed sm:px-10 anchor-catalogue lg:inline-block w-60 catalogue" data-pagefind-ignore>
+    <div
+      class="anchor sticky-module fixed sm:px-10 anchor-catalogue lg:inline-block w-60 catalogue"
+      data-pagefind-ignore
+    >
       <button class="header" title="高高山上走" data-pagefind-ignore>
         <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
-        {frontmatter.title && frontmatter.language  ? (
+        {frontmatter.title && frontmatter.language ? (
           <div class="read" data-pagefind-ignore>
-            {frontmatter.language}，共 {minutesRead.words} 字，需阅读 {convertToChineseTime(minutesRead.text)}
+            {frontmatter.language}，共 {minutesRead.words} 字，需阅读{' '}
+            {convertToChineseTime(minutesRead.text)}
           </div>
         ) : null}
       </button>
@@ -164,6 +168,8 @@ function convertToChineseTime(timeString: string) {
 
   .truncated-title {
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .text {
     text-decoration: underline;

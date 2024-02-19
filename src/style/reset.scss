@@ -17,6 +17,10 @@
   height: 100%;
 }
 
+.home-width {
+  width: 630px;
+}
+
 .prose-width {
   max-width: 110ch !important;
   display: flex;
@@ -24,7 +28,6 @@
 
   span {
     line-height: 35px;
-    display: flex;
   }
 
   a {
@@ -147,12 +150,6 @@
   .calendar {
     width: 690px !important;
   }
-  .item-background {
-    width: 690px !important;
-  }
-  .item-content {
-    width: 690px !important;
-  }
   .home {
     max-width: 1110px !important;
   }
@@ -160,12 +157,6 @@
 
 @media (max-width: 1600px) {
   .calendar {
-    width: 630px !important;
-  }
-  .item-content {
-    width: 630px !important;
-  }
-  .item-background {
     width: 630px !important;
   }
 }
