@@ -1,5 +1,5 @@
 export default {
-  title: `Jed`,
+  title: `Jed's log`,
   name: `Jed's log`,
   since: '2021',
   signature:'Me',

@@ -28,18 +28,6 @@ function getIcon(depth: number) {
   }
 }
 
-function removeFirstCharAndSpace(title: string) {
-  if (typeof title === 'string' && title.length > 1) {
-    const firstChar = title.charCodeAt(0)
-    if (firstChar >= 0xd800 && firstChar <= 0xdbff) {
-      return title.substring(2).trim()
-    } else {
-      return title.substring(1).trim()
-    }
-  }
-  return title
-}
-
 function convertToChineseTime(timeString: string) {
   const timePattern =
     /(\d+)\s*(min|minute|min\s+read|分钟\s+阅读|hr|hour|hour\s+read|小时\s+阅读|day|天|week|周|month|月|year|年)\s*(read)?/i
@@ -89,7 +77,7 @@ function convertToChineseTime(timeString: string) {
       data-pagefind-ignore
     >
       <button class="header" title="高高山上走" data-pagefind-ignore>
-        <div class="title">{removeFirstCharAndSpace(frontmatter.title)}</div>
+        <div class="title">{frontmatter.title}</div>
         {frontmatter.title && frontmatter.language ? (
           <div class="read" data-pagefind-ignore>
             {frontmatter.language}，共 {minutesRead.words} 字，需阅读{' '}

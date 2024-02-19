@@ -1,5 +1,5 @@
 ---
-title:   🌼 前端建设
+title: 前端建设
 layout: '@/layouts/Post'
 date: 2023-09-16
 tags: blog

@@ -1,5 +1,5 @@
 ---
-title: 🤖 二零二三年終總結
+title: 二零二三年終總結
 layout: '@/layouts/Post'
 date: 2023-12-22
 tags: blog

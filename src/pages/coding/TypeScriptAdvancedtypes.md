@@ -1,5 +1,5 @@
 ---
-title: 🪬 关于TypeScript高级类型
+title: 关于TypeScript高级类型
 layout: '@/layouts/Post'
 date: 2024-01-21
 tags: blog

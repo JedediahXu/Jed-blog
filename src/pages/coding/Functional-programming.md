@@ -1,5 +1,5 @@
 ---
-title:   👨‍💻 函数式编程
+title: 函数式编程
 layout: '@/layouts/Post'
 date: 2023-08-20
 tags: blog

@@ -1,5 +1,5 @@
 ---
-title: 🌸  Vue Setup简介与实践
+title: Vue Setup简介与实践
 layout: '@/layouts/Post'
 date: 2022-05-02
 tags: blog
@@ -51,7 +51,7 @@ import subassembly from './subassembly.vue'
 
 ## 三、组件通信
 
-#### defineProps：
+#### defineProps
 
 **父组件代码**
 
@@ -94,7 +94,7 @@ console.log(props.title) //父的值
 
 在标准组件写法里，子组件的数据都是默认隐式暴露给父组件的，但在`script-setup`模式下，**所有数据只是默认return给template 使用，不会暴露到组件外，所以父组件是无法直接通过挂载ref 变量获取子组件的数据**。如果要调用子组件的数据，需要先在子组件显示的暴露出来，才能够正确的拿到，这个操作，就是由**defineExpose**来完成。
 
-#### defineExpose：
+#### defineExpose
 
 **子组件代码**
 
@@ -121,7 +121,7 @@ defineExpose({
 </script>
 ```
 
-### 四、结果展示
+## 四、结果展示
 
 总得来说，新引入的setup语法糖的 目的是简化使用`Composition API`时冗长的模板代码，也就是让代码更加简洁，阅读性也越高。而在组件中引入并使用自定义hook 自定义hook的作用类似于vue2中的mixin技术 自定义Hook的优势: 很清楚复用功能代码的来源, 更清楚易懂！
 
