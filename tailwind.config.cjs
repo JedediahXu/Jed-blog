@@ -23,7 +23,5 @@ module.exports = {
 				body: ['Manrope', ...defaultTheme.fontFamily.sans]
 			},
 		}
-	},
-	plugins: [
-	],
+	}
 }

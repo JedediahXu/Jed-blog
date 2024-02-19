@@ -11,7 +11,8 @@
     const html = document.documentElement
     const isDark = newTheme === 'dark'
 
-    html.classList.toggle('dark', isDark)
+    // TODO: Temporarily switch the theme off
+    // html.classList.toggle('dark', isDark)
     html.classList.toggle('light', !isDark)
 
     localStorage.setItem('theme', newTheme)

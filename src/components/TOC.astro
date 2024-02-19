@@ -107,6 +107,7 @@ function convertToChineseTime(timeString: string) {
 <style>
   .catalogue {
     max-height: 36rem;
+    margin-top: 7px;
     padding: 0.618rem 1rem;
     padding-left: 0;
     overflow-y: auto;
@@ -155,11 +156,13 @@ function convertToChineseTime(timeString: string) {
   }
 
   .truncated-title {
-    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.7);
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
   .text {
+    font-size: 13px !important;
     text-decoration: underline;
     text-underline-offset: 0.4em;
     text-decoration-thickness: from-font;
@@ -177,11 +180,11 @@ function convertToChineseTime(timeString: string) {
 
   .anchor .header .title {
     font-weight: 700;
-    font-size: 15px;
+    color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
   }
 
   .anchor .header .read {
-    font-size: 11px;
+    font-size: 12px;
   }
 </style>

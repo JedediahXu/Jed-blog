@@ -18,7 +18,8 @@
 
     #toggleTheme() {
       const isPressed = this.#button!.getAttribute('aria-pressed') === 'true'
-      this.#dispatchThemeChangeEvent(isPressed ? 'light' : 'dark')
+      // TODO: Temporarily switch the theme off
+      // this.#dispatchThemeChangeEvent(isPressed ? 'light' : 'dark')
       this.#updateIconsOpacity(isPressed)
       this.#button!.setAttribute('aria-pressed', String(!isPressed))
     }
