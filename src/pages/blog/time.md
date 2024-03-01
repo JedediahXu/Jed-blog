@@ -25,6 +25,9 @@ image:
 
 在这里，我遇到了很多有意思的朋友和老师，也遇到了一个为我留下几年美好恋情回忆的人。最后一次回望，城市的街道仿佛是时间的画卷，在画卷中我留下了青涩懵懂的足迹。
 
+![树](https://chetxu.chetserenade.info/leslab/WechatIMG2050.jpg)
+○ **我最喜欢的一颗树 ｜ 2018**
+
 ![理完发](https://chetxu.chetserenade.info/leslab/WechatIMG11.jpg)
 ○ **理完发 ｜ 2019**
 
@@ -33,6 +36,9 @@ image:
 
 ![体验女装](https://chetxu.chetserenade.info/leslab/%E5%A5%B3%E8%A3%852.jpg)
 ○ **体验女装 ｜ 2021**
+
+![发呆](https://chetxu.chetserenade.info/leslab/%E6%BD%98%E5%BA%84.jpg)
+○ **傍晚，经常坐着望向窗外去想一些琐事 ｜ 2022**
 
 ### 当下
 
