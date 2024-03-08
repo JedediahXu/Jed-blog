@@ -34,10 +34,6 @@ image:
 在这里，我遇到了很多有意思的朋友和老师，也遇到了一个为我留下几年美好恋情回忆的人...
 
 ![树](https://chetxu.chetserenade.info/leslab/WechatIMG2050.jpg)
-○ **一颗树**
-
-![发呆](https://chetxu.chetserenade.info/leslab/%E6%BD%98%E5%BA%84.jpg)
-○ **窗外**
 
 ### 当下
 
@@ -68,6 +64,8 @@ image:
 所以在忙碌的生活中，要更加珍惜和深思我们所拥有的每一刻，要专注于当下，不要过渡的扩展到过去和未来。
 
 现在的将来，就是过去的现在。
+
+![发呆](https://chetxu.chetserenade.info/leslab/%E6%BD%98%E5%BA%84.jpg)
 
 ### Vettel
 
