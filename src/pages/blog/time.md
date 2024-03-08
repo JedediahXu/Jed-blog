@@ -17,16 +17,6 @@ image:
 
 ![图片描述](https://chetxu.chetserenade.info/leslab/20229.jpg)
 
-我是一个沉默不语的
-
-靠着车窗想念你的乘客
-
-当107路再次经过
-
-时间是带走青春的电车
-
----
-
 时间真的是一种特别奇妙东西，
 
 它可以让青涩变得成熟；
@@ -41,22 +31,13 @@ image:
 
 淄博，我在这里生活了5年多，时间在这里变得有形，这里也承载了我许多美好的回忆。这里不仅有精致好吃的博山菜，还有令人垂涎的小烧烤。
 
-在这里，我遇到了很多有意思的朋友和老师，也遇到了一个为我留下几年美好恋情回忆的人。最后一次回望，城市的街道仿佛是时间的影集...
+在这里，我遇到了很多有意思的朋友和老师，也遇到了一个为我留下几年美好恋情回忆的人...
 
 ![树](https://chetxu.chetserenade.info/leslab/WechatIMG2050.jpg)
-○ **一颗树 ｜ 2018**
-
-![理完发](https://chetxu.chetserenade.info/leslab/WechatIMG11.jpg)
-○ **理发 ｜ 2019**
-
-![耳朵插花](https://chetxu.chetserenade.info/leslab/1%E8%8A%B1.jpg)
-○ **插花 ｜ 2020**
-
-![体验女装](https://chetxu.chetserenade.info/leslab/%E5%A5%B3%E8%A3%852.jpg)
-○ **女装 ｜ 2021**
+○ **一颗树**
 
 ![发呆](https://chetxu.chetserenade.info/leslab/%E6%BD%98%E5%BA%84.jpg)
-○ **窗外 ｜ 2022**
+○ **窗外**
 
 ### 当下
 
@@ -92,7 +73,7 @@ image:
 
 插播一条，我很喜欢的一个短视频
 
-22年底退役的Vettel，他也曾是意气风发的少年
+22年底退役的Vettel，曾经意气风发的少年
 
 “Sebastian Vettel！You are the world champion!  The  world champion!”
 
