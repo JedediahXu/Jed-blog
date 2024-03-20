@@ -20,7 +20,7 @@ const graphqlGitHub = <T = any>(query: string): Promise<T> => {
       // TODO: Look out.
       // Here I do not do the proxy on the server side, 
       // Authorization will be exposed in the browser,
-      // which will cause potential hazards. I'll revise it sometime.
+      // which will cause potential hazards. 
       headers: { Authorization: `bearer ${PUBLIC__SECRET_TOKEN}` },
       url: `https://api.github.com/graphql`,
       method: 'POST',

@@ -3,7 +3,7 @@ import { computed, ref, onMounted } from "vue";
 import ImageModal from "./ImageModal.vue";
 
 // In order to solve [ERROR] [vite] Could not resolve "../../../src/server/getters/photoalbum" from "src/components/vue/Photoalbum.vue"
-// I put it here temporarily, but I'll change it later
+// I put it here temporarily
 const data = ref({
   images: [
     {
