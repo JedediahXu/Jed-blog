@@ -13,6 +13,15 @@ const data = ref({
         width: 0,
         height: 0,
       },
+      href: "https://chetxu.chetserenade.info/leslab/WechatIMG2185.jpg",
+    },
+    {
+      label: "天空 🛫",
+      time: "2024/01/07",
+      size: {
+        width: 0,
+        height: 0,
+      },
       href: "https://chetxu.chetserenade.info/ieslab/WechatIMG1845.jpg",
     },
     {
@@ -289,7 +298,7 @@ const isMobile = computed(() => {
   );
 });
 
-const openModal = (index) => {
+const openModal = (index: number) => {
   if (!isMobile.value) {
     currentIndex.value = index;
     isModalVisible.value = true;
@@ -299,7 +308,7 @@ const openModal = (index) => {
   }
 };
 
-const handleImageChange = (newIndex) => {
+const handleImageChange = (newIndex: number) => {
   currentIndex.value = newIndex;
 };
 </script>
