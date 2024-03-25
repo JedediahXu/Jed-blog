@@ -7,8 +7,8 @@ import ImageModal from "./ImageModal.vue";
 const data = ref({
   images: [
     {
-      label: "天空 🛫",
-      time: "2024/01/07",
+      label: "百花公园",
+      time: "2024/03/23",
       size: {
         width: 0,
         height: 0,
