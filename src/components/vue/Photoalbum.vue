@@ -6,6 +6,15 @@ import ImageModal from "./ImageModal.vue";
 // I put it here temporarily
 const data = ref({
   images: [
+   {
+      label: "烟台-养马岛",
+      time: "2024/04/04",
+      size: {
+        width: 0,
+        height: 0,
+      },
+      href: "https://chetxu.chetserenade.info/leslab/YanTai.jpg",
+    },
     {
       label: "百花公园",
       time: "2024/03/23",
