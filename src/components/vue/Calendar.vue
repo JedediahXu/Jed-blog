@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted } from "vue";
 import CalendarDay from "./Oneday.vue";
-import { dateToHuman, humanDateToYMD } from "@/utils/moment";
+import { dateToHuman, humanDateToYMD, type HumanDate } from "@/utils/moment";
 import { getGitHubContributions } from "@/server/getters/github";
 
 let data = null;
@@ -21,7 +21,7 @@ try {
   console.error("Error reading data:", error);
 }
 
-const createContributionsMap = (weeks) => {
+const createContributionsMap = (weeks: any) => {
   const contributionsMap = new Map();
   for (const week of weeks) {
     for (const day of week.contributionDays) {
