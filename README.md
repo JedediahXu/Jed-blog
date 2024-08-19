@@ -45,7 +45,3 @@ $ pnpm run start
 
 ![mobile menu](/screenhots/MobileEndMenu.png)
 
-
-### License
-
-Licensed under the [MIT](/LICENSE) License.
