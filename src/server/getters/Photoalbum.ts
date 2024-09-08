@@ -21,7 +21,7 @@ export const data = ref({
       },
       href: "https://chetxu.chetserenade.info/JedXu/WechatIMG761.jpg",
     },
-   {
+    {
       label: "烟台-养马岛",
       time: "2024/04/04",
       size: {
