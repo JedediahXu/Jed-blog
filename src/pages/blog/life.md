@@ -12,10 +12,10 @@ label:
 description:
   - 在流动中找寻平静
 image:
-  - 'https://chetxu.chetserenade.info/leslab/20240617.jpg'
+  - 'https://chetxu.chetserenade.info/JedXu/WechatIMG676.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/leslab/20240617.jpg)
+![图片描述](https://chetxu.chetserenade.info/JedXu/WechatIMG676.jpg)
 
 ### 近况
 

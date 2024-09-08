@@ -12,10 +12,10 @@ label:
 description:
   - 青春的偷盗者
 image:
-  - 'https://chetxu.chetserenade.info/leslab/20229.jpg'
+  - 'https://chetxu.chetserenade.info/JedXu/WechatIMG678.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/leslab/20229.jpg)
+![图片描述](https://chetxu.chetserenade.info/JedXu/WechatIMG678.jpg)
 
 时间真的是一种特别奇妙东西，
 
