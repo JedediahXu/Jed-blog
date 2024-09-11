@@ -139,7 +139,9 @@ Nest 在这些常见的 Node.js 框架 (Express/Fastify) 之上提高了一个�
 
 ....
 
-### 目前还在研发中，敬请期待！（只有业务时间才会开发）
+### 目前还在研发中，敬请期待！
+
+「**业余时间开发**」
 
 ![目前正在研发中](https://chetxu.chetserenade.info/JedXu/CleanShot%202024-09-11%20at%2022.16.35.png)
 
