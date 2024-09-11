@@ -19,9 +19,9 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
             <div class="text-gray-500 text-base font-light my-2">
               <div class="flex">
                 <div id="theme">
-                  <ToggleTheme />
+                  <!-- <ToggleTheme /> -->
                 </div>
-                <span class="ml-6 mt-1">{config.signature}</span>
+                <span class="mt-1">{config.signature}</span>
               </div>
             </div>
           </div>
@@ -33,11 +33,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
                 const trimmedPathname = pathname === '/' ? pathname : pathname.replace(/\/$/, '')
                 const isActive = trimmedPathname === nav.url
                 return (
-                  <a
-                    href={nav.url}
-                    class:list={isActive ? 'active' : ''}
-                    rel={nav.url.startsWith('http') ? 'noopener' : undefined}
-                  >
+                  <a href={nav.url} class:list={isActive ? 'active' : ''} rel={nav.url.startsWith('http') ? 'noopener' : undefined}>
                     {nav.title}
                   </a>
                 )
@@ -60,9 +56,9 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
             <div class="text-gray-400 text-base font-light my-2">
               <div class="flex">
                 <div id="theme">
-                  <ToggleTheme />
+                  <!-- <ToggleTheme /> -->
                 </div>
-                <span class="ml-6 mt-1" style="margin-left:24px">{config.signature}</span>
+                <span class="mt-1">{config.signature}</span>
               </div>
             </div>
           </div>
@@ -73,11 +69,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
                 const trimmedPathname = pathname === '/' ? pathname : pathname.replace(/\/$/, '')
                 const isActive = trimmedPathname === nav.url
                 return (
-                  <a
-                    href={nav.url}
-                    class:list={isActive ? 'active' : ''}
-                    rel={nav.url.startsWith('http') ? 'noopener' : undefined}
-                  >
+                  <a href={nav.url} class:list={isActive ? 'active' : ''} rel={nav.url.startsWith('http') ? 'noopener' : undefined}>
                     {nav.title}
                   </a>
                 )
@@ -90,10 +82,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
         </div>
       </div>
 
-      <div
-        class="toggle bg-frostedGlass dark:bg-markerShadow mobile header-navbar"
-        data-pagefind-ignore
-      >
+      <div class="toggle bg-frostedGlass dark:bg-markerShadow mobile header-navbar" data-pagefind-ignore>
         <div class="toggle-menu" id="toggle"><i class="iconfont icon-menu"></i></div>
         <div class="header-slogan" data-pagefind-ignore>Jed's log</div>
         <div class="toggle-menu">
@@ -103,7 +92,7 @@ let avatar = 'https://chetxu.chetserenade.info/article/avatar.jpg'
 
       <div id="shading" class="shading container-mains opened"></div>
 
-      <div class="lg:mt-28 mx-4 mx-0 ml-52 md container-main opened">
+      <div class="lg:mt-28 mx-4 ml-52 md container-main opened">
         <div class="container">
           <slot />
         </div>
