@@ -16,5 +16,5 @@ export default defineConfig({
     },
   },
   site: 'https://JedXu.info',
-  integrations: [tailwind(),vue()]
+  integrations: [tailwind(),vue()],
 });

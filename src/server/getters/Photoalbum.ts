@@ -1,7 +1,5 @@
-import { ref } from "vue";
 
-
-export const data = ref({
+export const photoAlbumData = {
   images: [
     {
       label: "婚纱照",
@@ -310,4 +308,4 @@ export const data = ref({
       href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1177.jpg",
     },
   ],
-});
+};

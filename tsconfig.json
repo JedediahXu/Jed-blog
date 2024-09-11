@@ -23,7 +23,10 @@
       ],
       "@/style/*": [
         "src/style/*.scss"
+      ],
+      "@/data/*": [
+        "src/data/*.ts"
       ]
     }
-  },
+  }
 }
