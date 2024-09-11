@@ -1,5 +1,5 @@
 ---
-title:  GeekSportApi-NodeJS
+title:  GeekSportApi-Api
 layout: '@/layouts/Post'
 date: 2024-09-11
 tags: blog
@@ -17,7 +17,7 @@ image:
 
 ![图片描述](https://chetxu.chetserenade.info/JedXu/header.1af6756a%2022.42.201.png)
 
-## GeekSport-后台服务
+## GeekSport-Api
 
 ### **NestJS官网介绍**
 
