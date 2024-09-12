@@ -1,5 +1,5 @@
 ---
-title:  GeekSportApi-Api
+title:  GeekSport-Api
 layout: '@/layouts/Post'
 date: 2024-09-11
 tags: blog
