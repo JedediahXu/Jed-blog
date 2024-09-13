@@ -29,8 +29,7 @@ function getIcon(depth: number) {
 }
 
 function convertToChineseTime(timeString: string) {
-  const timePattern =
-    /(\d+)\s*(min|minute|min\s+read|分钟\s+阅读|hr|hour|hour\s+read|小时\s+阅读|day|天|week|周|month|月|year|年)\s*(read)?/i
+  const timePattern = /(\d+)\s*(min|minute|min\s+read|分钟\s+阅读|hr|hour|hour\s+read|小时\s+阅读|day|天|week|周|month|月|year|年)\s*(read)?/i
   const match = timeString.match(timePattern)
 
   if (match) {
@@ -72,28 +71,19 @@ function convertToChineseTime(timeString: string) {
 
 {
   headings.length ? (
-    <div
-      class="anchor sticky-module fixed sm:px-10 anchor-catalogue lg:inline-block w-60 catalogue"
-      data-pagefind-ignore
-    >
+    <div class="anchor sticky-module fixed sm:px-10 anchor-catalogue lg:inline-block w-60 catalogue" data-pagefind-ignore>
       <button class="header" title="高高山上走" data-pagefind-ignore>
-        <div class="title">{frontmatter.title}</div>
+        <div class="title truncate">{frontmatter.title}</div>
         {frontmatter.title && frontmatter.language ? (
           <div class="read" data-pagefind-ignore>
-            {frontmatter.language}，共 {minutesRead.words} 字，需阅读{' '}
-            {convertToChineseTime(minutesRead.text)}
+            {frontmatter.language}，共 {minutesRead.words} 字，需阅读 {convertToChineseTime(minutesRead.text)}
           </div>
         ) : null}
       </button>
       <ol class="catalogue " data-pagefind-ignore>
         {headings.map((heading, index) => (
           <li>
-            <a
-              class={`toc-link text-gray-500 hover:text-gray-900 text-sm mb-2 ${
-                heading.depth > 2 ? 'ml-4' : ''
-              }`}
-              href={`#${heading.slug}`}
-            >
+            <a class={`toc-link text-gray-500 hover:text-gray-900 text-sm mb-2 ${heading.depth > 2 ? 'ml-4' : ''}`} href={`#${heading.slug}`}>
               <i class={`toc-icon iconfont ${getIcon(heading.depth)}`} />
               <span class="truncated-title text">{heading.text}</span>
             </a>
@@ -178,11 +168,21 @@ function convertToChineseTime(timeString: string) {
     padding-right: 3px;
   }
 
-  .anchor .header .title {
+  .anchor .header {
     font-weight: 700;
     color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     font-size: 15px;
+  }
+
+  .title {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 15px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .anchor .header .read {
