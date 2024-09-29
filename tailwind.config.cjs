@@ -16,7 +16,7 @@ module.exports = {
 				lunarLight: ' #eebbeeec',
 				markerShadow: 'rgba(68, 68, 68, .6)',
 				dullGrey:'#B2C5DE',
-				frostedGlass: '',
+				frostedGlass: 'rgba(255, 255, 255, .6)',
 				codeReveal: 'rgba(255, 255, 255, .9)',
 				secondary:'rgba(240, 240, 240, .5)',
 				commentBackground:'#ffffffe5',
