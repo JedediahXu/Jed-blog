@@ -31,7 +31,8 @@ h2 {
   flex-direction: column;
 
   span {
-    line-height: 35px;
+    line-height: 30px;
+    font-size: 15px;
     display: flex;
   }
 
@@ -46,6 +47,30 @@ h2 {
   svg {
     color: #2e9fff;
   }
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.dividers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 0.5rem;
+  white-space: nowrap;
+}
+
+.dividers:before, .dividers:after {
+  height: .125rem;
+  width: 100%;
+  flex-grow: 1;
+  --tw-content: "";
+  content: var(--tw-content);
+  background-color: #E7E3E3;
 }
 
 .home {

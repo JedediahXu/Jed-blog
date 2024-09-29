@@ -1,22 +1,10 @@
 <script>
   document.addEventListener('copy', function (event: ClipboardEvent) {
-    
     let selection = window.getSelection()
 
     if (selection !== null) {
       let selectedText = selection.toString()
-      let fixedText =
-        '作者：' +
-        'JedXu' +
-        '\n' +
-        '链接：' +
-        'https://jedxu.info/' +
-        '\n' +
-        '来源：' +
-        'JedXu.info' +
-        '\n' +
-        '著作权归作者所有，商业转载请联系作者获得授权，非商业转载请注明出处。' +
-        '\n'
+      let fixedText = '作者：' + 'JedediahXu' + '\n' + '链接：' + 'https://jedxu.info/' + '\n' + '来源：' + 'JedXu.info' + '\n' + '\n'
       const newText: string = `${selectedText}\n\n${fixedText}`
       if (event.clipboardData) {
         event.preventDefault()

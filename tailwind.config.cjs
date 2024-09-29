@@ -8,13 +8,15 @@ module.exports = {
 		extend: {
 			colors: {
 				snowfallWhite: '#dedede',
+				// snowfallWhite: '#ebf6ff',
+				// snowfallWhite: '#FAF7F5',
 				crystalClear: "#FFFFFFE5",
 				techNoir: "#000000E5",
 				lightGray:'#444444',
 				lunarLight: ' #eebbeeec',
 				markerShadow: 'rgba(68, 68, 68, .6)',
 				dullGrey:'#B2C5DE',
-				frostedGlass: 'rgba(255, 255, 255, .6)',
+				frostedGlass: '',
 				codeReveal: 'rgba(255, 255, 255, .9)',
 				secondary:'rgba(240, 240, 240, .5)',
 				commentBackground:'#ffffffe5',
