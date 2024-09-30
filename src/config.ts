@@ -10,23 +10,23 @@ export default {
   picture:'「优游处其境，岁月忽其期」',
   navs: [
     {
-      title: 'Home page',
+      title: '主页',
       url: '/'
     },
     {
-      title: 'Article archiving',
+      title: '文章归档',
       url: '/article'
     },
     {
-      title: 'About me',
+      title: '关于我',
       url: '/aboutme'
     },
     {
-      title: 'Life album',
+      title: '生活相册',
       url: '/photo'
     },
     {
-      title: 'RSS',
+      title: 'RSS订阅',
       url: '/rss.xml'
     }
   ],
