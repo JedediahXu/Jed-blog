@@ -1,6 +1,6 @@
 import { API_CONFIG } from './env';
 
-export const getApiUrl = (path: string) => `${API_CONFIG.BASE_URL}/api/v1/${path}`;
+export const getApiUrl = (path: string) => `https://jed-blog-api.pages.dev/api/v1/posts`;
 
 export interface ApiConfig {
   endpoint: string;
