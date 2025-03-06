@@ -16,13 +16,5 @@ export default defineConfig({
     },
   },
   site: 'https://JedXu.info',
-  integrations: [tailwind(),vue()],
-  output: 'server',  // 启用服务端渲染
-  server: {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-    }
-  }
+  integrations: [tailwind(),vue()]
 });
