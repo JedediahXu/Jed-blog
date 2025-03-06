@@ -30,7 +30,7 @@ interface ApiResponse<T = any> {
 
 // API 路由配置
 const API_ROUTES = {
-  posts: '/api/posts',
+  posts: '/api/v1/posts',
 } as const;
 
 const fetchApi = <T = any>(url: string): Promise<T> => {

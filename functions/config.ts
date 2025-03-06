@@ -8,7 +8,7 @@ export interface ApiConfig {
 }
 
 export const API_ROUTES: Record<string, ApiConfig> = {
-  '/api/posts': {
+  '/api/v1/posts': {
     endpoint: getApiUrl('/posts'),
     method: 'POST'
   },
