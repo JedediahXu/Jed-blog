@@ -13,12 +13,25 @@ interface Post {
   total: number;
 }
 
-interface ApiResponse {
-  data: Post[];
+interface Comment {
+  id: string;
+  postId: string;
+  content: string;
+  userId: string;
+  createdOn: number;
+}
+
+interface ApiResponse<T = any> {
+  data: T;
   source: string;
   total: number;
   executionTime: number;
 }
+
+// API 路由配置
+const API_ROUTES = {
+  posts: '/api/posts',
+} as const;
 
 const fetchApi = <T = any>(url: string): Promise<T> => {
   return axios
@@ -32,8 +45,7 @@ const fetchApi = <T = any>(url: string): Promise<T> => {
 }
 
 export const getPosts = () => {
-  // 使用本地代理端点，不要直接访问外部 API
-  return fetchApi<ApiResponse>('https://sitedeploy99-blog-api.pages.dev/api/v1/posts')
+  return fetchApi<ApiResponse<Post[]>>(API_ROUTES.posts)
     .catch(error => {
       console.error('Error fetching posts:', error)
       return { data: [], source: '', total: 0, executionTime: 0 }
