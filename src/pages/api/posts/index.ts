@@ -1,12 +1,8 @@
 import type { APIRoute } from 'astro';
 
-const API_URL = import.meta.env.PUBLIC_API_URL;
-
-console.log(API_URL);
-
 export const POST: APIRoute = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/v1/posts`, {
+    const response = await fetch(`https://sitedeploy99-blog-api.pages.dev/api/v1/posts`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
