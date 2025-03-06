@@ -33,7 +33,7 @@ const fetchApi = <T = any>(url: string): Promise<T> => {
 
 export const getPosts = () => {
   // 使用本地代理端点，不要直接访问外部 API
-  return fetchApi<ApiResponse>('/api/posts')
+  return fetchApi<ApiResponse>('https://sitedeploy99-blog-api.pages.dev/api/v1/posts')
     .catch(error => {
       console.error('Error fetching posts:', error)
       return { data: [], source: '', total: 0, executionTime: 0 }
