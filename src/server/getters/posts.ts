@@ -25,31 +25,18 @@ export interface PostsResponse {
   executionTime: number
 }
 
-const BLOG_API_BASE = 'https://jed-blog-api.pages.dev'
-
-let cachedPosts: PostsResponse | null = null
-const CACHE_TIME = 5 * 60 * 1000 // 5分钟缓存
-let lastFetchTime = 0
+const API_PATH = '/api/v1/posts'
 
 export const getBlogPosts = async (): Promise<PostsResponse> => {
-  // 如果有缓存且未过期，直接返回缓存
-  if (cachedPosts && (Date.now() - lastFetchTime < CACHE_TIME)) {
-    return cachedPosts
-  }
-
   try {
     const response = await axios.request<PostsResponse>({
-      url: `${BLOG_API_BASE}/api/v1/posts`,
+      url: API_PATH,  // 使用代理路径
       method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     })
-    
-    // 更新缓存
-    cachedPosts = response.data
-    lastFetchTime = Date.now()
     
     return response.data
   } catch (error) {

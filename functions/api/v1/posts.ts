@@ -4,7 +4,7 @@
  * @author JedediahXu <https://github.com/JedediahXu>
  */
 
-import { handleRequest } from '../../_middleware'
+import { API_CONFIG } from '../../env';
 
 export async function onRequest(context: any) {
   const { request } = context
@@ -24,7 +24,7 @@ export async function onRequest(context: any) {
 
   try {
     // 构建后端 API URL
-    const backendUrl = new URL('/api/v1/posts', 'https://jed-blog-api.pages.dev')
+    const backendUrl = new URL('/api/v1/posts', API_CONFIG.BASE_URL)
     
     // 转发请求到后端
     const response = await fetch(backendUrl.toString(), {
@@ -36,7 +36,7 @@ export async function onRequest(context: any) {
     })
 
     if (!response.ok) {
-      throw new Error(`Backend responded with status: ${response.status}`)
+      throw new Error(`后端返回状态: ${response.status}`)
     }
 
     const data = await response.json()
@@ -51,7 +51,7 @@ export async function onRequest(context: any) {
       }
     })
   } catch (error: any) {
-    console.error('Error proxying posts request:', error)
+    console.error('代理帖子请求时出错:', error)
     
     return new Response(
       JSON.stringify({
