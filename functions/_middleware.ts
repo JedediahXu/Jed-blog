@@ -6,7 +6,7 @@ export async function handleRequest(request: Request, apiPath: string) {
     return new Response(null, {
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Accept',
         'Access-Control-Max-Age': '86400'
       }
@@ -20,13 +20,11 @@ export async function handleRequest(request: Request, apiPath: string) {
 
   try {
     const response = await fetch(route.endpoint, {
-      method: route.method,
+      method: 'GET',  // 固定使用 GET 方法
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },
-      // 如果是 POST 请求，转发请求体
-      ...(request.method === 'POST' ? { body: await request.text() } : {})
+      }
     });
 
     if (!response.ok) {
@@ -40,7 +38,7 @@ export async function handleRequest(request: Request, apiPath: string) {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Accept'
       }
     });

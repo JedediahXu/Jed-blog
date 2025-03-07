@@ -2,7 +2,9 @@
 import { computed, ref, onMounted } from "vue";
 import ImageModal from "./ImageModal.vue";
 import { photoAlbumData } from "../../server/getters/Photoalbum";
-import { getPosts } from '../../server/services/api';
+import { getPosts } from "../../server/services/api";
+import { getBlogPosts } from "../../server/getters/posts";
+import { getBlogPosts2 } from "../../server/getters/posts2";
 
 interface Post {
   id: string;
@@ -26,21 +28,28 @@ const isAlertVisible = ref(false);
 const currentIndex = ref(0);
 const isModalVisible = ref(false);
 
+const posts = ref<Post[]>([]);
+const loading = ref(false);
+
 // 获取API数据
 const fetchApiData = async () => {
   try {
     isLoading.value = true;
     error.value = null;
     const response = await getPosts();
-    console.log('API Response:', response);
+    const response1 = await getBlogPosts();
+    const response2 = await getBlogPosts2();
+    console.log("API Response:", response);
+    console.log("API Response1111:", response1);
+    console.log("API Response2222:", response2);
     if (response?.data) {
       apiData.value = response.data;
     } else {
-      error.value = '数据格式错误';
+      error.value = "数据格式错误";
     }
   } catch (err) {
-    console.error('Error in component:', err);
-    error.value = '获取数据失败，请稍后重试';
+    console.error("Error in component:", err);
+    error.value = "获取数据失败，请稍后重试";
   } finally {
     isLoading.value = false;
   }
@@ -74,13 +83,21 @@ const handleImageChange = (newIndex: number) => {
   <div class="md:ml-0 md:mr-20 pb-10" data-pagefind-ignore>
     <div class="mb-6">
       <h2 class="text-xl font-bold mb-4">API 数据测试</h2>
-      <div v-if="error" class="bg-red-100 dark:bg-red-800 p-4 rounded-lg text-red-700 dark:text-red-200">
+      <div
+        v-if="error"
+        class="bg-red-100 dark:bg-red-800 p-4 rounded-lg text-red-700 dark:text-red-200"
+      >
         {{ error }}
       </div>
       <div v-else-if="isLoading" class="flex justify-center items-center p-4">
-        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-white"></div>
+        <div
+          class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-white"
+        ></div>
       </div>
-      <div v-else-if="apiData && apiData.length > 0" class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+      <div
+        v-else-if="apiData && apiData.length > 0"
+        class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg"
+      >
         <div v-for="item in apiData" :key="item.id" class="mb-4">
           <h3 class="font-semibold">{{ item.title }}</h3>
           <p class="text-gray-600 dark:text-gray-300">{{ item.body }}</p>

@@ -35,12 +35,7 @@ const API_ROUTES = {
 
 const fetchApi = <T = any>(url: string): Promise<T> => {
   return axios
-    .post(url, null, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
+    .get(url)
     .then(response => response.data)
 }
 

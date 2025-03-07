@@ -10,6 +10,6 @@ export interface ApiConfig {
 export const API_ROUTES: Record<string, ApiConfig> = {
   '/api/v1/posts': {
     endpoint: getApiUrl('/posts'),
-    method: 'POST'
+    method: 'GET'
   }
 }; 
