@@ -117,7 +117,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import "@/style/mixins";
+@use "sass:color";
+@use "@/style/mixins" as mixins;
 
 .calendar {
   border-radius: 4px;

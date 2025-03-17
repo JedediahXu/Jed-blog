@@ -70,7 +70,8 @@ const getPointHeightStyle = (value: number) => {
 </template>
 
 <style lang="scss" scoped>
-@import "@/style/mixins";
+@use "sass:color";
+@use "@/style/mixins" as mixins;
 
 li {
   text-decoration: none;
@@ -136,7 +137,7 @@ li {
     padding-right: 1rem;
     border-radius: 4px;
     color: #444;
-    @include hidden();
+    @include mixins.hidden();
     &::before {
       $size: 4px;
       content: "";
@@ -202,7 +203,7 @@ li {
   &[data-article-count="1"] {
     .point {
       .article {
-        background-color: lighten(#f8981d, 20%);
+        background-color: color.adjust(#f8981d, $lightness: 20%);
       }
     }
   }
@@ -212,7 +213,7 @@ li {
   &[data-article-count="4"] {
     .point {
       .article {
-        background-color: lighten(#f8981d, 10%);
+        background-color: color.adjust(#f8981d, $lightness: 10%);
       }
     }
   }
@@ -230,7 +231,7 @@ li {
   &[data-instagram-count="1"] {
     .point {
       .instagram {
-        background-color: lighten(#ed4956, 20%);
+        background-color: color.adjust(#ed4956, $lightness: 20%);
       }
     }
   }
@@ -239,7 +240,7 @@ li {
   &[data-instagram-count="3"] {
     .point {
       .instagram {
-        background-color: lighten(#ed4956, 10%);
+        background-color: color.adjust(#ed4956, $lightness: 10%);
       }
     }
   }

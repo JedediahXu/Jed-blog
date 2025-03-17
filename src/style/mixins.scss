@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @function is-important($important) {
   @return #{if($important, "!important", "")};
 }
@@ -6,10 +8,7 @@
 @mixin hidden($important: false) {
   opacity: 0 is-important($important);
   visibility: hidden is-important($important);
-}
-
-@function is-important($important) {
-  @return #{if($important, "!important", "")};
+  transition: opacity 0.25s, visibility 0.25s;
 }
 
 /// Text underline
@@ -25,12 +24,6 @@
   visibility: visible is-important($important);
 }
 
-/// Hidden element
-@mixin hidden($important: false) {
-  opacity: 0 is-important($important);
-  visibility: hidden is-important($important);
-}
-
 /// BackgroundColor transition
 @mixin background-transition($time: 0.1s) {
   transition: background-color $time;
@@ -44,8 +37,8 @@
 @mixin scrollbar-style(
   $size: 20px,
   $bg: #ffffff,
-  $thumb-bg: darken(#ffffff, 20%),
-  $thumb-bg-hover: darken(#ffffff, 26%)
+  $thumb-bg: color.adjust(#ffffff, $lightness: -20%),
+  $thumb-bg-hover: color.adjust(#ffffff, $lightness: -26%)
 ) {
   ::-webkit-scrollbar {
     width: $size;

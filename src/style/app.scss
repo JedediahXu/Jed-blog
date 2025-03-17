@@ -1,15 +1,6 @@
-// mixins
-@import './mixins.scss';
-
-// reset style
-@import './reset.scss';
-
-// mobile style
-@import './mobile.scss';
-
-// Iconfont
-@import './iconfont.scss';
-
-// markdown style
-@import './markdown.scss';
-
+@use "sass:color";
+@use './mixins.scss' as mixins;
+@use './reset.scss' as reset;
+@use './mobile.scss' as mobile;
+@use './iconfont.scss' as iconfont;
+@use './markdown.scss' as markdown;
