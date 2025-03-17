@@ -4,9 +4,3 @@
 
 declare module 'astro-imagetools/components';
 declare module 'probe-image-size';
-
-
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
-}
