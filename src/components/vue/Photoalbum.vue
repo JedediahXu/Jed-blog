@@ -4,6 +4,7 @@ import ImageModal from "./ImageModal.vue";
 import { photoAlbumData } from "../../server/getters/Photoalbum";
 import { getPosts } from "../../server/services/api";
 import { getBlogPosts } from "../../server/getters/posts";
+import { getBlogPosts2 } from "../../server/getters/posts2";
 
 interface Post {
   id: string;
@@ -36,9 +37,11 @@ const fetchApiData = async () => {
     isLoading.value = true;
     error.value = null;
     const response = await getPosts();
-    const response2 = await getBlogPosts();
+    const response1 = await getBlogPosts();
+    const response2 = await getBlogPosts2();
     console.log("API Response:", response);
-    console.log("API Response2:", response2);
+    console.log("API Response1111:", response1);
+    console.log("API Response2222:", response2);
     if (response?.data) {
       apiData.value = response.data;
     } else {
