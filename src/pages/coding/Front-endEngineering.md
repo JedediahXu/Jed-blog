@@ -12,10 +12,10 @@ label:
 description:
   - 工程化即系统化、模块化、规范化
 image:
-  - 'https://chetxu.chetserenade.info/uPic/web-javascript.jpg'
+  - 'https://cdn.chetserenade.info/article/javascript-design-pattern.png'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/uPic/web-javascript.jpg)
+![图片描述](https://cdn.chetserenade.info/article/javascript-design-pattern.png)
 
 ## 前端工程化
 

@@ -12,10 +12,10 @@ label:
 description:
   - 最早起源于数学中的范畴论
 image:
-  - 'https://chetxu.chetserenade.info/uPic/Functional.jpg'
+  - 'https://chetxu.chetserenade.info/article/Functional.png'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/uPic/Functional.jpg)
+![图片描述](https://chetxu.chetserenade.info/article/Functional.png)
 
 前言：函数式编程最早起源于数学中的范畴论，和面向对象编程、命令式编程并列为三大编程范式，也就是如何编写程序的方法论。 它属于"结构化编程"的一种，主要思想是把运算过程尽量写成一系列嵌套的函数调用。
 范畴论（Category Theory）是数学中的一个分支，它是一种抽象的数学理论，用于研究数学结构和数学对象之间的关系。

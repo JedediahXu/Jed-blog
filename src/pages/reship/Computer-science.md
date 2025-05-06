@@ -12,10 +12,10 @@ label:
 description:
   - 计算机科学 Computer Science
 image:
-  - 'https://chetxu.chetserenade.info/uPic/640.jpeg'
+  - 'https://cdn.chetserenade.info/article/gallery4.png'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/uPic/640.jpeg)
+![图片描述](https://cdn.chetserenade.info/article/gallery4.png)
 
 **原文来自：**[微信公众号：原理](https://mp.weixin.qq.com/s/W_z55JN2k_i2Mgluyz_cMA)
 
