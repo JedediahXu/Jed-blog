@@ -8,7 +8,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250504.jpg",
+      href: "https://chetxu.chetserenade.info/article/250504.jpg",
     },
     {
       label: "异地视频",
@@ -17,7 +17,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250419.jpg",
+      href: "https://chetxu.chetserenade.info/article/250419.jpg",
     },
     {
       label: "地铁 🚇",
@@ -26,7 +26,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250413.jpg",
+      href: "https://chetxu.chetserenade.info/article/250413.jpg",
     },
     {
       label: "高铁 🚄",
@@ -35,7 +35,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250405.jpg",
+      href: "https://chetxu.chetserenade.info/article/250405.jpg",
     },
     {
       label: "公园 🌳",
@@ -44,7 +44,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250323.jpg",
+      href: "https://chetxu.chetserenade.info/article/250323.jpg",
     },
     {
       label: "青岛 🌊",
@@ -53,7 +53,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250315.jpg",
+      href: "https://chetxu.chetserenade.info/article/250315.jpg",
     },
     {
       label: "安丘-泰华 ❤️‍🔥",
@@ -62,7 +62,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/250222.jpg",
+      href: "https://chetxu.chetserenade.info/article/250222.jpg",
     },
     {
       label: "婚纱照",
@@ -125,7 +125,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://cdn.chetserenade.info/article/WechatIMG2574.jpg",
+      href: "https://chetxu.chetserenade.info/article/WechatIMG2574.jpg",
     },
     {
       label: "Living alone in Jinan",
