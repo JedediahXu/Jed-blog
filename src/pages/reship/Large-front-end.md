@@ -12,10 +12,10 @@ label:
 description:
   - 从零开始学习 C 语言的时候...
 image:
-  - 'https://chetxu.chetserenade.info/article/WebAssembly.jpg'
+  - '/cdn/article/WebAssembly.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/article/WebAssembly.jpg)
+![图片描述](/cdn/article/WebAssembly.jpg)
 
 这是一篇转载自 ~~fullstack.blog~~ **(注：前几年看到的，现在应该已经找不到了)** 的非常优秀的文章，值得深度阅读和扩展学习，共勉。 
 
@@ -60,7 +60,7 @@ image:
 
 词法分析的主要实现原理是状态机，它逐个读取字符，然后根据读到的字符的特点转换状态。比如这是 GCC 的词法分析状态机(引用自《编译系统透视》):
 
-![图片描述](https://chetxu.chetserenade.info/article/4889038.jpg)
+![图片描述](/cdn/article/4889038.jpg)
 
 如果自己实现的话，思路也不难。外面包一个循环，然后各种 switch...case
 就完事了。词法分析应该算是最简单的一节。
@@ -107,7 +107,7 @@ image:
 
 再严谨一些，声明说明符还可以包括 `const` 这样的限定说明符，`inline` 这样的函数说明符，和 `_Alignas` 这样的对齐说明符。借用书中的公式，它的完整表达如下:
 
-![图片描述](https://chetxu.chetserenade.info/article/35690095.jpg)
+![图片描述](/cdn/article/35690095.jpg)
 
 
 这才仅仅是声明语句中最简单的声明说明符，仅仅是几个类型和关键字的组合而已。后面的**初始声明符列表**的解析更复杂。如果有能力做完这些解析，恭喜你，成功的解析了声明语句。你会发现什么定义语句啦，调用语句啦，正妩媚的向你招手。
@@ -120,7 +120,7 @@ int fun(int a, int b) {    int c = 0;    c = a + b;    return c;}
 
 它的语法树如下:
 
-![图片描述](https://chetxu.chetserenade.info/article/96647133.jpg)
+![图片描述](/cdn/article/96647133.jpg)
 
 语法树将字符串格式的源代码转化为树状的数据结构，更容易被计算机理解和处理。但它距离中间代码还有一定的距离。
 
@@ -369,7 +369,7 @@ Asm.js 是 JavaScript 的一个子集，任何 JavaScript 解释器都可以解�
 
 于是，包括微软、谷歌和苹果在内的各大公司觉得，是时候搞个标准了，这个标准就是 WebAssembly 格式。它是介于中间代码和目标代码之间的一种二进制格式，借用 [WebAssembly 系列（四）WebAssembly 工作原理](https://link.juejin.cn/?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F25754084) 一文的插图来表示:
 
-![图片描述](https://chetxu.chetserenade.info/article/17605653.jpg)
+![图片描述](/cdn/article/17605653.jpg)
 
 通常从中间代码到机器码，需要经过平台具体化(转目标代码)和二进制化(汇编器把汇编代码变为二进制机器码)这两个步骤。而 WebAssembly 首先完成了第二个步骤，即已经是二进制格式的，但只是一系列虚拟的通用指令，还需要转换到各个 CPU 架构上。这样一来，从 WebAssembly 到机器码其实是透明且统一的，各个浏览器厂商只需要考虑如何从中间代码转换 WebAssembly 就行了。
 
@@ -395,7 +395,7 @@ C++ 写网页这个脑洞虽然比较大，但它启发我思考一个问题:“
 
 以 GCC 的中间代码 [RTL: Register Transfer Language](https://link.juejin.cn/?target=https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%25E6%259A%25AB%25E5%25AD%2598%25E5%2599%25A8%25E5%2582%25B3%25E9%2581%259E%25E8%25AA%259E%25E8%25A8%2580) 为例，[官方文档](https://link.juejin.cn/?target=https%3A%2F%2Fgcc.gnu.org%2Fonlinedocs%2Fgccint%2FGENERIC.html%23GENERIC) 在对 RTL 的解释中，就明确的把RTL 树分为了通用的、C/C++ 特有的、Java 特有的等几个部分。
 
-![图片描述](https://chetxu.chetserenade.info/article/48588749.jpg)
+![图片描述](/cdn/article/48588749.jpg)
 
 具体来说，我们知道 Java 并不能直接访问内存地址，这一点和浏览器上的 JavaScript 不能读写文件很类似，都是因为它们的运行环境(虚拟机)具备这种能力，但没有在语言层面提供。因此，含有指针四则运算的 C 代码无法直接被转换成 Java 代码，因为 Java 字节码层面并没有定义这样的抽象，一种简单的方案是申请一个超大的数组，然后自己模拟内存地址。
 
@@ -407,7 +407,7 @@ C++ 写网页这个脑洞虽然比较大，但它启发我思考一个问题:“
 
 然而前文已经解释过，实现单纯语法的转换意义并不大。一方面，对于图灵完备的语言来说，换一种表示方法(语言)去解决相同的问题并没有意义。另一方面，语言的真正功能绝不仅仅是语法本身，而在于它的运行时环境提供了什么样的功能。比如 Objective-C 的 Foundation 库提供了字典类型 `NSDictionary`，它如果直接转换成 C 语言，将是一个找不到的符号。因为 C 语言的运行时环境根本就不提供对这种数据结构的支持。因此凡是在语言层面进行强制转换的，要么利用反编译器拿到一堆格式正确但无法运行的代码，要么就自行解析语法树并为转换后的语言添加对应的能力，来实现转换前语言的功能。
 
-![图片描述](https://chetxu.chetserenade.info/article/31671390.jpg)
+![图片描述](/cdn/article/31671390.jpg)
 
 比如图中就是一个 C 语言转换 Java 的工具，为了实现 C 语言中的字符串申请和释放内存，这个工具不得不自己实现了 `com.mtsystems.coot.String8` 类。这样巨大的成本，显然不够普适，应用场景相对有限。
 

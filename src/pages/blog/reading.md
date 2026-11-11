@@ -12,10 +12,10 @@ label:
 description:
   - 学习、学习、学习
 image:
-  - 'https://chetxu.chetserenade.info/leslab/Reading.jpg'
+  - '/cdn/leslab/Reading.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/leslab/Reading.jpg)
+![图片描述](/cdn/leslab/Reading.jpg)
 
 ### 近期阅读的书
 

@@ -12,10 +12,10 @@ label:
 description:
   - 人生如梦，瞬息万变
 image:
-  - 'https://chetxu.chetserenade.info/article/WechatIMG151.jpg'
+  - '/cdn/article/WechatIMG151.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/article/WechatIMG151.jpg)
+![图片描述](/cdn/article/WechatIMG151.jpg)
 
 对于我来讲今年是比较难熬的一年，很多事情都不是特别顺利。
 

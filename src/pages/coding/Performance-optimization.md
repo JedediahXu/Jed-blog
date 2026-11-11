@@ -12,10 +12,10 @@ label:
 description:
   - 从输入 URL 到页面加载完成
 image:
-  - 'https://chetxu.chetserenade.info/JedXu/javascript-design-pattern.jpg'
+  - '/cdn/JedXu/javascript-design-pattern.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/JedXu/javascript-design-pattern.jpg)
+![图片描述](/cdn/JedXu/javascript-design-pattern.jpg)
 
 从事前端开发的很难离开**性能优化**这个词，但是关于前端性能方面，其实知识点是相当琐碎的，以至于我们总是感觉**做的不够好** 接下来我们从一道面试题说起:
 

@@ -12,10 +12,10 @@ label:
 description:
   - NestJS 是一个用于构建高效、可扩展的 Node.js 服务器端应用的框架。
 image:
-  - 'https://chetxu.chetserenade.info/JedXu/header.1af6756a%2022.42.201.png'
+  - '/cdn/JedXu/header.1af6756a%2022.42.201.png'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/JedXu/header.1af6756a%2022.42.201.png)
+![图片描述](/cdn/JedXu/header.1af6756a%2022.42.201.png)
 
 ## GeekSport-Api
 
@@ -143,6 +143,6 @@ Nest 在这些常见的 Node.js 框架 (Express/Fastify) 之上提高了一个�
 
 「**业余时间开发**」
 
-![目前正在研发中](https://chetxu.chetserenade.info/JedXu/CleanShot%202024-09-11%20at%2022.16.35.png)
+![目前正在研发中](/cdn/JedXu/CleanShot%202024-09-11%20at%2022.16.35.png)
 
 

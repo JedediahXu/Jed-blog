@@ -12,10 +12,10 @@ label:
 description:
   - 内心丰盈者独行也如众，何时葡萄先熟透，你要静候再静候
 image:
-  - 'https://chetxu.chetserenade.info/article/WechatIMG151.jpg'
+  - '/cdn/article/WechatIMG151.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/article/WechatIMG151.jpg)
+![图片描述](/cdn/article/WechatIMG151.jpg)
 
 今年我不打算写年终总结，因为生活平常，似乎没有什么特别的记录。最后思来想去，还是在24年的最后留下一些文字记忆吧，作为对这一年的告别。
 

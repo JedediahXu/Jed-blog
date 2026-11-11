@@ -12,11 +12,11 @@ label:
 description:
   - infer、操作符、和高阶类型
 image:
-  - 'https://chetxu.chetserenade.info/article/web-javascript.png'
+  - '/cdn/article/web-javascript.png'
 ---
 
 
-![图片描述](https://chetxu.chetserenade.info/article/web-javascript.png)
+![图片描述](/cdn/article/web-javascript.png)
 
 ## 一、infer
 

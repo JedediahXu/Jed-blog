@@ -12,10 +12,10 @@ label:
 description:
   - 青春的偷盗者
 image:
-  - 'https://chetxu.chetserenade.info/JedXu/WechatIMG678.jpg'
+  - '/cdn/JedXu/WechatIMG678.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/JedXu/WechatIMG678.jpg)
+![图片描述](/cdn/JedXu/WechatIMG678.jpg)
 
 时间真的是一种特别奇妙东西，
 
@@ -33,7 +33,7 @@ image:
 
 在这里，我遇到了很多有意思的朋友和老师，也遇到了一个为我留下几年美好恋情回忆的人...
 
-![树](https://chetxu.chetserenade.info/leslab/WechatIMG2050.jpg)
+![树](/cdn/leslab/WechatIMG2050.jpg)
 
 ### 当下
 
@@ -65,7 +65,7 @@ image:
 
 现在的将来，就是过去的现在。
 
-![发呆](https://chetxu.chetserenade.info/leslab/%E6%BD%98%E5%BA%84.jpg)
+![发呆](/cdn/leslab/%E6%BD%98%E5%BA%84.jpg)
 
 ### Vettel
 

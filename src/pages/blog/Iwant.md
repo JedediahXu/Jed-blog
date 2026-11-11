@@ -12,10 +12,10 @@ label:
 description:
   - 心灵的迷宫
 image:
-  - 'https://chetxu.chetserenade.info/JedXu/WechatIMG677.jpg'
+  - '/cdn/JedXu/WechatIMG677.jpg'
 ---
 
-![图片描述](https://chetxu.chetserenade.info/JedXu/WechatIMG677.jpg)
+![图片描述](/cdn/JedXu/WechatIMG677.jpg)
 
 ### 阅读
 
@@ -35,7 +35,7 @@ image:
 
 最近，我专注于提升我的UI设计技能，并为我的个人APP项目设计了一整套UI界面。目前，我想展示部分设计成果，虽然这些设计仍在优化阶段，但基础页面已经开始开发。
 
-![图片描述](https://chetxu.chetserenade.info/ieslab/CleanShot%202024-02-24%20at%2012.56.06.png)
+![图片描述](/cdn/ieslab/CleanShot%202024-02-24%20at%2012.56.06.png)
 
 ### 成长
 

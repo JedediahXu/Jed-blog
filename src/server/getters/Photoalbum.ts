@@ -8,7 +8,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG762.jpg",
+      href: "/cdn/JedXu/WechatIMG762.jpg",
     },
     {
       label: "落日",
@@ -17,7 +17,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG761.jpg",
+      href: "/cdn/JedXu/WechatIMG761.jpg",
     },
     {
       label: "烟台-养马岛",
@@ -26,7 +26,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/leslab/YanTai.jpg",
+      href: "/cdn/leslab/YanTai.jpg",
     },
     {
       label: "百花公园",
@@ -35,7 +35,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG759.jpg",
+      href: "/cdn/JedXu/WechatIMG759.jpg",
     },
     {
       label: "天空 🛫",
@@ -44,7 +44,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG760.jpg",
+      href: "/cdn/JedXu/WechatIMG760.jpg",
     },
     {
       label: "棒 👍",
@@ -53,7 +53,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1473.jpg",
+      href: "/cdn/JedXu/WechatIMG1473.jpg",
     },
     {
       label: "奥体 🏀",
@@ -62,7 +62,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/article/WechatIMG2574.jpg",
+      href: "/cdn/article/WechatIMG2574.jpg",
     },
     {
       label: "Living alone in Jinan",
@@ -71,7 +71,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/Jinan.jpg",
+      href: "/cdn/JedXu/Jinan.jpg",
     },
     {
       label: "雨 🌧️",
@@ -80,7 +80,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1475.jpg",
+      href: "/cdn/JedXu/WechatIMG1475.jpg",
     },
     {
       label: "向日葵的花语",
@@ -89,7 +89,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1476.jpg",
+      href: "/cdn/JedXu/WechatIMG1476.jpg",
     },
     {
       label: "淄博人民公园",
@@ -98,7 +98,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1172.jpg",
+      href: "/cdn/JedXu/WechatIMG1172.jpg",
     },
     {
       label: "受伤 👍",
@@ -107,7 +107,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1174.jpg",
+      href: "/cdn/JedXu/WechatIMG1174.jpg",
     },
     {
       label: "发小",
@@ -116,7 +116,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1175.jpg",
+      href: "/cdn/JedXu/WechatIMG1175.jpg",
     },
     {
       label: "夜跑 🏃",
@@ -125,7 +125,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/12001694758911_.pic_hd.jpg",
+      href: "/cdn/JedXu/12001694758911_.pic_hd.jpg",
     },
     {
       label: "爱情 ❤️",
@@ -134,7 +134,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11951694758845_.pic_hd.jpg",
+      href: "/cdn/JedXu/11951694758845_.pic_hd.jpg",
     },
     {
       label: "淄博文体中心",
@@ -143,7 +143,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1176.jpg",
+      href: "/cdn/JedXu/WechatIMG1176.jpg",
     },
     {
       label: "月照西湘 🌚",
@@ -152,7 +152,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11881694758825_.pic_hd.jpg",
+      href: "/cdn/JedXu/11881694758825_.pic_hd.jpg",
     },
     {
       label: "山东省博物馆",
@@ -161,7 +161,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG151.jpeg",
+      href: "/cdn/JedXu/WechatIMG151.jpeg",
     },
     {
       label: "粉色天空",
@@ -170,7 +170,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11971694758845_.pic_hd.jpg",
+      href: "/cdn/JedXu/11971694758845_.pic_hd.jpg",
     },
     {
       label: "Live alone",
@@ -179,7 +179,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11841694758806_.pic_hd.jpg",
+      href: "/cdn/JedXu/11841694758806_.pic_hd.jpg",
     },
     {
       label: "关于东三路的故事",
@@ -188,7 +188,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11981694758899_.pic_hd.jpg",
+      href: "/cdn/JedXu/11981694758899_.pic_hd.jpg",
     },
     {
       label: "周村孝妇河",
@@ -197,7 +197,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/IMG_3733.JPG",
+      href: "/cdn/JedXu/IMG_3733.JPG",
     },
     {
       label: "雏菊🌼",
@@ -206,7 +206,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/12031694758924_.pic_hd.jpg",
+      href: "/cdn/JedXu/12031694758924_.pic_hd.jpg",
     },
     {
       label: "通宵编程之后去吃早饭路上拍的",
@@ -215,7 +215,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/12041694758924_.pic_hd.jpg",
+      href: "/cdn/JedXu/12041694758924_.pic_hd.jpg",
     },
     {
       label: "第一份工作下班路上",
@@ -224,7 +224,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11961694758845_.pic_hd.jpg",
+      href: "/cdn/JedXu/11961694758845_.pic_hd.jpg",
     },
     {
       label: "抽烟 🚬",
@@ -233,7 +233,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/2020-09-26%20105639.jpg",
+      href: "/cdn/JedXu/2020-09-26%20105639.jpg",
     },
     {
       label: "晨曦",
@@ -242,7 +242,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11891694758831_.pic.jpg",
+      href: "/cdn/JedXu/11891694758831_.pic.jpg",
     },
     {
       label: "淄博公交",
@@ -251,7 +251,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1178.jpg",
+      href: "/cdn/JedXu/WechatIMG1178.jpg",
     },
     {
       label: "雪❄️",
@@ -260,7 +260,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/12021694758919_.pic_hd.jpg",
+      href: "/cdn/JedXu/12021694758919_.pic_hd.jpg",
     },
     {
       label: "🌲",
@@ -269,7 +269,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/2020-10-25%20100814.jpg",
+      href: "/cdn/JedXu/2020-10-25%20100814.jpg",
     },
     {
       label: "大学课程",
@@ -278,7 +278,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/11901694758831_.pic_hd.jpg",
+      href: "/cdn/JedXu/11901694758831_.pic_hd.jpg",
     },
     {
       label: "青岛",
@@ -287,7 +287,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/2019-07-10%20235108.png",
+      href: "/cdn/JedXu/2019-07-10%20235108.png",
     },
     {
       label: "眼睛",
@@ -296,7 +296,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/2019-01-23%20091949.png",
+      href: "/cdn/JedXu/2019-01-23%20091949.png",
     },
     {
       label: "夜",
@@ -305,7 +305,7 @@ export const photoAlbumData = {
         width: 0,
         height: 0,
       },
-      href: "https://chetxu.chetserenade.info/JedXu/WechatIMG1177.jpg",
+      href: "/cdn/JedXu/WechatIMG1177.jpg",
     },
   ],
 };
